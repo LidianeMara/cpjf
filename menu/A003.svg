@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1326" height="1214" viewBox="0 0 1326 1214">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1326" height="1171" viewBox="0 0 1326 1171">
   <defs>
     <clipPath id="clip-path">
       <ellipse id="Elipse_190" data-name="Elipse 190" cx="125" cy="125" rx="125" ry="125" transform="translate(0 0)" fill="none"/>
@@ -8,7 +8,7 @@
       <stop offset="1"/>
     </linearGradient>
     <linearGradient id="linear-gradient-2" x1="522.802" y1="1.214" x2="523.319" y2="-0.036" xlink:href="#linear-gradient"/>
-    <filter id="Retângulo_105" x="309" y="0" width="713" height="1214" filterUnits="userSpaceOnUse">
+    <filter id="Retângulo_105" x="309" y="0" width="713" height="1171" filterUnits="userSpaceOnUse">
       <feOffset dy="3" input="SourceAlpha"/>
       <feGaussianBlur stdDeviation="3" result="blur"/>
       <feFlood flood-opacity="0.161"/>
@@ -21,8 +21,8 @@
     </linearGradient>
     <linearGradient id="linear-gradient-4" x1="0.044" y1="1.132" x2="0.587" y2="-0.077" xlink:href="#linear-gradient-3"/>
   </defs>
-  <g id="A003" transform="translate(125 -455)">
-    <g id="Grupo_473" data-name="Grupo 473" transform="translate(330 -3138)" opacity="0.5">
+  <g id="A003" transform="translate(125 -431)">
+    <g id="Grupo_473" data-name="Grupo 473" transform="translate(330 -3140)" opacity="0.5">
       <g id="Grupo_423" data-name="Grupo 423" transform="translate(-455 3750)">
         <g id="Grupo_422" data-name="Grupo 422" transform="translate(0 0)" clip-path="url(#clip-path)">
           <ellipse id="Elipse_166" data-name="Elipse 166" cx="125" cy="125" rx="125" ry="125" transform="translate(0 0)" fill="#f4e5d7"/>
@@ -527,7 +527,7 @@
       </g>
       <ellipse id="Elipse_302" data-name="Elipse 302" cx="125" cy="125" rx="125" ry="125" transform="translate(-455 3750)" fill="#696969" style="mix-blend-mode: saturation;isolation: isolate"/>
     </g>
-    <g id="Grupo_454" data-name="Grupo 454" transform="translate(1840 -3138)" opacity="0.5">
+    <g id="Grupo_454" data-name="Grupo 454" transform="translate(1840 -3140)" opacity="0.5">
       <g id="Grupo_444" data-name="Grupo 444" transform="translate(-889 3750)">
         <g id="Grupo_284" data-name="Grupo 284" transform="translate(0 0)">
           <path id="Caminho_798" data-name="Caminho 798" d="M125,0A125,125,0,1,1,0,125,125,125,0,0,1,125,0Z" transform="translate(0 0)" fill="#f4e5d7"/>
@@ -753,19 +753,21 @@
         <ellipse id="Elipse_303" data-name="Elipse 303" cx="125" cy="125" rx="125" ry="125" fill="#696969" style="mix-blend-mode: saturation;isolation: isolate"/>
       </g>
     </g>
-    <g id="Ficha" transform="translate(193 461)">
+    <g id="Ficha" transform="translate(193 437)">
       <g transform="matrix(1, 0, 0, 1, -318, -6)" filter="url(#Retângulo_105)">
-        <rect id="Retângulo_105-2" data-name="Retângulo 105" width="695" height="1196" rx="49" transform="translate(318 6)" fill="#fcf7ef"/>
+        <rect id="Retângulo_105-2" data-name="Retângulo 105" width="695" height="1153" rx="49" transform="translate(318 6)" fill="#fcf7ef"/>
       </g>
     </g>
     <text id="Camila_28_anos_mecânica" data-name="Camila
-28 anos, mecânica" transform="translate(228 937)" fill="#242e36" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="249.5" y="36">CAMILA</tspan><tspan font-size="30" font-family="IBMPlexMono-Medium, IBM Plex Mono" font-weight="500"><tspan x="159.5" y="77">28 anos, mecânica</tspan></tspan></text>
-    <g id="Grupo_457" data-name="Grupo 457" transform="translate(-5 -87.685)">
-      <text id="Camila_sempre_foi_cliente_da_Caixa_Econômica_Federal._Um_dia_ela_recebeu_a_informação_de_que_o_seu_nome_tinha_sido_incluído_no_cadastro_de_inadimplentes_CADIN_SERASA_em_razão_de_um_boleto_que_segundo_a_Caixa_não_tinha_sido_pago._Entretanto_ela_tinha_" data-name="Camila sempre foi cliente da Caixa Econômica Federal. Um dia, ela recebeu a informação de que o seu nome tinha sido incluído no cadastro de inadimplentes (CADIN/SERASA) em razão de um boleto que segundo a Caixa não tinha sido pago. 
+28 anos, mecânica" transform="translate(228 913)" fill="#242e36" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="249.5" y="36">CAMILA</tspan><tspan font-size="30" font-family="IBMPlexMono-Medium, IBM Plex Mono" font-weight="500"><tspan x="159.5" y="77">28 anos, mecânica</tspan></tspan></text>
+    <g id="Grupo_457" data-name="Grupo 457" transform="translate(-5 -111.685)">
+      <text id="Camila_sempre_foi_cliente_da_Caixa_Econômica_Federal._Um_dia_ela_recebeu_a_informação_de_que_seu_nome_tinha_sido_incluído_no_cadastro_de_inadimplentes_CADIN_SERASA_em_razão_de_um_boleto_que_segundo_a_Caixa_não_tinha_sido_pago._Entretanto_ela_tinha_" data-name="Camila sempre foi cliente da Caixa Econômica Federal. Um dia, ela recebeu a informação
+de que seu nome tinha sido incluído no cadastro de inadimplentes (CADIN/SERASA) em razão de
+um boleto que, segundo a Caixa, não tinha sido pago. 
 
-Entretanto, ela tinha " transform="translate(219 1157.684)" fill="rgba(36,46,54,0.78)" font-size="28" font-family="Inter-Medium, Inter" font-weight="500"><tspan x="0" y="27">Camila sempre foi cliente da Caixa Econômica </tspan><tspan x="0" y="61">Federal. Um dia, ela recebeu a informação de </tspan><tspan x="0" y="95">que o seu nome tinha sido incluído no cadastro </tspan><tspan x="0" y="129">de inadimplentes (CADIN/SERASA) em razão de </tspan><tspan x="0" y="163">um boleto que segundo a Caixa não tinha sido </tspan><tspan x="0" y="197">pago. </tspan><tspan x="0" y="231"></tspan><tspan x="0" y="265">Entretanto, ela tinha um comprovante do </tspan><tspan x="0" y="299">pagamento desse boleto e havia feito esse </tspan><tspan x="0" y="333">pagamento na data do vencimento. Ela procurou </tspan><tspan x="0" y="367">a Caixa, mas não conseguiu resolver o problema.</tspan></text>
+Entretanto, ela tinha " transform="translate(219 1157.684)" fill="rgba(36,46,54,0.78)" font-size="28" font-family="Inter-Medium, Inter" font-weight="500"><tspan x="0" y="27">Camila sempre foi cliente da Caixa Econômica </tspan><tspan x="0" y="61">Federal. Um dia, ela recebeu a informação</tspan><tspan x="0" y="95">de que seu nome tinha sido incluído no cadastro </tspan><tspan x="0" y="129">de inadimplentes (CADIN/SERASA) em razão de</tspan><tspan x="0" y="163">um boleto que, segundo a Caixa, não tinha sido </tspan><tspan x="0" y="197">pago. </tspan><tspan x="0" y="231"></tspan><tspan x="0" y="265">Entretanto, ela tinha o comprovante do </tspan><tspan x="0" y="299">pagamento desse boleto e havia feito</tspan><tspan x="0" y="333">esse pagamento na data do vencimento.</tspan><tspan x="0" y="367">Ela procurou a Caixa, mas não conseguiu </tspan><tspan x="0" y="401">resolver o problema.</tspan></text>
     </g>
-    <g id="Grupo_464" data-name="Grupo 464" transform="translate(-5 165)">
+    <g id="Grupo_464" data-name="Grupo 464" transform="translate(-5 141)">
       <g id="informação" transform="translate(223 1341.897)">
         <path id="Caminho_805" data-name="Caminho 805" d="M157.794,168.821h-.655l.006-14.779a1.857,1.857,0,0,0-1.856-1.821h-5.93a1.858,1.858,0,1,0,0,3.716h1.018v12.883h-.655a1.858,1.858,0,1,0,0,3.716h8.073a1.858,1.858,0,1,0,0-3.716Z" transform="translate(-129.576 -133.723)" fill="#0f4c81"/>
         <circle id="Elipse_305" data-name="Elipse 305" cx="3.902" cy="3.902" r="3.902" transform="translate(20.284 9.186)" fill="#0f4c81"/>
@@ -773,7 +775,7 @@ Entretanto, ela tinha " transform="translate(219 1157.684)" fill="rgba(36,46,54,
       </g>
       <text id="Para_acompanhar_o_desfecho_dessa_história_nos_visite_novamente_em_breve_" data-name="Para acompanhar o desfecho dessa história, nos visite novamente em breve!" transform="translate(288 1332)" fill="#242e36" font-size="24" font-family="IBMPlexMono, IBM Plex Mono"><tspan x="0" y="25">Para acompanhar o desfecho dessa </tspan><tspan x="0" y="57">história, nos visite novamente em breve!</tspan></text>
     </g>
-    <g id="Grupo_440" data-name="Grupo 440" transform="translate(390 609)">
+    <g id="Grupo_440" data-name="Grupo 440" transform="translate(390 585)">
       <circle id="Elipse_205" data-name="Elipse 205" cx="150" cy="150" r="150" fill="#f3dfd2"/>
       <path id="Caminho_722" data-name="Caminho 722" d="M112.016,29.4S98.608-7.149,57.812,10.338C9.362,31.1,14.311,207.362,24.01,231.05l83.238,9.886S137.409,51.217,112.016,29.4Z" transform="translate(33.605 10.976)" fill="#191515"/>
       <path id="Caminho_723" data-name="Caminho 723" d="M101.815,21.777s.571-22.812-42.51.133C11.879,47.167,15.892,192.242,76.161,230.857l23.356,2.5S127.459,43.3,101.815,21.777Z" transform="translate(51.471 22.887)" opacity="0.24"/>
@@ -958,12 +960,7 @@ Entretanto, ela tinha " transform="translate(219 1157.684)" fill="rgba(36,46,54,
         </g>
       </g>
     </g>
-    <text id="conciliação" transform="translate(185 493)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="232" y="36">CONCILIAÇÃO</tspan></text>
-    <line id="Linha_8" data-name="Linha 8" x2="285" transform="translate(390.5 550.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
-    <g id="Glossario_1" data-name="Glossario 1" transform="translate(303 1594)">
-      <g id="Grupo_1247" data-name="Grupo 1247" transform="translate(0 0)">
-        <text id="_Todos_os_personagens_e_casos_são_fictícios." data-name=" Todos os personagens e casos são fictícios." transform="translate(0 0)" fill="#0f4c81" font-size="22" font-family="Inter-Regular, Inter"><tspan x="0" y="21" xml:space="preserve"> Todos os personagens e casos são fictícios.</tspan></text>
-      </g>
-    </g>
+    <text id="conciliação" transform="translate(185 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="232" y="36">CONCILIAÇÃO</tspan></text>
+    <line id="Linha_8" data-name="Linha 8" x2="285" transform="translate(390.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
   </g>
 </svg>
