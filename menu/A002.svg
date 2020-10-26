@@ -956,7 +956,5 @@ fiscalização prossional." transform="translate(219 1157.684)" fill="rgba(36,46
         <ellipse id="Elipse_300" data-name="Elipse 300" cx="125" cy="125" rx="125" ry="125" transform="translate(0 0)" fill="#696969" style="mix-blend-mode: saturation;isolation: isolate"/>
       </g>
     </g>
-    <text id="execução_fiscal" data-name="execução fiscal" transform="translate(187 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="190" y="36">EXECUÇÃO FISCAL</tspan></text>
-    <line id="Linha_7" data-name="Linha 7" x2="346" transform="translate(361.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
   </g>
 </svg>

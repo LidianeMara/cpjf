@@ -654,7 +654,7 @@ Ela argumenta que é ilegal e injusta sua exclusão do processo seletiv" transfo
         <ellipse id="Elipse_303" data-name="Elipse 303" cx="125" cy="125" rx="125" ry="125" fill="#696969" style="mix-blend-mode: saturation;isolation: isolate"/>
       </g>
     </g>
-    <text id="Vara_CÍVEL_Ação_ordinária" data-name="Vara CÍVEL Ação ordinária" transform="translate(190 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="85" y="36">VARA CÍVEL AÇÃO ORDINÁRIA</tspan></text>
-    <line id="Linha_10" data-name="Linha 10" x2="582" transform="translate(246.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
+    <text id="Ação_cível" data-name="Ação cível" transform="translate(190 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="242.5" y="36">AÇÃO CÍVEL</tspan></text>
+    <line id="Linha_10" data-name="Linha 10" x2="252" transform="translate(407.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
   </g>
 </svg>

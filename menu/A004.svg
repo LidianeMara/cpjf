@@ -616,7 +616,7 @@
         <ellipse id="Elipse_301" data-name="Elipse 301" cx="125" cy="125" rx="125" ry="125" transform="translate(0 0)" fill="#696969" stroke="rgba(0,0,0,0)" stroke-width="1" style="mix-blend-mode: saturation;isolation: isolate"/>
       </g>
     </g>
-    <text id="rito_comum_criminal" data-name="rito comum criminal" transform="translate(186 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="148" y="36">RITO COMUM CRIMINAL</tspan></text>
-    <line id="Linha_9" data-name="Linha 9" x2="436" transform="translate(315.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
+    <text id="Ação_criminal" data-name="Ação criminal" transform="translate(186 469)" fill="#0f4c81" font-size="35" font-family="IBMPlexMono-Bold, IBM Plex Mono" font-weight="700"><tspan x="211" y="36">AÇÃO CRIMINAL</tspan></text>
+    <line id="Linha_9" data-name="Linha 9" x2="315" transform="translate(376.5 526.5)" fill="none" stroke="#62ba9b" stroke-width="3"/>
   </g>
 </svg>
