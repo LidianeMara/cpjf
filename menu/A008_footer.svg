@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="273" viewBox="0 0 1080 273">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Retângulo_205" data-name="Retângulo 205" width="1080" height="273" transform="translate(0 1647)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Grupo_de_máscara_1" data-name="Grupo de máscara 1" transform="translate(0 -1647)" clip-path="url(#clip-path)">
+    <g id="Grupo_460" data-name="Grupo 460" transform="translate(-260 1546)" opacity="0.533">
+      <text id="justiça_" data-name="justiça " transform="translate(469 318)" fill="#dfd7ca" font-size="97" font-family="Inter-Black, Inter" font-weight="800" opacity="0.51"><tspan x="-455.239" y="0">JUSTIÇA </tspan></text>
+      <text id="direito" transform="translate(1416 356)" fill="#dfd7ca" font-size="203" font-family="Inter-Black, Inter" font-weight="800" opacity="0.51"><tspan x="-822.669" y="0">DIREITO</tspan></text>
+      <text id="processo" transform="translate(624 182)" fill="#dfd7ca" font-size="97" font-family="Inter-Light, Inter" font-weight="300" opacity="0.51"><tspan x="-518.723" y="0">PROCESSO</tspan></text>
+      <text id="DEMOCRACIA" transform="translate(1587 182)" fill="#dfd7ca" font-size="97" font-family="Inter-Light, Inter" font-weight="300" opacity="0.51"><tspan x="-637.182" y="0">DEMOCRACIA</tspan></text>
+      <text id="réu" transform="translate(584 303)" fill="#dfd7ca" font-size="57" font-family="Inter-SemiBold, Inter" font-weight="600" opacity="0.51"><tspan x="-113.534" y="0">RÉU</tspan></text>
+      <text id="autor" transform="translate(883 172)" fill="#dfd7ca" font-size="68" font-family="Inter-SemiBold, Inter" font-weight="600" opacity="0.51"><tspan x="-238.749" y="0">AUTOR</tspan></text>
+    </g>
+  </g>
+</svg>
