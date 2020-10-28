@@ -6,8 +6,8 @@ float timer = 0.0;
 PImage[] photos = new PImage[5];
 
 /* IMAGENS MAOS */
-PImage maoDireita;
-PImage maoEsquerda;
+PImage img;
+PImage img1;
 float scale = 1.0;
 int offx = 50;  int offy = 900; //MAO ESQUERDA
 int offx1 = width*10; int offy1 = 900; // MAO DIREITA
@@ -16,11 +16,9 @@ int offx1 = width*10; int offy1 = 900; // MAO DIREITA
 int backgroundIndex = 0;
 boolean auto = true;
 void setup() {
-  size(displayHeight, displayWidth);
-  background(253,245,232);  
-  
-  maoEsquerda = loadImage("A007_maoEsquerda.png");
-  maoDireita = loadImage("A006_maoDireita.png");
+  size(displayHeight, displayWidth);  
+  img = loadImage("A007_maoEsquerda.png");
+  img1 = loadImage("A006_maoDireita.png");
 
   photos[0] = requestImage("A001.png");
   photos[1] = requestImage("A002.png");
@@ -30,9 +28,10 @@ void setup() {
   
 }
 void draw () {
+  background(253,245,232);  
   drawCabecalho();
-  maoEsquerdaHover();
-  maoDireitaHover();
+  maoEsquerda();
+  maoDireita();
   menuPrincipal();
   drawDots();
   
@@ -42,7 +41,7 @@ void draw () {
 void drawCabecalho() {
   stroke(36,46,54);
   fill(36,46,54);
-  rect(0,0,width,340);
+  rect(0,0,width*2,340*2);
   fill(253,245,232);
   fill(253,245,232);
   p = createFont("IBMPlexMono-Medium.ttf", 40);
@@ -58,33 +57,35 @@ void drawCabecalho() {
   rectMode(CENTER);
   text("personagens fictícios.", width/50, 260);  
 }
-void maoEsquerdaHover() { 
-  scale = 1.2;
- if ( mouseover1()) {
-  scale = 1.0;
-  image(maoEsquerda, offx, offy, maoEsquerda.width*scale, maoEsquerda.height*scale);
+void maoEsquerda() {
+ scale = 1.2;
+  if ( mouseover() ) {
+    scale = 0.9; 
+  image(img, offx, offy, img.width*scale, img.height*scale);
   }
-   else 
-   {
-     image(maoEsquerda, offx, offy, maoEsquerda.width*scale, maoEsquerda.height*scale);
-   }
+  else image(img, offx, offy, img.width*scale, img.height*scale);
+
+}
+  
+void maoDireita () {
+ scale = 1.2;
+  if ( mouseover1() ) {
+    scale = 0.9; 
+  image(img1, offx1, offy1, img1.width*scale, img1.height*scale);
+  }
+  else image(img1, offx1, offy1, img1.width*scale, img1.height*scale);
+
 }
 
-void maoDireitaHover() {
-  scale = 1.2;
- if ( mouseover1()) {
-  scale = 1.0;
-  image(maoDireita, offx1, offy1, maoDireita.width*scale, maoDireita.height*scale);
-  }
-   else 
-   {
-     image(maoDireita, offx1, offy1, maoDireita.width*scale, maoDireita.height*scale);
-   }
-}
+boolean mouseover() {
+  if ( ( mouseX > offx && mouseX < img.width+offx ) && ( mouseY > offy && mouseY < img.height +offy) ) return false;
+  return true; 
+  } 
 boolean mouseover1() {
-  if ( ( mouseX > offx1 && mouseX < maoDireita.width+offx1) && ( mouseY > offy1 && mouseY < maoDireita.height +offy1 ) ) return false;
+  if ( ( mouseX > offx1 && mouseX < img1.width+offx1) && ( mouseY > offy1 && mouseY < img1.height +offy1 ) ) return false;
   return true;
 }
+
 void menuPrincipal() {
 
   timer= timer + (1.0/10.0);
@@ -123,27 +124,27 @@ void textFooter(float y) {
   p2 = createFont("IBMPlexMono-Light.ttf", 97);
   textFont(p2);
   fill(223, 215, 202);
-  text("PROCESSO", -140, y*4.05);
+  text("PROCESSO", -140, y*4.4);
   p3 = createFont("IBMPlexMono-SemiBold.ttf", 68);
   textFont(p3);
   fill(223, 215, 202);
-  text("AUTOR", 350, y*4.05);
+  text("AUTOR", 325, y*4.4);
   fill(223, 215, 202);
   p2 = createFont("IBMPlexMono-Light.ttf", 97);
   textFont(p2);
-  text("DEMOCRACIA", width/2, y*4.05);
+  text("DEMOCRACIA", width/2, y*4.4);
   fill(223, 215, 202);
-  p1 = createFont("IBMPlexMono-Bold.ttf", 97);
+  p1 = createFont("IBMPlexMono-Bold.ttf", 115);
   textFont(p1);
-  text("JUSTIÇA", -205, y*4.75);
+  text("JUSTIÇA", -180, y*4.75);
   fill(223, 215, 202);
-  p2 = createFont("IBMPlexMono-Light.ttf", 57);
+  p2 = createFont("IBMPlexMono-Light.ttf", 100);
   textFont(p2);
-  text("RÉU", 250, y*4.75);
+  text("RÉU", 350, y*4.75);
   fill(223, 215, 202);
   p1 = createFont("IBMPlexMono-Bold.ttf", 203);
   textFont(p1);
-  text("DIREITO", width/2, y*4.75);
+  text("DIREITO", width/2, y*4.85);
   fill(223, 215, 202);
 }
 
