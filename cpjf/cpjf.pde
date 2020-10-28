@@ -84,7 +84,7 @@ void menuPrincipal() {
   }
   if (photos[backgroundIndex].width > 0)
   {
-    printImage(photos[backgroundIndex],0,0,width/2,height*1.25);
+    printImage(photos[backgroundIndex],width/4,height*0.25,width/2,height*1.25);
   } 
 }
 
