@@ -8,7 +8,7 @@ int backgroundIndex = 0;
 boolean auto = true;
 
 void setup() {
-  size(displayWidth,displayHeight);
+  size(displayHeight, displayWidth);
   background(253,245,232);
   photos[0] = requestImage("A001.png");
   photos[1] = requestImage("A002.png");
@@ -22,19 +22,18 @@ void draw () {
   rect(0,0,width,340);
   fill(253,245,232);
   fill(253,245,232);
-  rectMode(CENTER);
   p = createFont("IBMPlexMono-Medium.ttf", 40);
   textFont(p);
-  text("Aqui você pode trilhar alguns dos diferentes", width/5, 120);
+  text("Aqui você pode trilhar alguns dos diferentes", width/50, 120);
   fill(253,245,232);
   rectMode(CENTER);
-  text("caminhos de um processo judicial na Justiça", width/5, 170);
+  text("caminhos de um processo judicial na Justiça", width/50, 170);
   fill(253,245,232);
   rectMode(CENTER);
-  text("Federal. As histórias são ilustrativas e os", width/5, 210);
+  text("Federal. As histórias são ilustrativas e os", width/50, 210);
   fill(253,245,232);
   rectMode(CENTER);
-  text("personagens fictícios.", width/5, 260);  
+  text("personagens fictícios.", width/50, 260);  
   menuPrincipal();
   drawDots();
   drawPrevNext();
@@ -72,8 +71,8 @@ void textFooter(float y) {
 
 void menuPrincipal() {
 
-  timer= timer + 1.0/30.0;
-  if (timer > 8)
+  timer= timer + 1.0/10.0;
+  if (timer > 4)
   {
     backgroundIndex= backgroundIndex + 1;
     timer= 0;
@@ -84,7 +83,7 @@ void menuPrincipal() {
   }
   if (photos[backgroundIndex].width > 0)
   {
-    printImage(photos[backgroundIndex],width/4,height*0.25,width/2,height*1.25);
+    printImage(photos[backgroundIndex],width/100,height*0.25,width,height/2);
   } 
 }
 
