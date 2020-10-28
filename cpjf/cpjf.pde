@@ -5,27 +5,41 @@ PFont p, p1, p2, p3;
 float timer = 0.0;
 PImage[] photos = new PImage[5];
 
+/* IMAGENS MAOS */
 PImage maoDireita;
 PImage maoEsquerda;
+float scale = 1.0;
+int offx = 50;  int offy = 900; //MAO ESQUERDA
+int offx1 = width*10; int offy1 = 900; // MAO DIREITA
 
 
 int backgroundIndex = 0;
 boolean auto = true;
 void setup() {
   size(displayHeight, displayWidth);
-  background(253,245,232);
-  frameRate(10);
+  background(253,245,232);  
   
+  maoEsquerda = loadImage("A007_maoEsquerda.png");
+  maoDireita = loadImage("A006_maoDireita.png");
+
   photos[0] = requestImage("A001.png");
   photos[1] = requestImage("A002.png");
   photos[2] = requestImage("A003.png");
   photos[3] = requestImage("A004.png");
   photos[4] = requestImage("A005.png");
   
-  maoDireita = loadImage("A006_maoDireita.png");
-  maoEsquerda = loadImage("A007_maoEsquerda.png");
 }
 void draw () {
+  drawCabecalho();
+  maoEsquerdaHover();
+  maoDireitaHover();
+  menuPrincipal();
+  drawDots();
+  
+  textFooter(height/5);
+}
+
+void drawCabecalho() {
   stroke(36,46,54);
   fill(36,46,54);
   rect(0,0,width,340);
@@ -43,12 +57,34 @@ void draw () {
   fill(253,245,232);
   rectMode(CENTER);
   text("personagens fictícios.", width/50, 260);  
-  menuPrincipal();
-  drawDots();
-  drawPrevNext();
-  textFooter(height/5);
+}
+void maoEsquerdaHover() { 
+  scale = 1.2;
+ if ( mouseover1()) {
+  scale = 1.0;
+  image(maoEsquerda, offx, offy, maoEsquerda.width*scale, maoEsquerda.height*scale);
+  }
+   else 
+   {
+     image(maoEsquerda, offx, offy, maoEsquerda.width*scale, maoEsquerda.height*scale);
+   }
 }
 
+void maoDireitaHover() {
+  scale = 1.2;
+ if ( mouseover1()) {
+  scale = 1.0;
+  image(maoDireita, offx1, offy1, maoDireita.width*scale, maoDireita.height*scale);
+  }
+   else 
+   {
+     image(maoDireita, offx1, offy1, maoDireita.width*scale, maoDireita.height*scale);
+   }
+}
+boolean mouseover1() {
+  if ( ( mouseX > offx1 && mouseX < maoDireita.width+offx1) && ( mouseY > offy1 && mouseY < maoDireita.height +offy1 ) ) return false;
+  return true;
+}
 void menuPrincipal() {
 
   timer= timer + (1.0/10.0);
@@ -73,10 +109,6 @@ void printImage(PImage photo, float X, float Y, float W, float H)
   {
     image(photo,X,Y,W,H);
   }
-}
-void drawPrevNext(){
-image(maoDireita, 50, 900, 75, 75);
-image(maoEsquerda, width*0.9,900, 75, 75);
 }
 void drawDots(){
   int offset = width/2 - (photos.length * 20 )/2;
