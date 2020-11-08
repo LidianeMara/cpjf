@@ -36,6 +36,7 @@ void drawDots(){
       ellipse(i*20 + offset + 10, height-10, 10, 10);
   }
 }
+
 void textFooter(float y) {
   //TODO CRIAR FONTES
   p2 = createFont("IBMPlexMono-Light.ttf", 97);
@@ -94,20 +95,22 @@ void debug()
   textFont(p1);
   text("tempo: " + tempo, 30, 30);
   text("iMenu: " + iMenu + " M:" + narrativaMIndex + " A:" + narrativaAIndex + " B:" + narrativaBIndex + " C:" + narrativaCIndex + " D:" + narrativaDIndex + " E:" + narrativaEIndex, 200, 30);
+  text("iddle: " + iddle , 200, 50);
   
-  fill(255, 255, 255);
+ 
+  if (debug){
+      ellipse(mouseX, mouseY, 33, 33);
+  }
   
 }
 
-/*
+
 void iconeAe(){
  
-  if (iMenu==1){
-  
-       printImage(iconAe,width/100,height/100,width,height);
-    
-    //image(img1, offx1, offy1, img1.width*scale, img1.height*scale);
-
+    for (int i=0;i<10;i++){  
+      if (transparency > 0) { transparency -= 0.25; }
+      tint(255, transparency);
+     
+    }
  
 }  
-*/

@@ -11,6 +11,7 @@ int iconeSizeR = 20;
 int indice = 0;
 int tempo = 0;
 int tempomax = 500;
+boolean iddle = true;
 
 int iMenu = 0;
 int iCena = 0;
@@ -73,7 +74,12 @@ void draw () {
   if (tempo < 5000){
     iMenu=0;
     cena(0);
-  }else{
+  }
+  else{
+    if (iddle && tempo > tempo % 2500){
+      println("teste");
+    }
+    
 
     background(253,245,232);  
     

@@ -38,10 +38,7 @@ void mousePressed(){
 }
 
 void getMouse(){
-if (debug){
-      ellipse(mouseX, mouseY, 33, 33);
-  
-}
+
   // ACIONA ESQUERDA
   if (mouseX < offset)  {
     cena(-1);
@@ -71,6 +68,7 @@ if (debug){
    else{
      cena(0);
    }
+   
     if (!debug){
       robot.mouseMove(width/2, mouseY);
     }
