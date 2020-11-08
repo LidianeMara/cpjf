@@ -43,27 +43,25 @@ void getMouse(){
   if (mouseX < offset)  {
     cena(-1);
     delay(200);
-    
+
   }
-  else if (mouseX > offset && mouseX < offset*2)
-  {
-    //iconeAE();
-    cena(0);
-    
-  }
+  
   //DIREITA
   else if (mouseX > width-offset){
     cena (1);
     delay(200);
   }
+  //CLICK MOUSE DENTRO DO MENU
   else if (  mousePressed && iMenu == 0) {
     iMenu=narrativaMIndex;
     cena (0);
+    iddle=false;
     
    }
    else if ( mousePressed && iMenu > 0){
      iMenu=0;
      cena(0);
+     iddle=false;
    }
    else{
      cena(0);
@@ -72,6 +70,18 @@ void getMouse(){
     if (!debug){
       robot.mouseMove(width/2, mouseY);
     }
+  
+  // ICONE MOUSE
+  else if (mouseX < width/2-offset)
+  {
+    iconeAE();
+    cena(0);
+  }
+  else if (mouseX > width/2+offset)
+  {
+    iconeAD();
+    cena(0);
+  }
   
   
 

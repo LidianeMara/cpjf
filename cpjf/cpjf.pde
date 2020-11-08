@@ -11,6 +11,8 @@ int iconeSizeR = 20;
 int indice = 0;
 int tempo = 0;
 int tempomax = 500;
+int tempoiddle = 0;
+int iddlex=0;
 boolean iddle = true;
 
 int iMenu = 0;
@@ -38,7 +40,7 @@ float timer = 0.0;
 PImage[] narrativaM = new PImage[5];
 PImage[] narrativaA = new PImage[4];
 PImage[] narrativaB = new PImage[5];
-PImage[] narrativaC = new PImage[30];
+PImage[] narrativaC = new PImage[36];
 PImage[] narrativaD = new PImage[5];
 PImage[] narrativaE = new PImage[5];
 
@@ -71,26 +73,37 @@ void setup() {
   }
 void draw () {
   tempo = millis();
+  
   if (tempo < 5000){
     iMenu=0;
     cena(0);
   }
-  else{
-    if (iddle && tempo > tempo % 2500){
-      println("teste");
-    }
-    
+  else if (!iddle && tempo > tempo % 25000){
+    iddle = true;
+    tempoiddle = tempo - tempoiddle;
+    println("teste" + tempo);
+  }
+  else  {
 
     background(253,245,232);  
     
     drawCabecalho();
-    //maoEsquerda();
-    getMouse();
-    //maoDireita();
-    //menuPrincipal();
-    drawDots();
     
-    debug();
+    //maoEsquerda();
+    //maoDireita();
+    //trata o mouse e dispara cenas e animações
+    getMouse();
+    
+    
+    //menuPrincipal();
+    
+    //TODO talvez jogar para dentro da cena 
+    drawDots();
     textFooter(height/5);
+    
+    //DEBUG    
+    debug();
+    
   }
+  
 }

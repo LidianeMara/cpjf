@@ -18,7 +18,7 @@ void menuPrincipal() {
 }
 
 void cena(int param){
-  int frame = 0;
+  //int frame = 0;
   
   //MENU principal
   if (iMenu == 0) {
@@ -50,6 +50,6 @@ void cena(int param){
     printImage(narrativaC[narrativaCIndex],width/100,height/100,width,height);
   }
   
-    
+ 
  
 }

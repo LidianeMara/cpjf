@@ -105,12 +105,27 @@ void debug()
 }
 
 
-void iconeAe(){
- 
-    for (int i=0;i<10;i++){  
-      if (transparency > 0) { transparency -= 0.25; }
-      tint(255, transparency);
-     
-    }
- 
+void iconeAE(){
+        float scale =dist(mouseX,1,width/2-offset,1)/200;
+        image(img, offx, offy, img.width*scale, img.height*scale);
+        //image(img1, width-offx*2, offy, img1.width/scale, img1.height/scale);
 }  
+
+
+void iconeAD(){
+        float scale =dist(mouseX,1,width/2+offset,1)/200;
+        println(scale);
+        //image(img, offx, offy, img.width/scale, img.height/scale);
+        image(img1, width-offx*2, offy, img1.width*scale, img1.height*scale);
+        
+}  
+
+
+void fade()
+{
+      //for (int i=0;i<10;i++){  
+      //if (transparency > 0) { transparency -= 0.25; }
+        //tint(255, transparency);
+//        scale = 0.9;
+//      }
+}

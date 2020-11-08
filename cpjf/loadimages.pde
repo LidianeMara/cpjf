@@ -28,7 +28,7 @@ void loadimages (){
   narrativaC[17] = requestImage("../narrativa/C_Julia/C017.png");
   narrativaC[18] = requestImage("../narrativa/C_Julia/C018.png");
   narrativaC[19] = requestImage("../narrativa/C_Julia/C019.png");
-  narrativaC[20] = requestImage("../narrativa/C_Julia/C010.png");
+  narrativaC[20] = requestImage("../narrativa/C_Julia/C020.png");
   narrativaC[21] = requestImage("../narrativa/C_Julia/C021.png");
   narrativaC[22] = requestImage("../narrativa/C_Julia/C022.png");
   narrativaC[23] = requestImage("../narrativa/C_Julia/C023.png");
@@ -38,8 +38,12 @@ void loadimages (){
   narrativaC[27] = requestImage("../narrativa/C_Julia/C027.png");
   narrativaC[28] = requestImage("../narrativa/C_Julia/C028.png");
   narrativaC[29] = requestImage("../narrativa/C_Julia/C029.png");
-  
-    
+  narrativaC[20] = requestImage("../narrativa/C_Julia/C030.png");
+  narrativaC[31] = requestImage("../narrativa/C_Julia/C031.png");
+  narrativaC[32] = requestImage("../narrativa/C_Julia/C032.png");
+  narrativaC[33] = requestImage("../narrativa/C_Julia/C033.png");
+  narrativaC[34] = requestImage("../narrativa/C_Julia/C034.png");
+  narrativaC[35] = requestImage("../narrativa/C_Julia/C035.png"); 
 
 
 
