@@ -5,7 +5,7 @@ void drawCabecalho() {
   rect(0,0,width*2,340*2);
   fill(253,245,232);
   fill(253,245,232);
-  p = createFont("IBMPlexMono-Medium.ttf", 40);
+  p = createFont("fonts/IBMPlexMono-Medium.ttf", 40);
   textFont(p);
   text("Aqui você pode trilhar alguns dos diferentes", width/50, 120);
   fill(253,245,232);
@@ -31,7 +31,7 @@ void printImage(PImage photo, float X, float Y, float W, float H)
 void drawDots(){
   int offset = width/2 - (narrativaM.length * 20 )/2;
   for( int i = 0; i < narrativaM.length; i++){
-      if( backgroundIndex == i)   fill( 150 );
+      if( iBg == i)   fill( 150 );
       else              fill( 225 );
       ellipse(i*20 + offset + 10, height-10, 10, 10);
   }
@@ -39,85 +39,86 @@ void drawDots(){
 
 void textFooter(float y) {
   //TODO CRIAR FONTES
-  p2 = createFont("IBMPlexMono-Light.ttf", 97);
+  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 97);
   textFont(p2);
   fill(223, 215, 202);
   text("PROCESSO", -140, y*4.4);
-  p3 = createFont("IBMPlexMono-SemiBold.ttf", 68);
+  p3 = createFont("fonts/IBMPlexMono-SemiBold.ttf", 68);
   textFont(p3);
   fill(223, 215, 202);
   text("AUTOR", 325, y*4.4);
   fill(223, 215, 202);
-  p2 = createFont("IBMPlexMono-Light.ttf", 97);
+  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 97);
   textFont(p2);
   text("DEMOCRACIA", width/2, y*4.4);
   fill(223, 215, 202);
-  p1 = createFont("IBMPlexMono-Bold.ttf", 115);
+  p1 = createFont("fonts/IBMPlexMono-Bold.ttf", 115);
   textFont(p1);
   text("JUSTIÇA", -180, y*4.75);
   fill(223, 215, 202);
-  p2 = createFont("IBMPlexMono-Light.ttf", 100);
+  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 100);
   textFont(p2);
   text("RÉU", 350, y*4.75);
   fill(223, 215, 202);
-  p1 = createFont("IBMPlexMono-Bold.ttf", 203);
+  p1 = createFont("fonts/IBMPlexMono-Bold.ttf", 203);
   textFont(p1);
   text("DIREITO", width/2, y*4.85);
   fill(223, 215, 202);
 }
 
 
-void maoEsquerda() {
- scale = 1.2;
-  if ( mouseover() ) {
-    scale = 0.9; 
-  image(img, offx, offy, img.width*scale, img.height*scale);
-  }
-  else image(img, offx, offy, img.width*scale, img.height*scale);
-
-}
-  
-void maoDireita () {
- scale = 1.2;
-  if ( mouseover1() ) {
-    scale = 0.9; 
-  image(img1, offx1, offy1, img1.width*scale, img1.height*scale);
-  }
-  else image(img1, offx1, offy1, img1.width*scale, img1.height*scale);
-
-}
-
 
 
 void debug()
 {
+  if (debug){
+    
   p1 = createFont("IBMPlexMono-Bold.ttf", 20);
   textFont(p1);
   text("tempo: " + tempo, 30, 30);
-  text("iMenu: " + iMenu + " M:" + narrativaMIndex + " A:" + narrativaAIndex + " B:" + narrativaBIndex + " C:" + narrativaCIndex + " D:" + narrativaDIndex + " E:" + narrativaEIndex, 200, 30);
+  text("iMenu: " + iMenu + " M:" + iNarrativaM + " A:" + iNarrativaA + " B:" + iNarrativaB + " C:" + iNarrativaC + " D:" + iNarrativaD + " E:" + iNarrativaE, 200, 30);
   text("iddle: " + iddle , 200, 50);
   
- 
-  if (debug){
-      ellipse(mouseX, mouseY, 33, 33);
+  //ellipse(mouseX, mouseY, 33, 33);
   }
   
 }
 
+void drawIcons(){
+        
+    int autoscale =300;
+    if (mouseX < width/2){
+      scaleE =dist(mouseX,1,width/2,1)*autoscale;
+      scaleD =dist(mouseX,1,width/2,1)/autoscale;
+    } else {
+      scaleE =dist(mouseX,1,width/2,1)/autoscale;
+      scaleD =dist(mouseX,1,width/2,1)*autoscale;
+    }
+    
+    
+    noStroke();
+    fill(bgcolor);
+    rect(0, offy, 300 ,280 );
+    rect(1080, offy, 300 ,280 );
+    image(iconMaoE, offx, offy, iconMaoE.width*scaleE, iconMaoE.height*scaleE*2);  
+    image(iconMaoD, offx1, offy, iconMaoD.width*scaleD, iconMaoD.height*scaleD*2);
+}
 
-void iconeAE(){
-        float scale =dist(mouseX,1,width/2-offset,1)/200;
-        image(img, offx, offy, img.width*scale, img.height*scale);
-        //image(img1, width-offx*2, offy, img1.width/scale, img1.height/scale);
+
+void drawIconE(){
+        float scale =dist(mouseX,1,width/2-offset,1)/800;
+        noStroke();
+        fill(bgcolor);
+        rect(0, offy, 300 ,280 );
+        image(iconMaoE, offx, offy, iconMaoE.width*scale, iconMaoE.height*scale);        
 }  
 
-
-void iconeAD(){
-        float scale =dist(mouseX,1,width/2+offset,1)/200;
-        println(scale);
-        //image(img, offx, offy, img.width/scale, img.height/scale);
-        image(img1, width-offx*2, offy, img1.width*scale, img1.height*scale);
-        
+void drawIconD(){
+        float scale =dist(mouseX,1,width/2+offset,1)/800;
+        noStroke();
+        fill(bgcolor);
+        rect(1080, offy, 300 ,280 );
+        image(iconMaoD, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale); 
 }  
 
 

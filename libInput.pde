@@ -2,12 +2,12 @@
 //CH: sem uso
 
 boolean mouseover() {
-  if ( ( mouseX > offx && mouseX < img.width+offx ) && ( mouseY > offy && mouseY < img.height +offy) ) return false;
+  if ( ( mouseX > offx && mouseX < iconMaoE.width+offx ) && ( mouseY > offy && mouseY < iconMaoE.height +offy) ) return false;
   return true; 
   } 
 //CH: sem uso
 boolean mouseover1() {
-  if ( ( mouseX > offx1 && mouseX < img1.width+offx1) && ( mouseY > offy1 && mouseY < img1.height +offy1 ) ) return false;
+  if ( ( mouseX > offx1 && mouseX < iconMaoD.width+offx1) && ( mouseY > offy1 && mouseY < iconMaoD.height +offy1 ) ) return false;
   return true;
 }
 
@@ -19,7 +19,7 @@ void mouseMoved(){
 }
 
 //CH: sem uso
-void mousePressed(){
+/*void mousePressed(){
   auto = false;
   //handle prev / next
   if( mouseX < 10 || mouseX > width-10){
@@ -36,53 +36,50 @@ void mousePressed(){
     backgroundIndex = newIdx;   
   }
 }
+*/
+
 
 void getMouse(){
-
-  // ACIONA ESQUERDA
+ 
+  // ACIONA ESQUERDA / direita
   if (mouseX < offset)  {
-    cena(-1);
-    delay(200);
-
-  }
-  
-  //DIREITA
-  else if (mouseX > width-offset){
-    cena (1);
-    delay(200);
-  }
-  //CLICK MOUSE DENTRO DO MENU
-  else if (  mousePressed && iMenu == 0) {
-    iMenu=narrativaMIndex;
-    cena (0);
     iddle=false;
+    cena(-1);
+    delay(300);
+  }
+   else if (mouseX > width-offset){
+    iddle=false;
+    cena (1);
+    delay(300);
+  }
+
+  //CLICK MOUSE DENTRO DO MENU
+  if (  mousePressed && iMenu == 0) {
+    iddle=false;
+    iMenu=iNarrativaM;
+    cena (0);
     
    }
    else if ( mousePressed && iMenu > 0){
      iMenu=0;
      cena(0);
-     iddle=false;
-   }
-   else{
-     cena(0);
+     
    }
    
-    if (!debug){
-      robot.mouseMove(width/2, mouseY);
-    }
+   if (!debug){
+     robot.mouseMove(width/2, mouseY);
+   }
   
-  // ICONE MOUSE
-  else if (mouseX < width/2-offset)
-  {
-    iconeAE();
-    cena(0);
-  }
-  else if (mouseX > width/2+offset)
-  {
-    iconeAD();
-    cena(0);
-  }
-  
-  
+   // ICONE MOUSE
+   else if (mouseX < width/2-offset)
+   {
+     //drawIcons();
+     drawIconE();
+   }
+   else if (mouseX > width/2+offset)
+   {
+     //drawIcons();
+     drawIconD();
+   }  
 
 }
