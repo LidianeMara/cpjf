@@ -28,15 +28,6 @@ void printImage(PImage photo, float X, float Y, float W, float H)
   }
 }
 
-void drawDots(){
-  int offset = width/2 - (narrativaM.length * 20 )/2;
-  for( int i = 0; i < narrativaM.length; i++){
-      if( iBg == i)   fill( 150 );
-      else              fill( 225 );
-      ellipse(i*20 + offset + 10, height-10, 10, 10);
-  }
-}
-
 void textFooter(float y) {
   //TODO CRIAR FONTES
   p2 = createFont("fonts/IBMPlexMono-Light.ttf", 97);

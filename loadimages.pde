@@ -85,7 +85,4 @@ void loadimages (){
   narrativaD[33] = requestImage("narrativa/C_Julia/C033.png");
   narrativaD[34] = requestImage("narrativa/C_Julia/C034.png");
   narrativaD[35] = requestImage("narrativa/C_Julia/C035.png");
-
-
-
 }

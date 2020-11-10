@@ -63,10 +63,7 @@ void cena(int param){
     printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
   }
   
- 
-
-  drawDots();
-      
+       
     textFooter(height/5);
  
  

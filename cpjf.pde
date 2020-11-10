@@ -60,8 +60,8 @@ void setup() {
   //TODO fullscreen
   //fullScreen();
   size(displayHeight, displayWidth);  
-  iconMaoE = loadImage("narrativa/G_geral/G002_maoEsquerda.png");
-  iconMaoD = loadImage("narrativa/G_geral/G001_maoDireita.png");
+  iconMaoE = requestImage("menu/A007_maoEsquerda.png");
+  iconMaoD = requestImage("menu/A006_maoDireita.png");
   loadimages();
   cena (0);
   try {
