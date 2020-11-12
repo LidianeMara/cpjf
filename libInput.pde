@@ -1,6 +1,5 @@
 
 //CH: sem uso
-
 boolean mouseover() {
   if ( ( mouseX > offx && mouseX < iconMaoE.width+offx ) && ( mouseY > offy && mouseY < iconMaoE.height +offy) ) return false;
   return true; 
@@ -41,6 +40,37 @@ void mouseMoved(){
 
 void getMouse(){
  
+  // 
+  if ( iMenu ==0 ){
+    if (mouseX < width/2-offset)
+     {
+       //drawIcons();
+       drawIconMaoE();
+     }
+     else if (mouseX > width/2+offset)
+     {
+       //drawIcons();
+       drawIconMaoD();
+     }
+  }
+  else {
+    if (mouseX < width/2-offset)
+     {
+       //TODO trocar função
+       drawSetaE();
+       //drawProgE();
+     }
+     else if (mouseX > width/2+offset)
+     {
+       //TODO trocar função
+       //drawSetaD();
+       drawProgD();
+     }
+       
+  }
+
+
+  
   // ACIONA ESQUERDA / direita
   if (mouseX < offset)  {
     iddle=false;
@@ -58,6 +88,7 @@ void getMouse(){
     iddle=false;
     iMenu=iNarrativaM;
     cena (0);
+     robot.mouseMove(width/2, mouseY);
     
    }
    else if ( mousePressed && iMenu > 0){
@@ -66,20 +97,38 @@ void getMouse(){
      
    }
    
-   if (!debug){
-     robot.mouseMove(width/2, mouseY);
-   }
-  
-   // ICONE MOUSE
-   else if (mouseX < width/2-offset)
-   {
-     //drawIcons();
-     drawIconE();
-   }
-   else if (mouseX > width/2+offset)
-   {
-     //drawIcons();
-     drawIconD();
-   }  
+}
 
+
+void keyPressed() {
+  if (key == CODED) {
+    if (keyCode == LEFT) {
+      iddle=false;
+      cena(-1);
+      delay(300);
+    }
+    else if (keyCode == RIGHT ){
+      iddle=false;
+      cena (1);
+      delay(300);
+    }
+    else if (keyCode == DOWN or keyCode == UP ){
+      if ( iMenu == 0) {
+        iddle=false;
+        iMenu=iNarrativaM;
+        cena (0);
+      }
+      else
+      {
+        iMenu=0;
+        cena(0);
+      }
+     }
+   else if ( mousePressed && iMenu > 0){
+     iMenu=0;
+     cena(0);
+  
+    }
+  }
+  
 }

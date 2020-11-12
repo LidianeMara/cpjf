@@ -42,6 +42,17 @@ void cena(int param){
     printImage(narrativaM[iNarrativaM],width/100,height/100,width,height);
       
   }
+  else if (iMenu == 1){ 
+    iNarrativaB = iNarrativaB + param;
+    if (iNarrativaB >= narrativaB.length) {
+      iNarrativaB = narrativaB.length-1;
+    } else if (iNarrativaB < 0) {
+      iNarrativaB =0;
+    }
+    
+    printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
+  }
+
   else if (iMenu == 2){ 
     iNarrativaC = iNarrativaC + param;
     if (iNarrativaC >= narrativaC.length) {
@@ -61,6 +72,27 @@ void cena(int param){
     }
     
     printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
+  }
+ 
+  else if (iMenu == 4){ 
+    iNarrativaE = iNarrativaE + param;
+    if (iNarrativaE >= narrativaE.length) {
+      iNarrativaE = narrativaE.length-1;
+    } else if (iNarrativaE < 0) {
+      iNarrativaE =0;
+    }
+    
+    printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
+  }
+  else if (iMenu == 5){ 
+    iNarrativaF = iNarrativaF + param;
+    if (iNarrativaF >= narrativaF.length) {
+      iNarrativaF = narrativaF.length-1;
+    } else if (iNarrativaF < 0) {
+      iNarrativaF =0;
+    }
+    
+    printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
   }
   
        

@@ -67,7 +67,7 @@ void debug()
   p1 = createFont("IBMPlexMono-Bold.ttf", 20);
   textFont(p1);
   text("tempo: " + tempo, 30, 30);
-  text("iMenu: " + iMenu + " M:" + iNarrativaM + " A:" + iNarrativaA + " B:" + iNarrativaB + " C:" + iNarrativaC + " D:" + iNarrativaD + " E:" + iNarrativaE, 200, 30);
+  text("iMenu: " + iMenu + " M:" + iNarrativaM +" B:" + iNarrativaB + " C:" + iNarrativaC + " D:" + iNarrativaD + " E:" + iNarrativaE + " F:" + iNarrativaF  , 200, 30);
   text("iddle: " + iddle , 200, 50);
   
   //ellipse(mouseX, mouseY, 33, 33);
@@ -96,7 +96,7 @@ void drawIcons(){
 }
 
 
-void drawIconE(){
+void drawIconMaoE(){
         float scale =dist(mouseX,1,width/2-offset,1)/800;
         noStroke();
         fill(bgcolor);
@@ -104,13 +104,60 @@ void drawIconE(){
         image(iconMaoE, offx, offy, iconMaoE.width*scale, iconMaoE.height*scale);        
 }  
 
-void drawIconD(){
+void drawIconMaoD(){
         float scale =dist(mouseX,1,width/2+offset,1)/800;
         noStroke();
         fill(bgcolor);
         rect(1080, offy, 300 ,280 );
         image(iconMaoD, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale); 
 }  
+
+
+
+// setas experimentais - TODO REMOVER
+void drawSetaE(){
+        //float distNegCent =-dist(mouseX,1,width/2,1);
+      //float dx = (mouseX-img.width/2) - offset;  
+        noStroke();
+        
+        fill(0,0,255);
+        rect(mouseX, height-offset, width/2-mouseX , 50 );
+        //limpador
+        fill(bgcolor);
+        rect(0, height-offset, mouseX , 50 );
+        
+      //TODO zerar o lado inverso  
+}  
+//setas experimentais - TODO REMOVER
+void drawSetaD(){
+        float distNegDir =-dist(mouseX,1,width,1);
+        noStroke();
+        
+        fill(0,0,255);
+        rect(width/2, height-offset, mouseX-width/2 , 50 );
+        //limpador
+         fill(bgcolor);
+         rect(width, height-offset, distNegDir , 50 );
+        
+        //TODO zerar o lado inverso
+}  
+
+void drawProgE()
+{
+  float distCent =dist(mouseX,1,width/2,1);
+  areaProgEsqOn = iconProgEsqOn.get(0,0,int(distCent),250);
+  areaProgDirOff = iconProgEsqOff.get(0,0,int(distCent),250);
+  image(areaProgDirOn,offset,height-offset);
+  image(areaProgDirOff,offset,height-offset);
+       
+}
+void drawProgD()
+{
+  //image(iconProgDirOff, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale);    
+  //image(iconProgDirOn, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale);
+       
+}
+
 
 
 void fade()
