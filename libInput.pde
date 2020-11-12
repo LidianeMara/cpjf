@@ -112,7 +112,7 @@ void keyPressed() {
       cena (1);
       delay(300);
     }
-    else if (keyCode == DOWN or keyCode == UP ){
+    else if (keyCode == DOWN || keyCode == UP ){
       if ( iMenu == 0) {
         iddle=false;
         iMenu=iNarrativaM;
