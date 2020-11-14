@@ -159,12 +159,9 @@ void drawProgD()
 }
 
 
-
 void fade()
 {
-      //for (int i=0;i<10;i++){  
-      //if (transparency > 0) { transparency -= 0.25; }
-        //tint(255, transparency);
-//        scale = 0.9;
-//      }
+   for (int i=255;i>10;i-=0.25){  
+      tint(255, transparency);
+   }
 }

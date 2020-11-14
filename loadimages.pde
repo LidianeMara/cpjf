@@ -1,8 +1,7 @@
-void loadimages (){
+void loadimages () {
 
-  
-  
-  
+  //Imagens do menu
+
   narrativaM[0] = requestImage("menu/A000.png");
   narrativaM[1] = requestImage("menu/A001.png");
   narrativaM[2] = requestImage("menu/A002.png");
@@ -10,11 +9,22 @@ void loadimages (){
   narrativaM[4] = requestImage("menu/A004.png");
   narrativaM[5] = requestImage("menu/A005.png");
 
-//img = requestImage("narrativa/B_João/G002_maoEsquerda.png");
-//grade? narrativa/G_geral/G003_grade.png
+
+  //Imagens do menu
+
+  narrativaT[0] = requestImage("tela descanso/TD003.png");
+  narrativaT[1] = requestImage("tela descanso/TD004.png");
+  narrativaT[2] = requestImage("tela descanso/TD005.png");
+  narrativaT[3] = requestImage("tela descanso/TD006.png");
+  narrativaT[4] = requestImage("tela descanso/TD007.png");
+ 
+
+
+  //img = requestImage("narrativa/B_João/G002_maoEsquerda.png");
+  //grade? narrativa/G_geral/G003_grade.png
 
   //narrativa C João
-  narrativaB[0] = requestImage("narrativa/B_João/B000_header.png");
+  narrativaB[0] = requestImage("narrativa/B_João/B000.png");
   narrativaB[1] = requestImage("narrativa/B_João/B001.png");
   narrativaB[2] = requestImage("narrativa/B_João/B002.png");
   narrativaB[3] = requestImage("narrativa/B_João/B003.png");
@@ -76,12 +86,9 @@ void loadimages (){
   narrativaB[59] = requestImage("narrativa/B_João/B059.png"); 
   narrativaB[60] = requestImage("narrativa/B_João/B060.png");
 
-  
-  
-  
   //narrativa C Julia
-
-  narrativaC[0] = requestImage("narrativa/C_Julia/C000_header.png");
+  //narrativaCCapa = requestImage("narrativa/C_Julia/C000_header.png");
+  narrativaC[0] = requestImage("narrativa/C_Julia/C000.png");
   narrativaC[1] = requestImage("narrativa/C_Julia/C001.png");
   narrativaC[2] = requestImage("narrativa/C_Julia/C002.png");
   narrativaC[3] = requestImage("narrativa/C_Julia/C003.png");
@@ -117,11 +124,10 @@ void loadimages (){
   narrativaC[33] = requestImage("narrativa/C_Julia/C033.png");
   narrativaC[34] = requestImage("narrativa/C_Julia/C034.png");
   narrativaC[35] = requestImage("narrativa/C_Julia/C035.png");
-  
-  
-  
+
   //narrativaD Camila 
-  narrativaD[0] = requestImage("narrativa/D_Camila/D000_header.png");
+  //narrativaDCapa = requestImage("narrativa/D_Camila/D000_header.png");
+  narrativaD[0] = requestImage("narrativa/D_Camila/D000.png");
   narrativaD[1] = requestImage("narrativa/D_Camila/D001.png");
   narrativaD[2] = requestImage("narrativa/D_Camila/D002.png");
   narrativaD[3] = requestImage("narrativa/D_Camila/D003.png");
@@ -154,10 +160,10 @@ void loadimages (){
   narrativaD[20] = requestImage("narrativa/D_Camila/D030.png");
   narrativaD[31] = requestImage("narrativa/D_Camila/D031.png");
   narrativaD[32] = requestImage("narrativa/D_Camila/D032.png");
-  
-  
+
+
   //narrativaE Bernardo
-  narrativaE[0] = requestImage("narrativa/E_Bernardo/E000_header.png");
+  //narrativaECapa = requestImage("narrativa/E_Bernardo/E000_header.png");
   narrativaE[1] = requestImage("narrativa/E_Bernardo/E001.png");
   narrativaE[2] = requestImage("narrativa/E_Bernardo/E002.png");
   narrativaE[3] = requestImage("narrativa/E_Bernardo/E003.png");
@@ -211,7 +217,8 @@ void loadimages (){
   narrativaE[51] = requestImage("narrativa/E_Bernardo/E051.png");
 
   //narrativaF Samira
-  narrativaF[0] = requestImage("narrativa/F_Samira/F000_header.png");
+  //narrativaFCapa = requestImage("narrativa/F_Samira/F000_header.png");
+  narrativaF[0] = requestImage("narrativa/F_Samira/F000.png");
   narrativaF[1] = requestImage("narrativa/F_Samira/F001.png");
   narrativaF[2] = requestImage("narrativa/F_Samira/F002.png");
   narrativaF[3] = requestImage("narrativa/F_Samira/F003.png");

@@ -41,7 +41,20 @@ void mouseMoved(){
 void getMouse(){
  
   // 
-  if ( iMenu ==0 ){
+  if (iMenu == 0){
+    if (iNarrativaT == 1){
+      if (mouseX>width-offset){
+          cena(1,true);
+       }
+    }
+    else if (iNarrativaT == 2){
+        if (mouseX<offset){
+          cena(1,true);
+        }
+    }
+  }
+  
+  else if ( iMenu ==1 ){
     if (mouseX < width/2-offset)
      {
        //drawIcons();
@@ -52,9 +65,20 @@ void getMouse(){
        //drawIcons();
        drawIconMaoD();
      }
+     // ACIONA ESQUERDA / direita
+    if (mouseX < offset)  {
+      iddle=false;
+      cena(-1,true);
+      delay(300);
+    }
+     else if (mouseX > width-offset){
+      iddle=false;
+      cena (1,true);
+      delay(300);
+    }
   }
-  else {
-    if (mouseX < width/2-offset)
+  else if ( iMenu >1){
+    if (mouseX > offset && mouseX < width/2-offset)
      {
        //TODO trocar função
        drawSetaE();
@@ -66,37 +90,45 @@ void getMouse(){
        //drawSetaD();
        drawProgD();
      }
-       
-  }
-
-
-  
-  // ACIONA ESQUERDA / direita
-  if (mouseX < offset)  {
-    iddle=false;
-    cena(-1);
-    delay(300);
-  }
-   else if (mouseX > width-offset){
-    iddle=false;
-    cena (1);
-    delay(300);
-  }
+    // ACIONA ESQUERDA / direita
+    if (mouseX < offset)  {
+      iddle=false;
+      cena(-1,true);
+      delay(300);
+    }
+     else if (mouseX > width-offset){
+      iddle=false;
+      cena (1,true);
+      delay(300);
+    }      
+    
+ }
 
   //CLICK MOUSE DENTRO DO MENU
-  if (  mousePressed && iMenu == 0) {
-    iddle=false;
-    iMenu=iNarrativaM;
-    cena (0);
-     robot.mouseMove(width/2, mouseY);
-    
-   }
-   else if ( mousePressed && iMenu > 0){
-     iMenu=0;
-     cena(0);
-     
-   }
-   
+  
+  if ( mousePressed ){
+    println("mouse click!");
+    if (iMenu == 0){
+      if (iNarrativaT == 0) {
+        cena(1,true);
+      }
+      else if (iNarrativaT ==3){
+        iMenu=1;
+        cena(0,true);
+      }
+    }
+    else if (iMenu ==1){
+      iddle=false;
+      iMenu=iNarrativaM+1;
+      cena (0,true);
+      robot.mouseMove(width/2, mouseY);
+    }
+    else if (iMenu > 1){
+      iMenu=1;
+      cena(0,true);
+    }
+  }
+  
 }
 
 
@@ -104,29 +136,29 @@ void keyPressed() {
   if (key == CODED) {
     if (keyCode == LEFT) {
       iddle=false;
-      cena(-1);
+      cena(-1,true);
       delay(300);
     }
     else if (keyCode == RIGHT ){
       iddle=false;
-      cena (1);
+      cena (1,true);
       delay(300);
     }
     else if (keyCode == DOWN || keyCode == UP ){
       if ( iMenu == 0) {
         iddle=false;
         iMenu=iNarrativaM;
-        cena (0);
+        cena (0,true);
       }
       else
       {
-        iMenu=0;
-        cena(0);
+        iMenu=1;
+        cena(0,true);
       }
      }
    else if ( mousePressed && iMenu > 0){
-     iMenu=0;
-     cena(0);
+     iMenu=1;
+     cena(0,true);
   
     }
   }
