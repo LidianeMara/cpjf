@@ -31,12 +31,12 @@ void getMouse(){
  
   // 
   if (iMenu == 0){
-    if (iNarrativaT == 1 ){
+    if (iNarrativaT == 2 ){
       if (mouseX>width-offset){
           cena(1,true);
        }
     }
-    else if (iNarrativaT == 2){
+    else if (iNarrativaT == 3){
         if (mouseX<offset){
           cena(1,true);
         }
@@ -86,10 +86,13 @@ void getMouse(){
       cena(0,true);
       //PRIMEIRA TELA
       if (iNarrativaT ==0) {
+        cena(2,true);
+      }
+      if (iNarrativaT ==1) {
         cena(1,true);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==3){
+      else if (iNarrativaT==4){
         iMenu=1;
         cena(0,true);
       }

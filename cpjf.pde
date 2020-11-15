@@ -94,60 +94,56 @@ void setup() {
 
 void draw () {
   seconds = startTime - millis()/1000;
-   drawMouse();
-   
-   //modo inativo (iddle true)
-   if (iddle){
-       if ( seconds <=0) {
-        iNarrativaM=0;
-        iNarrativaT=0;
-        iNarrativaB=0;
-        iNarrativaC=0;
-        iNarrativaD=0;
-        iNarrativaE=0;
-        iNarrativaF=0;
-        iMenu=0;
-        delay(1000);
-        cena(0,true);
-       }
-       
-       getMouse();
 
-    }
-    //modo ativo (iddle false)
-   else{
-     //zera timer
-     startTime = millis()/1000 + countdown;
-     
-     //
-     if (fade){
-       if (transparency >0 ){
-         transparency-=2.5;
-       }
-       else {
-         fade = false;
-       }
-       
-     }
-     else {   
-         if (transparency < 255){
-           transparency+=5;
-           cena(0,false);
-           return;
-         }
-         else{
-           
-           iddle=true;
-          delay(200);
-          }
-     }
-       
-     
+  drawMouse();
+   
+  //modo inativo (iddle true)
+  if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown-5){
+    cena(1,true);
+    startTime = millis()/1000 + countdown;
+  }
+  else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-10){
+    cena(-1,true);
+    startTime = millis()/1000 + countdown;
    }
-   
-   
-    
 
-  
-  
-}
+   if (iddle){
+     if ( seconds <=0) {
+       iNarrativaM=0;
+       iNarrativaT=0;
+       iNarrativaB=0;
+       iNarrativaC=0;
+       iNarrativaD=0;
+       iNarrativaE=0;
+       iNarrativaF=0;
+       iMenu=0;
+       delay(1000);
+       cena(0,true);
+     }
+     getMouse();
+    }
+    //zera timer
+    startTime = millis()/1000 + countdown;
+
+    //
+    if (fade){
+      if (transparency >0 ){
+         transparency-=2.5;
+      }
+      else {
+        fade = false;
+      }
+       
+    }
+    else {   
+      if (transparency < 255){
+        transparency+=5;
+        cena(0,false);
+        return;
+      }
+      else{
+        iddle=true;
+        delay(200);
+      }
+    }   
+  }
