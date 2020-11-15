@@ -8,9 +8,6 @@ int offset = 50;
 String texto = "nulo";
 int indice = 0;
 
-int tempo = 0;
-int tempomax = 500;
-
 int slideTempo = 5;
 byte countdown = 90; // segundos
 int seconds, startTime; //<>//
@@ -90,19 +87,25 @@ void setup() {
   cena(0,true);
   
   robot.mouseMove(width/2, height/2);
+  
+  // inicializa relogio  
   startTime = millis()/1000 + countdown;
  }
 
 void draw () {
-   
   seconds = startTime - millis()/1000;
-  
    drawMouse();
    
    //modo inativo (iddle true)
    if (iddle){
        if ( seconds <=0) {
         iNarrativaM=0;
+        iNarrativaT=0;
+        iNarrativaB=0;
+        iNarrativaC=0;
+        iNarrativaD=0;
+        iNarrativaE=0;
+        iNarrativaF=0;
         iMenu=0;
         delay(1000);
         cena(0,true);
@@ -119,7 +122,7 @@ void draw () {
      //
      if (fade){
        if (transparency >0 ){
-         transparency-=5;
+         transparency-=2.5;
        }
        else {
          fade = false;

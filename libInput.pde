@@ -46,12 +46,15 @@ void getMouse(){
   else if ( iMenu ==1 ){
     // TROCA CENA - ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
+      fade=true;
       cena(-1,true);
       robot.mouseMove(width/2, mouseY);
       delay(300);
     }
      else if (mouseX > width-offset){
+       fade=true;
       cena (1,true);
+      robot.mouseMove(width/2, mouseY);
       delay(300);
     }
   }
@@ -60,12 +63,14 @@ void getMouse(){
   
     // ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
+      fade=true;
       cena(-1,true);
-      delay(300);
+      //delay(300);
     }
      else if (mouseX > width-offset){
+       fade=true;
       cena (1,true);
-      delay(300);
+      //delay(300);
     }      
     
  }

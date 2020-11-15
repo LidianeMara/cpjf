@@ -20,6 +20,19 @@ void drawCabecalho() {
 }
 
 
+void drawCabecalhoB() {
+  stroke(36,46,54);
+  fill(36,46,54);                                                
+  rect(0,0,width*2,340)                                                                                                                                                  ;
+  fill(253,245,232);
+  fill(253,245,232);
+  p = createFont("fonts/IBMPlexMono-Medium.ttf", 40);
+  textFont(p);
+  text("TODO", width/50, 120);
+    
+}
+
+
 void printImage(PImage photo, float X, float Y, float W, float H)
 {
   if (photo.width > 0)
@@ -66,7 +79,7 @@ void debug()
     
   p1 = createFont("IBMPlexMono-Bold.ttf", 20);
   textFont(p1);
-  text("tempo: " + tempo, 30, 30);
+  text("seconds: " + seconds, 30, 30);
   text("iMenu: " + iMenu + " M:" + iNarrativaM +" B:" + iNarrativaB + " C:" + iNarrativaC + " D:" + iNarrativaD + " E:" + iNarrativaE + " F:" + iNarrativaF  , 200, 30);
   text("iddle: " + iddle , 200, 50);
   
@@ -171,9 +184,8 @@ void drawSeta(){
           fill(blue);
           stroke(blue);
           rect(width/2-offset*4, height-offset-10, 20, 20);
-          rect(offset, height-offset-10, dist(mouseX,0,width/2-20-offset*4,0), 20);
+          rect(offset+5, height-offset-10, 250, 20);
         }
-        
         else {
           //desenha desligada
           fill(bgcolor);
@@ -182,16 +194,16 @@ void drawSeta(){
         }
         
         
-        if ( mouseX > offset && mouseX < width/2 - offset*6){
+        if ( mouseX > 0 && mouseX < offset*1.5){
           fill(blue);
           stroke(blue);
-          triangle(offset, height-offset, offset+10, height-offset-20, offset+20, height-offset+20);
+          triangle(offset, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
         }
         else {
           //desenha desligada
           fill(bgcolor);
           stroke(blue);
-          triangle(offset, height-offset, offset+10, height-offset-20, offset+20, height-offset+20);
+          triangle(offset, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
         }        
          
 
