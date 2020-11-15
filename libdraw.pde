@@ -167,6 +167,13 @@ void drawSeta(){
           rect(width/2-offset*4, height-offset-10, 20, 20);
           rect(mouseX, height-offset-10, dist(mouseX,0,width/2-20-offset*4,0), 20);
         }
+        else if (mouseX < offset ){
+          fill(blue);
+          stroke(blue);
+          rect(width/2-offset*4, height-offset-10, 20, 20);
+          rect(offset, height-offset-10, dist(mouseX,0,width/2-20-offset*4,0), 20);
+        }
+        
         else {
           //desenha desligada
           fill(bgcolor);

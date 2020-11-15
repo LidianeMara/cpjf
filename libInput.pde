@@ -31,12 +31,12 @@ void getMouse(){
  
   // 
   if (iMenu == 0){
-    if (iNarrativaT == 2 ){
+    if (iNarrativaT == 1 ){
       if (mouseX>width-offset){
           cena(1,true);
        }
     }
-    else if (iNarrativaT == 3){
+    else if (iNarrativaT == 2){
         if (mouseX<offset){
           cena(1,true);
         }
@@ -46,13 +46,11 @@ void getMouse(){
   else if ( iMenu ==1 ){
     // TROCA CENA - ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
-      iddle=false;
       cena(-1,true);
       robot.mouseMove(width/2, mouseY);
       delay(300);
     }
      else if (mouseX > width-offset){
-      iddle=false;
       cena (1,true);
       delay(300);
     }
@@ -62,14 +60,10 @@ void getMouse(){
   
     // ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
-      iddle=false;
-      transparency=20;
       cena(-1,true);
       delay(300);
     }
      else if (mouseX > width-offset){
-      iddle=false;
-      transparency=20;
       cena (1,true);
       delay(300);
     }      
@@ -84,36 +78,31 @@ void getMouse(){
     //CLICKS DO TUTORIAL
  
     if (iMenu == 0 ){
+      cena(0,true);
       //PRIMEIRA TELA
-      if (iNarrativaT <=1) {
-        transparency=0;
-        iddle=false;
+      if (iNarrativaT ==0) {
         cena(1,true);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==4){
-        transparency=0;
+      else if (iNarrativaT==3){
         iMenu=1;
-        iddle=false;
         cena(0,true);
       }
     }
     //Clicks no menu principal
     else if (iMenu ==1){
-      iddle=false;
-      transparency=0;
       iMenu=iNarrativaM+2;
       cena (0,true);
       robot.mouseMove(width/2, mouseY);
+      delay(300);
     }
     //Narrativas B-F
     else if (iMenu > 1){
       //Força o retorno ao menu principal (escolha das narrativas)
       iMenu=1;
-      transparency=0;
-      iddle=false;
       cena(0,true);
       robot.mouseMove(width/2, mouseY);
+      delay(300);
     }
   }
   
@@ -124,35 +113,29 @@ void keyPressed() {
   println("Key: " + (int)key);
     println("KeyCode: " + keyCode);
     if (keyCode == 97){
-      iddle=false;
       iNarrativaT=0;
       iMenu=0;
       cena(0,true);
     }
    else if (keyCode == 98){
-      iddle=false;
       iNarrativaM=0;
       iMenu=1;
       cena(0,true);
     }
     else if (keyCode == LEFT) {
-      iddle=false;
       cena(-1,true);
       delay(300);
     }
     else if (keyCode == RIGHT ){
-      iddle=false;
       cena (1,true);
       delay(300);
     }
     else if (keyCode == DOWN || keyCode == UP ){
       if ( iMenu == 0) {
-        iddle=false;
         iMenu=1;
         cena (0,true);
       }
       if ( iMenu == 1) {
-        iddle=false;
         iMenu=iNarrativaM+2;
         cena (0,true);
       }

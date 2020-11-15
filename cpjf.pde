@@ -16,6 +16,7 @@ byte countdown = 90; // segundos
 int seconds, startTime; //<>//
 
 boolean iddle = true;
+boolean fade = true;
 
 boolean debug = true; //desliga mouse quando ligado
 
@@ -95,56 +96,54 @@ void setup() {
 void draw () {
    
   seconds = startTime - millis()/1000;
-    
-   //println(seconds);
-   //println(iddle);
-
-  //ROTEIRO
-  // inicio
-/*  if (seconds > 0 && seconds < 2){
-    iNarrativaT=0;
-     cena(0,true);
-  } 
-  else {
-     
-   //FADE OU INTERAÇÃO
-   //TODO código para atualização da imagem com fade
-   */
-   
+  
    drawMouse();
    
-   if (transparency < 255){
-     //prinln(seconds);
-     cena(0,false);
-     //Se muito lento, é necessário ajustar aqui
-     transparency+=2;
-   
-   }
+   //modo inativo (iddle true)
+   if (iddle){
+       if ( seconds <=0) {
+        iNarrativaM=0;
+        iMenu=0;
+        delay(1000);
+        cena(0,true);
+       }
+       
+       getMouse();
+
+    }
+    //modo ativo (iddle false)
    else{
-     //transparency=255;
-     getMouse();
-          //TODO tela descanso
-    
-
-    // controle tempo
-    if ( iddle && seconds <=0) {
-      iNarrativaM=0;
-      iMenu=0;
-      cena(0,true);
-      iddle=false;
-    }
-    
-    if (!iddle){
-      startTime = millis()/1000 + countdown;
-      iddle=true;
- 
-    }
-    
-    
-
+     //zera timer
+     startTime = millis()/1000 + countdown;
+     
+     //
+     if (fade){
+       if (transparency >0 ){
+         transparency-=5;
+       }
+       else {
+         fade = false;
+       }
+       
+     }
+     else {   
+         if (transparency < 255){
+           transparency+=5;
+           cena(0,false);
+           return;
+         }
+         else{
+           
+           iddle=true;
+          delay(200);
+          }
+     }
+       
+     
    }
    
-     
+   
+    
 
   
   

@@ -20,19 +20,21 @@ void menuPrincipal() {
 //CENÁRIOS E COMPORTAMENTO GERAL DOS MENUS
 
 void cena(int param,boolean refresh){
-
-  //MENU tutorial
-  println("cena iMenu: " + iMenu + " param: " + param + " iM: " + iNarrativaM + " iT: " + iNarrativaT);
+  if (refresh){
+    iddle=false;
+    transparency=0;
+  }
+  else {
+      //MENU tutorial
+  //println("cena iMenu: " + iMenu + " param: " + param + " iM: " + iNarrativaM + " iT: " + iNarrativaT);
+  }
   
   if (iMenu == 0) {
       
     if (refresh == false && transparency != 255) {
-      print ("aqui" + transparency);
        background(bgcolor);
        tint(255, transparency);
-       drawCabecalho();
        printImage(narrativaT[iNarrativaT],width/100,height/100,width,height);
-       return;
 
     } 
     else{
@@ -61,6 +63,7 @@ void cena(int param,boolean refresh){
       
       else  {
         iNarrativaM = iNarrativaM + param;
+        //iddle=true;
       }
        background(bgcolor);
        drawCabecalho();
@@ -192,5 +195,6 @@ void cena(int param,boolean refresh){
       
     }
   }
+  
   
 }
