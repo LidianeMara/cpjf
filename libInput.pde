@@ -1,15 +1,3 @@
-
-//CH: sem uso
-boolean mouseover() {
-  if ( ( mouseX > offx && mouseX < iconMaoE.width+offx ) && ( mouseY > offy && mouseY < iconMaoE.height +offy) ) return false;
-  return true; 
-  } 
-//CH: sem uso
-boolean mouseover1() {
-  if ( ( mouseX > offx1 && mouseX < iconMaoD.width+offx1) && ( mouseY > offy1 && mouseY < iconMaoD.height +offy1 ) ) return false;
-  return true;
-}
-
 //CH: sem uso
 void mouseMoved(){
   //handle cursor pointer effects
@@ -43,12 +31,12 @@ void getMouse(){
  
   // 
   if (iMenu == 0){
-    if (iNarrativaT == 1){
+    if (iNarrativaT == 2 ){
       if (mouseX>width-offset){
           cena(1,true);
        }
     }
-    else if (iNarrativaT == 2){
+    else if (iNarrativaT == 3){
         if (mouseX<offset){
           cena(1,true);
         }
@@ -95,14 +83,16 @@ void getMouse(){
     
     //CLICKS DO TUTORIAL
  
-    if (iMenu == 0){
+    if (iMenu == 0 ){
       //PRIMEIRA TELA
-      if (iNarrativaT == 0) {
+      if (iNarrativaT <=1) {
+        transparency=0;
         iddle=false;
         cena(1,true);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==3){
+      else if (iNarrativaT==4){
+        transparency=0;
         iMenu=1;
         iddle=false;
         cena(0,true);
@@ -133,35 +123,19 @@ void getMouse(){
 void keyPressed() {
   println("Key: " + (int)key);
     println("KeyCode: " + keyCode);
-  if (key == CODED) {
     if (keyCode == 97){
       iddle=false;
       iNarrativaT=0;
       iMenu=0;
       cena(0,true);
     }
-   if (keyCode == 98){
+   else if (keyCode == 98){
       iddle=false;
       iNarrativaM=0;
       iMenu=1;
       cena(0,true);
     }
-    if (keyCode == 99){
-      iddle=false;
-      iNarrativaB=0;
-      iMenu--;
-      cena(0,true);
-    }
-    if (keyCode == 100){
-      iddle=false;
-      iNarrativaB=0;
-      iMenu++;
-      cena(0,true);
-    }
-    
-    
-    
-    if (keyCode == LEFT) {
+    else if (keyCode == LEFT) {
       iddle=false;
       cena(-1,true);
       delay(300);
@@ -189,6 +163,5 @@ void keyPressed() {
       }
      }
 
-  }
-  
+   
 }

@@ -38,14 +38,14 @@ PFont f, p, p1, p2, p3;
 /*  IMAGENS    */
 float timer = 0.0;
 PImage[] narrativaM = new PImage[5];
-PImage[] narrativaT = new PImage[5];
+PImage[] narrativaT = new PImage[6];
 PImage[] narrativaB = new PImage[61];
 PImage[] narrativaC = new PImage[36];
 PImage[] narrativaD = new PImage[33];
 PImage[] narrativaE = new PImage[52];
 PImage[] narrativaF = new PImage[35];
 
-PImage iconMaoE, iconMaoD;
+PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
@@ -66,14 +66,16 @@ void setup() {
   //TODO fullscreen
   //fullScreen();
   size(displayHeight, displayWidth, P2D);
-  iconMaoE = requestImage("menu/A007_maoEsquerda.png");
-  iconMaoD = requestImage("menu/A006_maoDireita.png");
+  iconMaoE = requestImage("menu/A006_maoEsquerda_off.png");
+  iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
+  iconMaoD = requestImage("menu/A006_maoDireita_off.png");
+  iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
   
-  iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
+  /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
   iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");
   iconProgDirOn = requestImage("geral/G005_progressoDireita_on.png");
   iconProgDirOff = requestImage("geral/G005_progressoDireita_on.png");
- 
+ */
   
   loadimages();
 

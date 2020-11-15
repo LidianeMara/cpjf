@@ -124,12 +124,8 @@ void drawSeta(){
           fill(255,0,0);
           rect(0, height-offset-20, width*2 , 40 );
         }
-            
-       
         //Primeiro circulo esquerdo
-        //print (width);
          if (  mouseX < width/2 - offset/2  ){
-          println(width/2-30);
           fill(blue);
           stroke(blue);
           circle(width/2-offset, height-offset, 20);
@@ -165,10 +161,11 @@ void drawSeta(){
           circle(width/2-offset*3, height-offset, 20);
         }
         //barra e seta
-        if ( mouseX < width/2 - offset*3){
+        if ( mouseX > offset && mouseX < width/2 - offset*4){
           fill(blue);
           stroke(blue);
-          rect(mouseX, height-offset-10, dist(mouseX,0,width/2-20-offset*3,0), 20);
+          rect(width/2-offset*4, height-offset-10, 20, 20);
+          rect(mouseX, height-offset-10, dist(mouseX,0,width/2-20-offset*4,0), 20);
         }
         else {
           //desenha desligada
@@ -176,11 +173,24 @@ void drawSeta(){
           stroke(blue);
           rect(width/2-offset*4, height-offset-10, 20, 20);
         }
+        
+        
+        if ( mouseX > offset && mouseX < width/2 - offset*6){
+          fill(blue);
+          stroke(blue);
+          triangle(offset, height-offset, offset+10, height-offset-20, offset+20, height-offset+20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          triangle(offset, height-offset, offset+10, height-offset-20, offset+20, height-offset+20);
+        }        
+         
 
        //Primeiro circulo direito
         //print (width);
          if (  mouseX > width/2 + offset/2  ){
-          println(width/2-30);
           fill(blue);
           stroke(blue);
           circle(width/2+offset, height-offset, 20);
@@ -218,18 +228,7 @@ void drawSeta(){
           circle(width/2+offset*3, height-offset, 20);
           
         }
-
- 
-
-          
-        
-        /*       
-        rect(mouseX, height-offset, width/2 , 50 );
-        //limpador
-        fill(bgcolor);
-        rect(0, height-offset, mouseX , 50 );
-        */
-      //TODO zerar o lado inverso  
+  
 }  
 
 void drawProgE()
