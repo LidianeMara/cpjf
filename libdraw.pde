@@ -70,6 +70,7 @@ void debug()
   text("iMenu: " + iMenu + " M:" + iNarrativaM +" B:" + iNarrativaB + " C:" + iNarrativaC + " D:" + iNarrativaD + " E:" + iNarrativaE + " F:" + iNarrativaF  , 200, 30);
   text("iddle: " + iddle , 200, 50);
   
+  
   //ellipse(mouseX, mouseY, 33, 33);
   }
   
@@ -115,31 +116,120 @@ void drawIconMaoD(){
 
 
 // setas experimentais - TODO REMOVER
-void drawSetaE(){
-        //float distNegCent =-dist(mouseX,1,width/2,1);
-      //float dx = (mouseX-img.width/2) - offset;  
+void drawSeta(){
+        color blue = color(10,30,250);    
         noStroke();
         
-        fill(0,0,255);
-        rect(mouseX, height-offset, width/2-mouseX , 50 );
+        if (debug){
+          fill(255,0,0);
+          rect(0, height-offset-20, width*2 , 40 );
+        }
+            
+       
+        //Primeiro circulo esquerdo
+        //print (width);
+         if (  mouseX < width/2 - offset/2  ){
+          println(width/2-30);
+          fill(blue);
+          stroke(blue);
+          circle(width/2-offset, height-offset, 20);
+        }
+        else {
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2-offset, height-offset, 20);
+        }
+        
+        //segundo circulo esquerdo
+        if ( mouseX < width/2 - offset){
+          fill(blue);
+          stroke(blue);
+          circle(width/2-offset*2, height-offset, 20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2-offset*2, height-offset, 20);
+        }
+        //terceiro circulo esquerdo
+        if ( mouseX < width/2 - offset*2){
+          fill(blue);
+          stroke(blue);
+          circle(width/2-offset*3, height-offset, 20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2-offset*3, height-offset, 20);
+        }
+        //barra e seta
+        if ( mouseX < width/2 - offset*3){
+          fill(blue);
+          stroke(blue);
+          rect(mouseX, height-offset-10, dist(mouseX,0,width/2-20-offset*3,0), 20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          rect(width/2-offset*4, height-offset-10, 20, 20);
+        }
+
+       //Primeiro circulo direito
+        //print (width);
+         if (  mouseX > width/2 + offset/2  ){
+          println(width/2-30);
+          fill(blue);
+          stroke(blue);
+          circle(width/2+offset, height-offset, 20);
+        }
+        else {
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2+offset, height-offset, 20);
+          
+        }
+        
+        //segundo circulo esquerdo
+        if ( mouseX > width/2 + offset){
+          fill(blue);
+          stroke(blue);
+          circle(width/2+offset*2, height-offset, 20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2+offset*2, height-offset, 20);
+          
+        }
+        //terceiro circulo esquerdo
+        if ( mouseX > width/2 + offset*2){
+          fill(blue);
+          stroke(blue);
+          circle(width/2+offset*3, height-offset, 20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          circle(width/2+offset*3, height-offset, 20);
+          
+        }
+
+ 
+
+          
+        
+        /*       
+        rect(mouseX, height-offset, width/2 , 50 );
         //limpador
         fill(bgcolor);
         rect(0, height-offset, mouseX , 50 );
-        
+        */
       //TODO zerar o lado inverso  
-}  
-//setas experimentais - TODO REMOVER
-void drawSetaD(){
-        float distNegDir =-dist(mouseX,1,width,1);
-        noStroke();
-        
-        fill(0,0,255);
-        rect(width/2, height-offset, mouseX-width/2 , 50 );
-        //limpador
-         fill(bgcolor);
-         rect(width, height-offset, distNegDir , 50 );
-        
-        //TODO zerar o lado inverso
 }  
 
 void drawProgE()
@@ -159,9 +249,27 @@ void drawProgD()
 }
 
 
-void fade()
-{
-   for (int i=255;i>10;i-=0.25){  
-      tint(255, transparency);
-   }
+
+void drawMouse(){
+  fill(bgcolor);
+  rect(0,height-10,width,20);
+  fill(255,255,0);
+  
+   rect (mouseX, height-10,20,20);
+  if ( iMenu == 1 ){
+    if (mouseX < width/2-offset)
+     {
+       //drawIcons();
+       drawIconMaoE();
+     }
+     else if (mouseX > width/2+offset)
+     {
+       //drawIcons();
+       drawIconMaoD();
+     }
+  }
+  else {
+    drawSeta();
+  }
+   
 }

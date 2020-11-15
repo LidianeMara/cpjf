@@ -38,6 +38,7 @@ void mouseMoved(){
 */
 
 
+
 void getMouse(){
  
   // 
@@ -55,20 +56,11 @@ void getMouse(){
   }
   
   else if ( iMenu ==1 ){
-    if (mouseX < width/2-offset)
-     {
-       //drawIcons();
-       drawIconMaoE();
-     }
-     else if (mouseX > width/2+offset)
-     {
-       //drawIcons();
-       drawIconMaoD();
-     }
-     // ACIONA ESQUERDA / direita
+    // TROCA CENA - ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
       iddle=false;
       cena(-1,true);
+      robot.mouseMove(width/2, mouseY);
       delay(300);
     }
      else if (mouseX > width-offset){
@@ -77,27 +69,19 @@ void getMouse(){
       delay(300);
     }
   }
+  //TROCA Narrativas
   else if ( iMenu >1){
-    if (mouseX > offset && mouseX < width/2-offset)
-     {
-       //TODO trocar função
-       drawSetaE();
-       //drawProgE();
-     }
-     else if (mouseX > width/2+offset)
-     {
-       //TODO trocar função
-       //drawSetaD();
-       drawProgD();
-     }
+  
     // ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
       iddle=false;
+      transparency=20;
       cena(-1,true);
       delay(300);
     }
      else if (mouseX > width-offset){
       iddle=false;
+      transparency=20;
       cena (1,true);
       delay(300);
     }      
@@ -108,24 +92,38 @@ void getMouse(){
   
   if ( mousePressed ){
     println("mouse click!");
+    
+    //CLICKS DO TUTORIAL
+ 
     if (iMenu == 0){
+      //PRIMEIRA TELA
       if (iNarrativaT == 0) {
+        iddle=false;
         cena(1,true);
       }
-      else if (iNarrativaT ==3){
+      //ULTIMA TELA
+      else if (iNarrativaT==3){
         iMenu=1;
+        iddle=false;
         cena(0,true);
       }
     }
+    //Clicks no menu principal
     else if (iMenu ==1){
       iddle=false;
-      iMenu=iNarrativaM+1;
+      transparency=0;
+      iMenu=iNarrativaM+2;
       cena (0,true);
       robot.mouseMove(width/2, mouseY);
     }
+    //Narrativas B-F
     else if (iMenu > 1){
+      //Força o retorno ao menu principal (escolha das narrativas)
       iMenu=1;
+      transparency=0;
+      iddle=false;
       cena(0,true);
+      robot.mouseMove(width/2, mouseY);
     }
   }
   
@@ -133,7 +131,36 @@ void getMouse(){
 
 
 void keyPressed() {
+  println("Key: " + (int)key);
+    println("KeyCode: " + keyCode);
   if (key == CODED) {
+    if (keyCode == 97){
+      iddle=false;
+      iNarrativaT=0;
+      iMenu=0;
+      cena(0,true);
+    }
+   if (keyCode == 98){
+      iddle=false;
+      iNarrativaM=0;
+      iMenu=1;
+      cena(0,true);
+    }
+    if (keyCode == 99){
+      iddle=false;
+      iNarrativaB=0;
+      iMenu--;
+      cena(0,true);
+    }
+    if (keyCode == 100){
+      iddle=false;
+      iNarrativaB=0;
+      iMenu++;
+      cena(0,true);
+    }
+    
+    
+    
     if (keyCode == LEFT) {
       iddle=false;
       cena(-1,true);
@@ -147,7 +174,12 @@ void keyPressed() {
     else if (keyCode == DOWN || keyCode == UP ){
       if ( iMenu == 0) {
         iddle=false;
-        iMenu=iNarrativaM;
+        iMenu=1;
+        cena (0,true);
+      }
+      if ( iMenu == 1) {
+        iddle=false;
+        iMenu=iNarrativaM+2;
         cena (0,true);
       }
       else
@@ -156,11 +188,7 @@ void keyPressed() {
         cena(0,true);
       }
      }
-   else if ( mousePressed && iMenu > 0){
-     iMenu=1;
-     cena(0,true);
-  
-    }
+
   }
   
 }

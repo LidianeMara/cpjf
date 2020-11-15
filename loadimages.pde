@@ -1,16 +1,14 @@
 void loadimages () {
 
-  //Imagens do menu
+  //Imagens do menu principal
 
-  narrativaM[0] = requestImage("menu/A000.png");
-  narrativaM[1] = requestImage("menu/A001.png");
-  narrativaM[2] = requestImage("menu/A002.png");
-  narrativaM[3] = requestImage("menu/A003.png");
-  narrativaM[4] = requestImage("menu/A004.png");
-  narrativaM[5] = requestImage("menu/A005.png");
+  narrativaM[0] = requestImage("menu/A001.png");
+  narrativaM[1] = requestImage("menu/A002.png");
+  narrativaM[2] = requestImage("menu/A003.png");
+  narrativaM[3] = requestImage("menu/A004.png");
+  narrativaM[4] = requestImage("menu/A005.png");
 
-
-  //Imagens do menu
+  //Imagens do menu tutorial
 
   narrativaT[0] = requestImage("tela descanso/TD003.png");
   narrativaT[1] = requestImage("tela descanso/TD004.png");
@@ -164,6 +162,7 @@ void loadimages () {
 
   //narrativaE Bernardo
   //narrativaECapa = requestImage("narrativa/E_Bernardo/E000_header.png");
+  narrativaE[0] = requestImage("narrativa/E_Bernardo/E000.png");
   narrativaE[1] = requestImage("narrativa/E_Bernardo/E001.png");
   narrativaE[2] = requestImage("narrativa/E_Bernardo/E002.png");
   narrativaE[3] = requestImage("narrativa/E_Bernardo/E003.png");

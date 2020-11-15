@@ -37,7 +37,7 @@ PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
 float timer = 0.0;
-PImage[] narrativaM = new PImage[6];
+PImage[] narrativaM = new PImage[5];
 PImage[] narrativaT = new PImage[5];
 PImage[] narrativaB = new PImage[61];
 PImage[] narrativaC = new PImage[36];
@@ -65,7 +65,7 @@ boolean auto = true;
 void setup() {
   //TODO fullscreen
   //fullScreen();
-  size(displayHeight, displayWidth);  
+  size(displayHeight, displayWidth, P2D);
   iconMaoE = requestImage("menu/A007_maoEsquerda.png");
   iconMaoD = requestImage("menu/A006_maoDireita.png");
   
@@ -82,6 +82,8 @@ void setup() {
   } 
   catch (Throwable e) {}
   //reset mouse
+  iNarrativaT=0;
+  iMenu=0;
   cena(0,true);
   
   robot.mouseMove(width/2, height/2);
@@ -97,37 +99,51 @@ void draw () {
 
   //ROTEIRO
   // inicio
-  if (seconds > 0 && seconds < 2){
+/*  if (seconds > 0 && seconds < 2){
+    iNarrativaT=0;
      cena(0,true);
   } 
   else {
      
    //FADE OU INTERAÇÃO
    //TODO código para atualização da imagem com fade
-   /*if (transparency < 255){
-     //prinln(seconds);
-     //cena(0,false);
-     //transparency+=25;
-   }*/
+   */
    
+   drawMouse();
+   
+   if (transparency < 255){
+     //prinln(seconds);
+     cena(0,false);
+     //Se muito lento, é necessário ajustar aqui
+     transparency+=2;
+   
+   }
+   else{
      //transparency=255;
      getMouse();
-     
-     //TODO tela descanso
+          //TODO tela descanso
+    
+
+    // controle tempo
     if ( iddle && seconds <=0) {
       iNarrativaM=0;
       iMenu=0;
       cena(0,true);
       iddle=false;
     }
-
     
     if (!iddle){
       startTime = millis()/1000 + countdown;
       iddle=true;
  
     }
+    
+    
 
-  }
+   }
+   
+     
+
+  
   
 }
