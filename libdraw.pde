@@ -197,13 +197,13 @@ void drawSeta(){
         if ( mouseX > 0 && mouseX < offset*1.5){
           fill(blue);
           stroke(blue);
-          triangle(offset, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
+          triangle(10, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
         }
         else {
           //desenha desligada
           fill(bgcolor);
           stroke(blue);
-          triangle(offset, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
+          triangle(10, height-offset, offset+10, height-offset-20, offset+10, height-offset+20);
         }        
          
 
@@ -234,7 +234,7 @@ void drawSeta(){
           circle(width/2+offset*2, height-offset, 20);
           
         }
-        //terceiro circulo esquerdo
+        //terceiro circulo direito
         if ( mouseX > width/2 + offset*2){
           fill(blue);
           stroke(blue);
@@ -247,26 +247,32 @@ void drawSeta(){
           circle(width/2+offset*3, height-offset, 20);
           
         }
-  
+
+        //barra e setas direitas
+        //barra 
+        if ( mouseX < width-offset && mouseX > width/2 + offset*4){
+          fill(blue);
+          stroke(blue);
+          rect(width/2+offset*4, height-offset-10, 20, 20);
+          rect(width/2+offset*4+20, height-offset-10, dist(mouseX,0,width/2+20+offset*4,0), 20);
+          triangle(width-10, height-offset, width-offset+10, height-offset-20, width-offset+10, height-offset+20);
+        }
+        //região ativa
+        else if (mouseX > width-offset ){
+          fill(blue);
+          stroke(blue);
+          rect(width/2+offset*4, height-offset-10, 20, 20);
+          rect(width/2+offset*5, height-offset-10, 250, 20);
+          triangle(width-10, height-offset, width-offset+10, height-offset-20, width-offset+10, height-offset+20);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(blue);
+          rect(width/2+offset*4, height-offset-10, 20, 20);
+          triangle(width-10, height-offset, width-offset+10, height-offset-20, width-offset+10, height-offset+20);
+        }
 }  
-
-void drawProgE()
-{
-  float distCent =dist(mouseX,1,width/2,1);
-  areaProgEsqOn = iconProgEsqOn.get(0,0,int(distCent),250);
-  areaProgDirOff = iconProgEsqOff.get(0,0,int(distCent),250);
-  image(areaProgDirOn,offset,height-offset);
-  image(areaProgDirOff,offset,height-offset);
-       
-}
-void drawProgD()
-{
-  //image(iconProgDirOff, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale);    
-  //image(iconProgDirOn, offx1, offy, iconMaoD.width*scale, iconMaoD.height*scale);
-       
-}
-
-
 
 void drawMouse(){
   fill(bgcolor);
