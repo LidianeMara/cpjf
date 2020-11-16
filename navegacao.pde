@@ -26,6 +26,8 @@ void cena(int param, boolean refresh){
   //MENU PRINCIPAL
   else if (iMenu == 1) {
 
+    iNarrativaM = iNarrativaM + param;
+    
     if (refresh == false && transparency != 255) {  
        background(bgcolor);
        drawCabecalho();
@@ -33,16 +35,16 @@ void cena(int param, boolean refresh){
        printImage(narrativaM[iNarrativaM],width/50,height/50,width,height);
     }
     else {
-      if ( iNarrativaM==0 & param==-1){
-        iNarrativaM = narrativaM.length-1; 
+      if ( iNarrativaM<0){
+        iNarrativaM = 4; 
       }
       
-      else if (iNarrativaM >= narrativaM.length-1 ) {
-        iNarrativaM = 1;
+      else if (iNarrativaM >4 ) {
+        iNarrativaM = 0;
       }
       
       else  {
-        iNarrativaM = iNarrativaM + param;
+
         //iddle=true;
       }
        background(bgcolor);
