@@ -1,6 +1,6 @@
 //CENÁRIOS E COMPORTAMENTO GERAL DOS MENUS
 
-void cena(int param,boolean refresh){
+void cena(int param, boolean refresh){
   if (refresh){
     iddle=false;
     transparency=0;
@@ -11,16 +11,15 @@ void cena(int param,boolean refresh){
   }
   
   if (iMenu == 0) {
-      
     if (refresh == false) {
-       background(bgcolor);
-       tint(255, transparency);
-       printImage(narrativaT[iNarrativaT],width/100,height/100,width,height);
-
+      background(bgcolor);
+      printImage(imageHeaderTD, width/800, height/100, width, height/15);
+      tint(255, transparency);
+      printImage(narrativaT[iNarrativaT],width/500,height/750,width,height);
     } 
     else{
      iNarrativaT = iNarrativaT + param;
-       printImage(narrativaT[iNarrativaT],width/100,height/100,width,height);
+       printImage(narrativaT[iNarrativaT],width/100,height/800,width,height);
     }
       
   }
@@ -31,7 +30,7 @@ void cena(int param,boolean refresh){
        background(bgcolor);
        drawCabecalho();
        tint(255, transparency);
-       printImage(narrativaM[iNarrativaM],width/100,height/100,width,height);
+       printImage(narrativaM[iNarrativaM],width/50,height/50,width,height);
     }
     else {
       if ( iNarrativaM==0 & param==-1){
@@ -74,7 +73,7 @@ void cena(int param,boolean refresh){
       }
       background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+      drawCabecalhoB();
       printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
       
     }

@@ -15,9 +15,13 @@ void loadimages () {
   narrativaT[2] = requestImage("tela descanso/TD002.png");
   narrativaT[3] = requestImage("tela descanso/TD002.png");
   narrativaT[4] = requestImage("tela descanso/TD004.png");
-  narrativaT[5] = requestImage("tela descanso/TD001_sobreposição.png");
- 
- 
+  
+  headerNarrativa[0] = requestImage("narrativa/B_João/B000_header.png");
+  headerNarrativa[1] = requestImage("narrativa/C_Julia/C000_header.png");
+  headerNarrativa[2] = requestImage("narrativa/D_Camila/D000_header.png");
+  headerNarrativa[3] = requestImage("narrativa/E_Bernardo/E000_header.png");
+  headerNarrativa[4] = requestImage("narrativa/F_Samira/F000_header.png");
+
 
 
   //img = requestImage("narrativa/B_João/G002_maoEsquerda.png");

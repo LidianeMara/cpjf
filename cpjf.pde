@@ -5,47 +5,51 @@ Robot robot;
 
 /* CONFIG */ 
 int offset = 50;
-String texto = "nulo";
-int indice = 0;
+String texto = "nulo"; // TODO conferir uso
+int indice = 0; // TODO conferir uso
 
-int slideTempo = 5;
-byte countdown = 90; // segundos
+int slideTempo = 5; // TODO conferir uso
+byte countdown = 60; // segundos
 int seconds, startTime; //<>//
 
-boolean iddle = true;
-boolean fade = true;
+boolean iddle = true; // sem interação = true
+boolean fade = true;  // transição
 
 boolean debug = true; //desliga mouse quando ligado
 
 
 int iMenu = 0;
-int iBg = 0; 
-int iNarrativaM = 0 ; // indice cena menu
+int iBg = 0; // TODO conferir uso
 int iNarrativaT = 0 ; // indice tutorial
+int iNarrativaM = 0 ; // indice cena menu
 int iNarrativaB = 0;// indice cena narrativa B
 int iNarrativaC = 0; // indice cena narrativa C
 int iNarrativaD = 0; // indice cena narrativa D
 int iNarrativaE = 0; // indice cena narrativa E
 int iNarrativaF = 0; // indice cena narrativa F
 
-String bgpath="";
+String bgpath=""; //TODO conferir uso
 
 /*  FONTES  */
 PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
-float timer = 0.0;
+float timer = 0.0; //TODO conferir uso
+PImage[] narrativaT = new PImage[5];
 PImage[] narrativaM = new PImage[5];
-PImage[] narrativaT = new PImage[6];
 PImage[] narrativaB = new PImage[61];
 PImage[] narrativaC = new PImage[36];
 PImage[] narrativaD = new PImage[33];
 PImage[] narrativaE = new PImage[52];
 PImage[] narrativaF = new PImage[35];
 
+PImage[]headerNarrativa = new PImage [5];
+
 PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
+
+PImage imageHeaderTD;
 
 float scaleE;
 float scaleD;
@@ -56,18 +60,20 @@ int offx1 = width*10, offy1 = 900; // MAO DIREITA
 float transparency = 255;
 
 color bgcolor = color(253,245,232);
+color bgcolorT = color (97,186,154); // APAGAR
 
-boolean auto = true;
+boolean auto = true; // TODO conferir uso
 
 
 void setup() {
   //TODO fullscreen
   //fullScreen();
-  size(displayHeight, displayWidth, P2D);
+  size(displayHeight, displayWidth);
   iconMaoE = requestImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = requestImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
+  imageHeaderTD = requestImage("tela descanso/TD000_header.png");
   
   /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
   iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");
@@ -99,7 +105,7 @@ void draw () {
    
   //modo inativo (iddle true)
   if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown-5){
-    cena(1,true);
+    cena(1,true); 
     startTime = millis()/1000 + countdown;
   }
   else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-10){
@@ -127,8 +133,8 @@ void draw () {
 
     //
     if (fade){
-      if (transparency >0 ){
-         transparency-=2.5;
+      if (transparency > 0 ){
+         transparency -= 2.5;
       }
       else {
         fade = false;
@@ -137,7 +143,7 @@ void draw () {
     }
     else {   
       if (transparency < 255){
-        transparency+=5;
+        transparency += 5; // sem p2d conferir 
         cena(0,false);
         return;
       }

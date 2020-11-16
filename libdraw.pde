@@ -19,17 +19,8 @@ void drawCabecalho() {
   text("personagens fictícios.", width/50, 260);  
 }
 
-
 void drawCabecalhoB() {
-  stroke(36,46,54);
-  fill(36,46,54);                                                
-  rect(0,0,width*2,340)                                                                                                                                                  ;
-  fill(253,245,232);
-  fill(253,245,232);
-  p = createFont("fonts/IBMPlexMono-Medium.ttf", 40);
-  textFont(p);
-  text("TODO", width/50, 120);
-    
+  printImage(headerNarrativa[iMenu - 2], 0, 0, width, height/2);    
 }
 
 

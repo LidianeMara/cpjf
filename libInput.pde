@@ -32,18 +32,18 @@ void getMouse(){
   // 
   if (iMenu == 0){
     if (iNarrativaT == 2 ){
-      if (mouseX>width-offset){
+      if (mouseX > width - offset){
           cena(1,true);
        }
     }
     else if (iNarrativaT == 3){
-        if (mouseX<offset){
+        if (mouseX < offset){
           cena(1,true);
         }
     }
   }
   
-  else if ( iMenu ==1 ){
+  else if ( iMenu == 1 ){
     // TROCA CENA - ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
       fade=true;
@@ -59,7 +59,7 @@ void getMouse(){
     }
   }
   //TROCA Narrativas
-  else if ( iMenu >1){
+  else if ( iMenu > 1){
   
     // ACIONA ESQUERDA / direita
     if (mouseX < offset)  {
@@ -68,7 +68,7 @@ void getMouse(){
       //delay(300);
     }
      else if (mouseX > width-offset){
-       fade=true;
+      fade=true;
       cena (1,true);
       //delay(300);
     }      
