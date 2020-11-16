@@ -68,7 +68,7 @@ boolean auto = true; // TODO conferir uso
 void setup() {
   //TODO fullscreen
   //fullScreen();
-  size(displayHeight, displayWidth);
+  size(displayHeight, displayWidth,P2D);
   iconMaoE = requestImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = requestImage("menu/A006_maoDireita_off.png");

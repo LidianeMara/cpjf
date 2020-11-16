@@ -46,7 +46,6 @@ void cena(int param, boolean refresh){
         //iddle=true;
       }
        background(bgcolor);
-       drawCabecalhoB();
        println(iNarrativaM);
        printImage(narrativaM[iNarrativaM],width/100,height/100,width,height);
        textFooter(height/5);
@@ -58,7 +57,9 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
       // background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaB != 0){        
+         drawCabecalhoB();
+       }
        tint(255, transparency);
        printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
        
@@ -73,7 +74,9 @@ void cena(int param, boolean refresh){
       }
       background(bgcolor);
        tint(255, 255);
-      drawCabecalhoB();
+      if (iNarrativaB != 0){        
+         drawCabecalhoB();
+       }
       printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
       
     }
@@ -85,8 +88,10 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
        //background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
-       tint(255, transparency);
+       
+       if (iNarrativaC != 0){        
+         drawCabecalhoB();
+       }tint(255, transparency);
        printImage(narrativaC[iNarrativaC],width/100,height/100,width,height);
        
     }
@@ -99,7 +104,9 @@ void cena(int param, boolean refresh){
       }
       background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaC != 0){        
+         drawCabecalhoB();
+       }
       printImage(narrativaC[iNarrativaC],width/100,height/100,width,height);
       
     }
@@ -109,7 +116,9 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
        //background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaD != 0){        
+         drawCabecalhoB();
+       }
        tint(255, transparency);
        printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
        
@@ -123,7 +132,9 @@ void cena(int param, boolean refresh){
       }
       background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaD != 0){        
+         drawCabecalhoB();
+       }
       printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
       
     }
@@ -133,7 +144,9 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
        //background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaE != 0){        
+         drawCabecalhoB();
+       }
        tint(255, transparency);
        printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
        
@@ -147,7 +160,9 @@ void cena(int param, boolean refresh){
       }
       background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaE != 0){        
+         drawCabecalhoB();
+       }
       printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
       
     }
@@ -157,7 +172,9 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
        //background(bgcolor);
        tint(255, 255);
-       drawCabecalhoB();
+       if (iNarrativaF != 0){        
+         drawCabecalhoB();
+       }
        tint(255, transparency);
        printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
        
