@@ -174,8 +174,8 @@ void drawSeta(){
         noStroke();
         
         if (debug){
-          fill(255,0,0);
-          rect(0, height-offset-20, width*2 , 40 );
+          fill(252, 247, 239);
+          rect(0, height-offset-20, width*2 , 200 );
         }
         //Primeiro circulo esquerdo
          if (  mouseX < width/2 - offset/2  ){
