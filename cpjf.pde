@@ -46,10 +46,14 @@ PImage[] narrativaF = new PImage[35];
 PImage[]headerNarrativa = new PImage [5];
 
 PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
+PImage iconMaoET, iconMaoDT;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
 PImage imageHeaderTD;
+
+//tutorial over
+PImage overTutorialAOff, overTutorialAOn;
 
 float scaleE;
 float scaleD;
@@ -62,8 +66,9 @@ int offx1 = width*10, offy1 = 900; // MAO DIREITA
 float transparency = 255;
 
 color bgcolor = color(253,245,232);
-color bgcolorT = color (97,186,154); // APAGAR
-
+//color bgcolorT = color (97,186,154); // APAGAR
+color bgcolorT = color (255,250,242); 
+color verde = color (97,186,154);
 boolean auto = true; // TODO conferir uso
 
 
@@ -76,6 +81,13 @@ void setup() {
   iconMaoD = requestImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
   imageHeaderTD = requestImage("tela descanso/TD000_header.png");
+  iconMaoET = requestImage("tela descanso/iconemaoesquerda.png");
+  iconMaoDT = requestImage("tela descanso/iconemaodireita.png");
+  
+  //imagens tutorial, primeira tela
+  overTutorialAOn = requestImage("tela descanso/TD001_sobreposição.png");
+  overTutorialAOff = requestImage("tela descanso/TD001_sobreposicaoOFF.png");
+  
   
   /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
   iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");

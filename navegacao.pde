@@ -7,9 +7,9 @@ void cena(int param, boolean refresh){
   }
   
   if (iMenu == 0) {
-      background(bgcolor);
+      //background(bgcolor);
       iNarrativaT = iNarrativaT + param;
-      printImage(narrativaT[iNarrativaT],width/500,height/750,width,height);
+      printImage(narrativaT[iNarrativaT],0,0,width,height);
   }
   //MENU PRINCIPAL
   else if (iMenu == 1) {
