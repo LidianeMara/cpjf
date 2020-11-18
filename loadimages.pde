@@ -10,8 +10,8 @@ void loadimages () {
 
   //Imagens do menu tutorial
 
-  narrativaT[0] = requestImage("tela descanso/TD001.png");
-  narrativaT[1] = requestImage("tela descanso/TD002.png");
+  narrativaT[0] = loadImage("tela descanso/TD001.png");
+  narrativaT[1] = loadImage("tela descanso/TD002.png");
   narrativaT[2] = requestImage("tela descanso/TD003.png");
   narrativaT[3] = requestImage("tela descanso/TD004.png");
   

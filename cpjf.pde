@@ -57,7 +57,7 @@ PImage overTutorialAOff, overTutorialAOn;
 
 float scaleE;
 float scaleD;
-float scaleTA=60;
+float scaleTA=10;
 boolean up = true;
 boolean tutorialSobre = false;
 

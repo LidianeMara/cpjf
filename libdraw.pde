@@ -129,7 +129,7 @@ void drawIconsTutorialA(color cor){
   
     noStroke();
     fill(cor);
-    rect(width/2-offset*3, offy-40, offset*7 ,200 );
+    rect(width/2-offset*3, offy-40, offset*7 ,330 );
     image(iconMaoET, 440, offy, 1*scaleTA, 2*scaleTA);
     image(iconMaoDT, 620, offy, 1*scaleTA, 2*scaleTA);
 }
@@ -342,7 +342,6 @@ void drawSeta(){
         //barra e setas direitas
         //barra 
         if (  mouseX > width/2 + offset*5 && mouseX < width-offset ){
-          println("teste");
           fill(blue);
           stroke(blue);
           rect(mouseX, height-offset-6, dist(mouseX,0,width/2-20+offset*5,0), 12);
