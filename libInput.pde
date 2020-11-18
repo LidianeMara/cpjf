@@ -25,22 +25,20 @@ void mouseMoved(){
 }
 */
 
-
-
 void getMouse(){
- 
-  // 
+
+  //Tutorial 
   if (iMenu == 0){
-    if (iNarrativaT == 2 ){
+    if (iNarrativaT == 1 ){
       if (mouseX > width - offset){
           cena(1,true);
        }
     }
-    else if (iNarrativaT == 3){
-        if (mouseX < offset){
+    else if (iNarrativaT == 2){
+      if (mouseX < offset){
           cena(1,true);
         }
-    }
+      }
   }
   
   else if ( iMenu == 1 ){
@@ -86,15 +84,12 @@ void getMouse(){
       cena(0,true);
       //PRIMEIRA TELA
       if (iNarrativaT ==0) {
-        cena(2,true);
-      }
-      if (iNarrativaT ==1) {
         cena(1,true);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==4){
+      else if (iNarrativaT==3){
         iMenu=1;
-        cena(0,true);
+        cena(1,true);
       }
     }
     //Clicks no menu principal
@@ -119,7 +114,6 @@ void getMouse(){
 
 void keyPressed() {
   println("Key: " + (int)key);
-    println("KeyCode: " + keyCode);
     if (keyCode == 97){
       iNarrativaT=0;
       iMenu=0;

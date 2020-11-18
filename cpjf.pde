@@ -13,7 +13,7 @@ byte countdown = 60; // segundos
 int seconds, startTime; //<>// //<>//
 
 boolean iddle = true; // sem interação = true
-boolean fade = true;  // transição
+boolean fade = false;  // transição
 
 boolean debug = true; //desliga mouse quando ligado
 
@@ -58,7 +58,7 @@ float scaleE;
 float scaleD;
 float scaleTA=60;
 boolean up = true;
-
+boolean tutorialSobre = false;
 
 int offx = 50, offy = 900; //MAO ESQUERDA
 int offx1 = width*10, offy1 = 900; // MAO DIREITA
@@ -68,6 +68,7 @@ color bgcolor = color(253,245,232);
 //color bgcolorT = color (97,186,154); // APAGAR
 color bgcolorT = color (255,250,242); 
 color verde = color (97,186,154);
+color quasebranco = color (252,247,239);
 boolean auto = true; // TODO conferir uso
 
 
@@ -76,120 +77,139 @@ void setup() {
   //fullScreen();
   //size(displayHeight, displayWidth,P2D);
   size(displayHeight, displayWidth);
-  iconMaoE = requestImage("menu/A006_maoEsquerda_off.png");
-  iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
-  iconMaoD = requestImage("menu/A006_maoDireita_off.png");
-  iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
-  //imageHeaderTD = requestImage("tela descanso/TD000_header.png");
-  iconMaoET = requestImage("tela descanso/iconemaoesquerda.png");
-  iconMaoDT = requestImage("tela descanso/iconemaodireita.png");
+  iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
+  iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
+  iconMaoD = loadImage("menu/A006_maoDireita_off.png");
+  iconMaoDOn = loadImage("menu/A006_maoDireita_on.png");
+  //imageHeaderTD = loadImage("tela descanso/TD000_header.png");
+  iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
+  iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
   
   //imagens tutorial, primeira tela
-  overTutorialAOn = requestImage("tela descanso/TD001_sobreposição.png");
-  overTutorialAOff = requestImage("tela descanso/TD001_sobreposicaoOFF.png");
+  overTutorialAOn = loadImage("tela descanso/TD001_sobreposição.png");
+  overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
   
-  
-  /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
-  iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");
-  iconProgDirOn = requestImage("geral/G005_progressoDireita_on.png");
-  iconProgDirOff = requestImage("geral/G005_progressoDireita_on.png");
- */
+ 
+  iconProgEsqOn = loadImage("geral/G005_progressoEsquerda_off.png");
+  iconProgEsqOff = loadImage("geral/G005_progressoEsquerda_on.png");
+  iconProgDirOn = loadImage("geral/G005_progressoDireita_on.png");
+  iconProgDirOff = loadImage("geral/G005_progressoDireita_on.png");
+
   
   loadimages();
-
+ //delay(3000);
   try {
     robot = new Robot();
   } 
   catch (Throwable e) {}
   //reset mouse
-  iNarrativaT=0;
-  iMenu=0;
+  
   cena(0,true);
   
   robot.mouseMove(width/2, height/2);
   
+ 
   // inicializa relogio  
   startTime = millis()/1000 + countdown;
+    cena(0,true);
+
  }
 
 void draw () {
   seconds = startTime - millis()/1000;
-
+  //println(seconds);
   //desenha icones
   //icone tutorial narrativa tela A1 e A2
-  if (iMenu==0  && iNarrativaT==0 || iMenu ==0 && iNarrativaT==1){
-   drawIconsTutorialA();
-  }
-  //icone tutorial narrativa tela B
-  else if (iMenu ==0 && iNarrativaT==2)
-  {
-    drawIconsTutorialB();
-  }
-  else if (iMenu == 0 && iNarrativaT == 3)
-  {
-     drawIconsTutorialB();
-  }
-  else if (iMenu == 0 && iNarrativaT == 4)
-  {
-    drawIconsTutorialA();
-  }
-  else 
-  {
-    drawMouse();
-  }
-   
-  println(seconds);
-  if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown -5){
-    
-    startTime = millis()/1000 + countdown;
-  }
-  else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-5){
-    
-    startTime = millis()/1000 + countdown;
-   }
 
+// icones animados e interação!;
+   
 //modo inativo (iddle true)
    if (iddle){
-     
-     if ( seconds <=0) {
-       iNarrativaM=0;
-       iNarrativaT=0;
-       iNarrativaB=0;
-       iNarrativaC=0;
-       iNarrativaD=0;
-       iNarrativaE=0;
-       iNarrativaF=0;
-       iMenu=0;
-       delay(1000);
-       cena(0,true);
+     //print ("iddle" + seconds);   
+     if ( iMenu == 0){
+        if ( iNarrativaT == 0 ){
+          drawIconsTutorialA ( verde );
+          if (!tutorialSobre && seconds < countdown -5){
+            println("aqui");
+             tint(255, 255);
+             printImage(overTutorialAOn, offset*2, height-400, overTutorialAOn.width, overTutorialAOn.height);           
+             startTime = millis()/1000 + countdown;
+             tutorialSobre=!tutorialSobre;
+           
+          }
+          else if (seconds < countdown -10){
+            println("ali");
+            printImage(overTutorialAOff, offset*2, height-400, overTutorialAOn.width, overTutorialAOn.height);
+            startTime = millis()/1000 + countdown;
+            tutorialSobre=!tutorialSobre;
+          }
+        }
+        //icone tutorial narrativa tela B
+        else if( iNarrativaT == 1)
+        {
+          drawIconsTutorialB();
+        }
+        else if( iNarrativaT == 2)
+        {
+           drawIconsTutorialB();
+        }
+        else if( iNarrativaT == 3)
+        {
+          drawIconsTutorialA( bgcolorT );
+        }
+        getMouse(); 
      }
-     getMouse();
+     else if (iMenu == 1){
+       if ( seconds <=0) {
+         zeracenas(); // reinicializa todos indices
+         cena(0,true);
+         delay(1000);
+       }
+       drawIconsMenu();
+       getMouse();
+     }
+     else if (iMenu >= 2){
+         if ( seconds <=0) {
+           zeracenas(); // reinicializa todos indices
+           delay(1000);
+           cena(0,true);
+       }
+        
+       drawSeta();
+       getMouse();
+     }
+   }
+   else{
+     //println("not iddle");
+      
+      if (fade){
+        if (transparency > 0 ){
+           transparency -= 2.5;
+        }
+        else {
+          fade = false;
+        }
+      }
+      else {   
+        if (transparency < 255){
+          transparency += 10; // sem p2d conferir 
+          cena(0,false);
+        //  return;
+        }
+        else{
+          //fade=true;
+          iddle=true;
+          startTime = millis()/1000 + countdown;
+        }
+        
+        
     }
-    else{
-      startTime = millis()/1000 + countdown;
-    }
+  }
     //zera timer
     
 
+   
     //
-    if (fade){
-      if (transparency > 0 ){
-         transparency -= 2.5;
-      }
-      else {
-        fade = false;
-      }
-       
-    }
-    else {   
-      if (transparency < 255){
-        transparency += 5; // sem p2d conferir 
-        cena(0,false);
-        return;
-      }
-      else{
-        iddle=true;
-        delay(200);
-      }
-    }   
+    
+// !   }  
   }
