@@ -135,8 +135,8 @@ void drawIconsTutorialA(color cor){
 }
 
 void drawIconsTutorialB(){
-    float s=sin(millis());
-    float c=cos(millis());
+    float s=sin(millis()%3600);
+    float c=cos(millis()%3600);
     int offscale = 20;
     int autoscale =5;
     scaleE =offscale+s*autoscale;
@@ -313,14 +313,14 @@ void drawSeta(){
           fill(blue);
           stroke(blue);
           rectMode(CORNER);
-          rect(width/2+offset*3.5, height-offset-10, 12, 12);
+          rect(width/2+offset*3.5, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
           stroke(blue);
           rectMode(CORNER);
-          rect(width/2+offset*3.5, height-offset-10, 12, 12);              
+          rect(width/2+offset*3.5, height-offset-6, 12, 12);              
         }
         
         //quinta icone direito (quadrado)
@@ -328,39 +328,38 @@ void drawSeta(){
           fill(blue);
           stroke(blue);
           rectMode(CORNER);
-          rect(width/2+offset*4, height-offset-10, 12, 12);
+          rect(width/2+offset*4, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
           stroke(blue);
           rectMode(CORNER);
-          rect(width/2+offset*4, height-offset-10, 12, 12);      
+          rect(width/2+offset*4, height-offset-6, 12, 12);      
         }
         
 
         //barra e setas direitas
         //barra 
-        if (  mouseX > width/2 + offset*4 && mouseX < width-offset*5 ){
+        if (  mouseX > width/2 + offset*5 && mouseX < width-offset ){
           println("teste");
           fill(blue);
           stroke(blue);
-          rect(mouseX, height-offset-4, dist(mouseX,0,width/2-20+offset*5,0), 12);
+          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-20+offset*5,0), 12);
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
         }
         //região ativa
         else if (mouseX > width-offset*2 ){
           fill(blue);
           stroke(blue);
-          rect(width/2+offset*4, height-offset-4, 12, 12);
-          rect(width/2+offset*4+20, height-offset-4, 250, 12);
+          rect(width/2+offset*4+20, height-offset-10, 250, 12);
           printImage(iconProgDirOn, width-offset+10, height-offset-10, 20, 20);
         }
         else {
           //desenha desligada
           fill(bgcolor);
           stroke(blue);
-          rect(width/2+offset*4, height-offset-4, 12, 12);
+          //rect(width/2+offset*4, height-offset-4, 12, 12);
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
         }
 }  
