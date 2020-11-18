@@ -117,13 +117,13 @@ void drawIconsMenu(){
     fill(bgcolor);
     rect(0, offy, 300 ,280 );
     rect(1080, offy, 300 ,280 );
-    image(iconMaoE, offx, offy, iconMaoE.width*scaleE, iconMaoE.height*scaleE*2);  
-    image(iconMaoD, offx1, offy, iconMaoD.width*scaleD, iconMaoD.height*scaleD*2);
+    image(iconMaoET, offx, offy, iconMaoET.width*scaleE, iconMaoE.height*scaleE*2);  
+    image(iconMaoDT, offx1, offy, iconMaoDT.width*scaleD, iconMaoD.height*scaleD*2);
 }
 
 void drawIconsTutorialA(){
       if (scaleTA >= 30 ){
-        scaleTA--;
+        scaleTA-=3;
       }
       else{
         scaleTA = 60;
@@ -131,10 +131,10 @@ void drawIconsTutorialA(){
       } 
   
     noStroke();
-    fill(255,255,0);
-    rect(0, offy, 1080 ,150 );
-    image(iconMaoE, 440, offy, 1*scaleTA, 2*scaleTA);
-    image(iconMaoD, 620, offy, 1*scaleTA, 2*scaleTA);
+    fill(verde);
+    rect(width/2-offset*3, offy-40, offset*7 ,200 );
+    image(iconMaoET, 440, offy, 1*scaleTA, 2*scaleTA);
+    image(iconMaoDT, 620, offy, 1*scaleTA, 2*scaleTA);
 }
 
 void drawIconsTutorialB(){
@@ -146,10 +146,10 @@ void drawIconsTutorialB(){
     scaleD =offscale+c*autoscale;
 //    println(scaleE);
     noStroke();
-    fill(255,255,0);
-    rect(0, offy, 1080 ,280 );
-    image(iconMaoE, 440, offy, 1*scaleE, 2*scaleE*2);
-    image(iconMaoD, 620, offy, 1*scaleD, 2*scaleD*2);
+    fill(bgcolorT);
+    rect(width/2-offset*3, offy-40, offset*7 ,200 );
+    image(iconMaoET, 440, offy, 1*scaleE, 2*scaleE*2);
+    image(iconMaoDT, 620, offy, 1*scaleD, 2*scaleD*2);
 }
 
 void drawIconMaoE(){
