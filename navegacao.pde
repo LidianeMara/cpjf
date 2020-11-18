@@ -5,23 +5,11 @@ void cena(int param, boolean refresh){
     iddle=false;
     transparency=0;
   }
-  else {
-      //MENU tutorial
-  //println("cena iMenu: " + iMenu + " param: " + param + " iM: " + iNarrativaM + " iT: " + iNarrativaT);
-  }
   
   if (iMenu == 0) {
-    if (refresh == false) {
       background(bgcolor);
-      printImage(imageHeaderTD, width/800, height/100, width, height/15);
-      tint(255, transparency);
+      iNarrativaT = iNarrativaT + param;
       printImage(narrativaT[iNarrativaT],width/500,height/750,width,height);
-    } 
-    else{
-     iNarrativaT = iNarrativaT + param;
-       printImage(narrativaT[iNarrativaT],width/100,height/800,width,height);
-    }
-      
   }
   //MENU PRINCIPAL
   else if (iMenu == 1) {
@@ -48,8 +36,9 @@ void cena(int param, boolean refresh){
         //iddle=true;
       }
        background(bgcolor);
-       println(iNarrativaM);
-       printImage(narrativaM[iNarrativaM],width/100,height/100,width,height);
+       drawCabecalho();
+       printImage(narrativaM[iNarrativaM],width/50,height/50,width,height);
+      // printImage(narrativaM[iNarrativaM],width/100,height/100,width,height);
        textFooter(height/5);
       
     }
@@ -138,8 +127,7 @@ void cena(int param, boolean refresh){
          drawCabecalhoB();
        }
       printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
-      
-    }
+     }
   }
   //NARRATIVA E
   else if (iMenu == 5){ 
@@ -151,7 +139,6 @@ void cena(int param, boolean refresh){
        }
        tint(255, transparency);
        printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
-       
     }
     else{
       iNarrativaE = iNarrativaE + param;
@@ -192,9 +179,6 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        drawCabecalhoB();
       printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
-      
     }
-  }
-  
-  
+  } 
 }

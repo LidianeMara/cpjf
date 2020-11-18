@@ -20,7 +20,7 @@ void drawCabecalho() {
 }
 
 void drawCabecalhoB() {
-  printImage(headerNarrativa[iMenu - 2], 0, 0, width, height/2);    
+  printImage(headerNarrativa[iMenu - 2], 0, 0, width, 426);    
 }
 
 
@@ -80,7 +80,7 @@ void debug()
   
 }
 
-void drawIcons(){
+void drawIconsMenu(){
         
     int autoscale =300;
     if (mouseX < width/2){
@@ -90,8 +90,7 @@ void drawIcons(){
       scaleE =dist(mouseX,1,width/2,1)/autoscale;
       scaleD =dist(mouseX,1,width/2,1)*autoscale;
     }
-    
-    
+        
     noStroke();
     fill(bgcolor);
     rect(0, offy, 300 ,280 );
@@ -100,6 +99,36 @@ void drawIcons(){
     image(iconMaoD, offx1, offy, iconMaoD.width*scaleD, iconMaoD.height*scaleD*2);
 }
 
+void drawIconsTutorialA(){
+      if (scaleTA >= 30 ){
+        scaleTA--;
+      }
+      else{
+        scaleTA = 60;
+        //up = false;
+      } 
+  
+    noStroke();
+    fill(255,255,0);
+    rect(0, offy, 1080 ,150 );
+    image(iconMaoE, 440, offy, 1*scaleTA, 2*scaleTA);
+    image(iconMaoD, 620, offy, 1*scaleTA, 2*scaleTA);
+}
+
+void drawIconsTutorialB(){
+    float s=sin(millis());
+    float c=cos(millis());
+    int offscale = 20;
+    int autoscale =5;
+    scaleE =offscale+s*autoscale;
+    scaleD =offscale+c*autoscale;
+//    println(scaleE);
+    noStroke();
+    fill(255,255,0);
+    rect(0, offy, 1080 ,280 );
+    image(iconMaoE, 440, offy, 1*scaleE, 2*scaleE*2);
+    image(iconMaoD, 620, offy, 1*scaleD, 2*scaleD*2);
+}
 
 void drawIconMaoE(){
         float scale =dist(mouseX,1,width/2-offset,1)/800;
@@ -266,11 +295,9 @@ void drawSeta(){
 }  
 
 void drawMouse(){
-  fill(bgcolor);
-  rect(0,height-10,width,20);
-  fill(255,255,0);
   
-   rect (mouseX, height-10,20,20);
+  //TODO juntar depois
+  
   if ( iMenu == 1 ){
     if (mouseX < width/2-offset)
      {
@@ -283,7 +310,8 @@ void drawMouse(){
        drawIconMaoD();
      }
   }
-  else {
+  else if (iMenu > 1){
+    drawIconsMenu();
     drawSeta();
   }
    

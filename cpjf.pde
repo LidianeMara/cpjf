@@ -53,6 +53,8 @@ PImage imageHeaderTD;
 
 float scaleE;
 float scaleD;
+float scaleTA=60;
+boolean up = true;
 
 
 int offx = 50, offy = 900; //MAO ESQUERDA
@@ -101,19 +103,44 @@ void setup() {
 void draw () {
   seconds = startTime - millis()/1000;
 
-  drawMouse();
+  //desenha icones
+  //icone tutorial narrativa tela A1 e A2
+  if (iMenu==0  && iNarrativaT==0 || iMenu ==0 && iNarrativaT==1){
+   drawIconsTutorialA();
+  }
+  //icone tutorial narrativa tela B
+  else if (iMenu ==0 && iNarrativaT==2)
+  {
+    drawIconsTutorialB();
+  }
+  else if (iMenu == 0 && iNarrativaT == 3)
+  {
+     drawIconsTutorialB();
+  }
+  else if (iMenu == 0 && iNarrativaT == 4)
+  {
+    drawIconsTutorialA();
+  }
+  else 
+  {
+    drawMouse();
+  }
    
-  //modo inativo (iddle true)
-  if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown-5){
+  println(seconds);
+  if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown -5){
+    println("aqui");
     cena(1,true); 
     startTime = millis()/1000 + countdown;
   }
-  else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-10){
+  else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-5){
+    println("ou aqui");
     cena(-1,true);
     startTime = millis()/1000 + countdown;
    }
 
+//modo inativo (iddle true)
    if (iddle){
+     
      if ( seconds <=0) {
        iNarrativaM=0;
        iNarrativaT=0;
@@ -128,8 +155,11 @@ void draw () {
      }
      getMouse();
     }
+    else{
+      startTime = millis()/1000 + countdown;
+    }
     //zera timer
-    startTime = millis()/1000 + countdown;
+    
 
     //
     if (fade){
