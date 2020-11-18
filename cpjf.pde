@@ -86,7 +86,7 @@ void setup() {
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
   
   //imagens tutorial, primeira tela
-  overTutorialAOn = loadImage("tela descanso/TD001_sobreposição.png");
+  overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
   overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
   
  
@@ -97,7 +97,7 @@ void setup() {
 
   
   loadimages();
- //delay(3000);
+ delay(3000);
   try {
     robot = new Robot();
   } 
