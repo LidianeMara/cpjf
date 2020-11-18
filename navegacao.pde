@@ -16,10 +16,10 @@ void cena(int param, boolean refresh){
   //MENU PRINCIPAL
   else if (iMenu == 1) {
     iNarrativaM = iNarrativaM + param;
-    if ( iNarrativaM<0){
+    if ( iNarrativaM < 0){
       iNarrativaM = 4; 
     }
-    else if (iNarrativaM >4 ) {
+    else if (iNarrativaM > 4 ) {
       iNarrativaM = 0;
     }
     
@@ -129,19 +129,17 @@ void cena(int param, boolean refresh){
     if (refresh == false && transparency != 255) {  
       background(bgcolor);
        tint(255, 255);
-       if (iNarrativaB != 0){    
+       if (iNarrativaE != 0){    
           drawBackgroundB();
-        //drawCabecalhoB();
        }
        tint(255, transparency);
-       printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
+       printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
 
     }
     else{
       if (iNarrativaB != 0){
         background(bgcolor);
          drawBackgroundB();
-         //drawCabecalhoB();
        }
       //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
     }

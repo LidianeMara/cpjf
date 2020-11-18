@@ -47,6 +47,8 @@ PImage iconSelecionar;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
+PImage iconVoltar, iconAvancar;
+
 
 //tutorial over
 PImage overTutorialAOff, overTutorialAOn;
@@ -76,9 +78,14 @@ void setup() {
   iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = loadImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = loadImage("menu/A006_maoDireita_on.png");
-  //imageHeaderTD = loadImage("tela descanso/TD000_header.png");
+  
+  //Tutorial
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
+  
+  iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
+  iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
+  
   
   iconMenu = loadImage("geral/G001_btnMenu.png");
   iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
@@ -142,11 +149,11 @@ void draw () {
         //icone tutorial narrativa tela B
         else if( iNarrativaT == 1)
         {
-          drawIconsTutorialB();
+          drawIconsTutorialAvancar();
         }
         else if( iNarrativaT == 2)
         {
-           drawIconsTutorialB();
+           drawIconsTutorialVoltar();
         }
         else if( iNarrativaT == 3)
         {

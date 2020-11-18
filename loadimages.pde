@@ -2,11 +2,11 @@ void loadimages () {
 
   //Imagens do menu principal
 
-  narrativaM[0] = requestImage("menu/A001.png");
-  narrativaM[1] = requestImage("menu/A003.png");
-  narrativaM[2] = requestImage("menu/A004.png");
-  narrativaM[3] = requestImage("menu/A005.png");
-  narrativaM[4] = requestImage("menu/A005.png");
+  narrativaM[0] = requestImage("menu/A001.png"); //Joao
+  narrativaM[1] = requestImage("menu/A002.png"); //Julia
+  narrativaM[2] = requestImage("menu/A003.png"); //Camila
+  narrativaM[3] = requestImage("menu/A004.png"); //Bernardo
+  narrativaM[4] = requestImage("menu/A005.png"); //Samira
 
   //Imagens do menu tutorial
 
