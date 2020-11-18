@@ -2,7 +2,7 @@
 void drawCabecalho() {
   stroke(36,46,54);
   fill(36,46,54);
-  rect(0,0,width*2,340*2);
+  rect(0,0,width*2,340);
   fill(253,245,232);
   fill(253,245,232);
   p = createFont("fonts/IBMPlexMono-Medium.ttf", 40);
@@ -46,35 +46,6 @@ void printImage(PImage photo, float X, float Y, float W, float H)
   {
     image(photo,X,Y,W,H);
   }
-}
-
-void textFooter(float y) {
-  //TODO CRIAR FONTES
-  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 97);
-  textFont(p2);
-  fill(223, 215, 202);
-  text("PROCESSO", -140, y*4.4);
-  p3 = createFont("fonts/IBMPlexMono-SemiBold.ttf", 68);
-  textFont(p3);
-  fill(223, 215, 202);
-  text("AUTOR", 325, y*4.4);
-  fill(223, 215, 202);
-  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 97);
-  textFont(p2);
-  text("DEMOCRACIA", width/2, y*4.4);
-  fill(223, 215, 202);
-  p1 = createFont("fonts/IBMPlexMono-Bold.ttf", 115);
-  textFont(p1);
-  text("JUSTIÇA", -180, y*4.75);
-  fill(223, 215, 202);
-  p2 = createFont("fonts/IBMPlexMono-Light.ttf", 100);
-  textFont(p2);
-  text("RÉU", 350, y*4.75);
-  fill(223, 215, 202);
-  p1 = createFont("fonts/IBMPlexMono-Bold.ttf", 203);
-  textFont(p1);
-  text("DIREITO", width/2, y*4.85);
-  fill(223, 215, 202);
 }
 
 void debug()
@@ -152,76 +123,77 @@ void drawIconsTutorialB(){
 
 // setas experimentais - TODO REMOVER
 void drawSeta(){
-        color blue = color(10,30,250);    
+        color blue = color(10,30,250); 
+        color cream = color (226,220,208);
         noStroke();
           
         //barra de fundo
         fill(quasebranco);
-          rect(0, height-offset/7, width*2 , 200 );
+          rect(0, height-offset/7, width*2 , 300 );
         
         //Primeiro circulo esquerdo
          if (  mouseX < width/2 - offset*2  ){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           circle(width/2-offset*2, height-offset, 12);
         }
         else {
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2-offset*2, height-offset, 12);
         }
         
         //segundo circulo esquerdo
         if ( mouseX < width/2 - offset*2.5){
-          fill(blue);
-          stroke(blue);
+          fill(quasebranco);
+          stroke(cream);
           circle(width/2-offset*2.5, height-offset, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2-offset*2.5, height-offset, 12);
         }
         //terceiro circulo esquerdo
         if ( mouseX < width/2 - offset*3){
-          fill(blue);
-          stroke(blue);
+          fill(quasebranco);
+          stroke(cream);
           circle(width/2-offset*3, height-offset, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2-offset*3, height-offset, 12);
         }
         
         //quarto icone esquerdo (quadrado)
         if ( mouseX < width/2 - offset*3.5){
-          fill(blue);
-          stroke(blue);
+          fill(quasebranco);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2-offset*3.5, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2-offset*3.5, height-offset-6, 12, 12);
         }
         
         //quinto icone esquerdo (quadrado)
         if ( mouseX < width/2 - offset*4){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2-offset*4, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2-offset*4, height-offset-6, 12, 12);
         }
@@ -274,79 +246,78 @@ void drawSeta(){
        //Primeiro circulo direito
         //print (width);
          if (  mouseX > width/2 + offset*2  ){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           circle(width/2+offset*2, height-offset, 12);
         }
         else {
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2+offset*2, height-offset, 12);
         }
         
         //segundo circulo direito
         if ( mouseX > width/2 + offset*2.5){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           circle(width/2+offset*2.5, height-offset, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2+offset*2.5, height-offset, 12);
           
         }
         //terceiro circulo direito
         if ( mouseX > width/2 + offset*3){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           circle(width/2+offset*3, height-offset, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           circle(width/2+offset*3, height-offset, 12);
         }
         
         //quarto icone direito (quadrado)
         if ( mouseX > width/2 + offset*3.5){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2+offset*3.5, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2+offset*3.5, height-offset-6, 12, 12);              
         }
         
         //quinta icone direito (quadrado)
         if ( mouseX > width/2 + offset*4){
-          fill(blue);
-          stroke(blue);
+          fill(cream);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2+offset*4, height-offset-6, 12, 12);
         }
         else {
           //desenha desligada
           fill(bgcolor);
-          stroke(blue);
+          stroke(cream);
           rectMode(CORNER);
           rect(width/2+offset*4, height-offset-6, 12, 12);      
         }
         
         //barra e setas da direita
         //barra 
-        if (  mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
+        if (mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
           fill(blue);
           stroke(255,0,0);
-          rectMode(CORNER);
-          
+          rectMode(CORNER);        
           
           rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
           fill(bgcolor);
@@ -355,7 +326,7 @@ void drawSeta(){
           rect(offset*5, height+offset*6, mouseX-width/2-offset*4-offset, 12);
           //rect(offset+5, height-offset-6, mouseX-offset+5,12);
           
-          printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
+          printImage(iconProgDirOff, width-offset+10, height-offset-10, 15, 20);
           
           /*fill(bgcolor);
           stroke(255,0,0);
@@ -377,11 +348,242 @@ void drawSeta(){
         }
 }  
 
+void drawSetaMenu(){
+        color blue = color(10,30,250); 
+        color cream = color (226,220,208);
+        noStroke();
+          
+        //barra de fundo
+        fill(quasebranco);
+        rect(0, height-offset/7, width*2 , 300 );
+        
+        //Primeiro circulo esquerdo
+         if (  mouseX < width/2 - offset*2  ){
+          fill(cream);
+          stroke(cream);
+          circle(width/2-offset*2, height-offset, 12);
+        }
+        else {
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2-offset*2, height-offset, 12);
+        }
+        
+        //segundo circulo esquerdo
+        if ( mouseX < width/2 - offset*2.5){
+          fill(quasebranco);
+          stroke(cream);
+          circle(width/2-offset*2.5, height-offset, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2-offset*2.5, height-offset, 12);
+        }
+        //terceiro circulo esquerdo
+        if ( mouseX < width/2 - offset*3){
+          fill(quasebranco);
+          stroke(cream);
+          circle(width/2-offset*3, height-offset, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2-offset*3, height-offset, 12);
+        }
+        
+        //quarto icone esquerdo (quadrado)
+        if ( mouseX < width/2 - offset*3.5){
+          fill(quasebranco);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2-offset*3.5, height-offset-6, 12, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2-offset*3.5, height-offset-6, 12, 12);
+        }
+        
+        //quinto icone esquerdo (quadrado)
+        if ( mouseX < width/2 - offset*4){
+          fill(cream);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2-offset*4, height-offset-6, 12, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2-offset*4, height-offset-6, 12, 12);
+        }
+        
+        
+        
+        //barra e seta esquerdas        
+        if ( mouseX > offset*1.2 && mouseX < width/2 - offset*4.5){
+          fill(blue);
+          stroke(blue);          
+          rectMode(CORNER);
+          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
+          fill(bgcolor);
+          stroke(bgcolor);
+          rectMode(CORNER);
+          rect(offset+5, height-offset-6, mouseX-offset+5,12);
+        }
+        else if (mouseX < offset ){
+          fill(blue);
+          stroke(blue);
+          rectMode(CORNER);
+          //rect(width/2-offset*4.5, height-offset-6, 12, 12);
+          rect(offset+5, height-offset*6, 250, 12);
+          
+        }
+        else {
+          //desenha desligada
+          
+          printImage(iconProgEsqOff, offset-10, height-offset-8, 20, 20);
+        }
+        
+        if ( mouseX > 0 && mouseX < offset*1.5){
+          fill(blue);
+          stroke(blue);
+          rectMode(CORNER);
+          rect(width/2*offset, height-offset-5, 250, 12);
+          printImage(iconProgEsqOn, offset-10, height-offset-8, 20, 20);
+        }
+        else {
+          //desenha desligada
+          //fill(bgcolor);
+          //stroke(blue);
+          printImage(iconProgEsqOn, offset-10, height-offset-8, 20, 20);
+        }        
+         
+         // imagem do meio
+         printImage(iconSelecionar, width/2-iconSelecionar.width/2, height-offset*2.5, iconSelecionar.width, iconSelecionar.height);
+         
+
+       //Primeiro circulo direito
+        //print (width);
+         if (  mouseX > width/2 + offset*2  ){
+          fill(cream);
+          stroke(cream);
+          circle(width/2+offset*2, height-offset, 12);
+        }
+        else {
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2+offset*2, height-offset, 12);
+        }
+        
+        //segundo circulo direito
+        if ( mouseX > width/2 + offset*2.5){
+          fill(cream);
+          stroke(cream);
+          circle(width/2+offset*2.5, height-offset, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2+offset*2.5, height-offset, 12);
+          
+        }
+        //terceiro circulo direito
+        if ( mouseX > width/2 + offset*3){
+          fill(cream);
+          stroke(cream);
+          circle(width/2+offset*3, height-offset, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          circle(width/2+offset*3, height-offset, 12);
+        }
+        
+        //quarto icone direito (quadrado)
+        if ( mouseX > width/2 + offset*3.5){
+          fill(cream);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2+offset*3.5, height-offset-6, 12, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2+offset*3.5, height-offset-6, 12, 12);              
+        }
+        
+        //quinta icone direito (quadrado)
+        if ( mouseX > width/2 + offset*4){
+          fill(cream);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2+offset*4, height-offset-6, 12, 12);
+        }
+        else {
+          //desenha desligada
+          fill(bgcolor);
+          stroke(cream);
+          rectMode(CORNER);
+          rect(width/2+offset*4, height-offset-6, 12, 12);      
+        }
+        
+        //barra e setas da direita
+        //barra 
+        if (  mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
+          fill(blue);
+          stroke(255,0,0);
+          rectMode(CORNER);        
+          
+          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
+          fill(bgcolor);
+          stroke(bgcolor);
+          rectMode(CORNER);
+          rect(offset*5, height+offset*6, mouseX-width/2-offset*4-offset, 12);
+          //rect(offset+5, height-offset-6, mouseX-offset+5,12);
+          
+          printImage(iconProgDirOff, width-offset+10, height-offset-10, 15, 20);
+          
+          /*fill(bgcolor);
+          stroke(255,0,0);
+          rectMode(CORNER);
+          rect(offset+5, height-offset-6, mouseX-offset-10,12);
+          */
+          
+        }
+        
+        //região ativa
+        else if (mouseX > width-offset*2 ){
+          fill(blue);
+          stroke(blue);
+          rect(width/2+offset*4+20, height-offset-10, 250, 12);
+          printImage(iconProgDirOn, width-offset+10, height-offset-10, 20, 20);
+        }
+        else {
+          printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
+        }
+}  
+
+
+
+
+
 void drawMouse(){
   //TODO juntar depois
   
   if ( iMenu == 1 ){
        drawIconsMenu();
+       drawSetaMenu();
   }
   else if (iMenu > 1){
     drawIconsMenu();

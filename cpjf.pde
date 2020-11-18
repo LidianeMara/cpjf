@@ -5,21 +5,17 @@ Robot robot;
 
 /* CONFIG */ 
 int offset = 50;
-String texto = "nulo"; // TODO conferir uso
-int indice = 0; // TODO conferir uso
 
-int slideTempo = 5; // TODO conferir uso
 byte countdown = 60; // segundos
 int seconds, startTime; //<>// //<>//
 
 boolean iddle = true; // sem interação = true
-boolean fade = false;  // transição
+boolean fade = false;  // transição //<>//
 
 boolean debug = true; //desliga mouse quando ligado
 
 
 int iMenu = 0;
-int iBg = 0; // TODO conferir uso
 int iNarrativaT = 0 ; // indice tutorial
 int iNarrativaM = 0 ; // indice cena menu
 int iNarrativaB = 0;// indice cena narrativa B
@@ -34,7 +30,6 @@ String bgpath=""; //TODO conferir uso
 PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
-float timer = 0.0; //TODO conferir uso
 PImage[] narrativaT = new PImage[4];
 PImage[] narrativaM = new PImage[5];
 PImage[] narrativaB = new PImage[61];
@@ -48,6 +43,7 @@ PImage[]headerNarrativa = new PImage [5];
 PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconMaoET, iconMaoDT;
 PImage iconMenu;
+PImage iconSelecionar;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
@@ -66,11 +62,9 @@ int offx1 = width*10, offy1 = 900; // MAO DIREITA
 float transparency = 255;
 
 color bgcolor = color(253,245,232);
-//color bgcolorT = color (97,186,154); // APAGAR
 color bgcolorT = color (255,250,242); 
 color verde = color (97,186,154);
 color quasebranco = color (252,247,239);
-boolean auto = true; // TODO conferir uso
 
 
 void setup() {
@@ -85,7 +79,9 @@ void setup() {
   //imageHeaderTD = loadImage("tela descanso/TD000_header.png");
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
+  
   iconMenu = loadImage("geral/G001_btnMenu.png");
+  iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
   
   //imagens tutorial, primeira tela
   overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
@@ -164,7 +160,7 @@ void draw () {
          cena(0,true);
          delay(1000);
        }
-       drawIconsMenu();
+       drawSetaMenu();
        getMouse();
      }
      else if (iMenu >= 2){

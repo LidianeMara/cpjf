@@ -25,8 +25,7 @@ void cena(int param, boolean refresh){
     
     if (refresh == false && transparency != 255) {  
        tint(255, transparency);
-       printImage(narrativaM[iNarrativaM],width/50,height/50,width,height);
-       textFooter(height/5);
+       printImage(narrativaM[iNarrativaM],width/500,height/50,width,height);
     }
     else {
       background(bgcolor);
@@ -178,7 +177,7 @@ void cena(int param, boolean refresh){
 }
 
 void zeracenas(){
-         iNarrativaM=0;
+       iNarrativaM=0;
        iNarrativaT=0;
        iNarrativaB=0;
        iNarrativaC=0;
