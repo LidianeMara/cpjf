@@ -94,8 +94,8 @@ void setup() {
  
   iconProgEsqOn = loadImage("geral/G002_setaON.png");
   iconProgEsqOff = loadImage("geral/G002_setaOFF.png");
-  iconProgDirOn = loadImage("geral/G002_setaON.png");
-  iconProgDirOff = loadImage("geral/G002_setaOFF.png");
+  iconProgDirOn = loadImage("geral/G002_setaDireitaON.png");
+  iconProgDirOff = loadImage("geral/G002_setaDireitaOFF.png");
 
    //carrega tabelas de imagens das narrativas 
   loadimages();

@@ -229,25 +229,27 @@ void drawSeta(){
         
         
         //barra e seta esquerdas        
-        if ( mouseX > offset && mouseX < width/2 - offset*4.5){
+        if ( mouseX > offset*1.2 && mouseX < width/2 - offset*4.5){
           fill(blue);
           stroke(blue);          
           rectMode(CORNER);
-          rect(mouseX, height-offset-6, dist(mouseX,1,width/2-offset*5, 1)/2,12);
+          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
+          fill(bgcolor);
+          stroke(bgcolor);
+          rectMode(CORNER);
+          rect(offset+5, height-offset-6, mouseX-offset+5,12);
         }
         else if (mouseX < offset ){
           fill(blue);
           stroke(blue);
           rectMode(CORNER);
           //rect(width/2-offset*4.5, height-offset-6, 12, 12);
-          rect(offset+5, height-offset-6, 250, 12);
+          rect(offset+5, height-offset*6, 250, 12);
+          
         }
         else {
           //desenha desligada
-          fill(bgcolor);
-          stroke(blue);
-          //rectMode(CORNER);
-          //rect(width/2-offset*4.5, height-offset-6, 12, 12);
+          
           printImage(iconProgEsqOff, offset-10, height-offset-8, 20, 20);
         }
         
@@ -338,15 +340,31 @@ void drawSeta(){
           rect(width/2+offset*4, height-offset-6, 12, 12);      
         }
         
-
-        //barra e setas direitas
+        //barra e setas da direita
         //barra 
-        if (  mouseX > width/2 + offset*5 && mouseX < width-offset ){
+        if (  mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
           fill(blue);
-          stroke(blue);
-          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-20+offset*5,0), 12);
+          stroke(255,0,0);
+          rectMode(CORNER);
+          
+          
+          rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
+          fill(bgcolor);
+          stroke(bgcolor);
+          rectMode(CORNER);
+          rect(offset*5, height+offset*6, mouseX-width/2-offset*4-offset, 12);
+          //rect(offset+5, height-offset-6, mouseX-offset+5,12);
+          
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
+          
+          /*fill(bgcolor);
+          stroke(255,0,0);
+          rectMode(CORNER);
+          rect(offset+5, height-offset-6, mouseX-offset-10,12);
+          */
+          
         }
+        
         //região ativa
         else if (mouseX > width-offset*2 ){
           fill(blue);
@@ -355,10 +373,6 @@ void drawSeta(){
           printImage(iconProgDirOn, width-offset+10, height-offset-10, 20, 20);
         }
         else {
-          //desenha desligada
-          fill(bgcolor);
-          stroke(blue);
-          //rect(width/2+offset*4, height-offset-4, 12, 12);
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 20, 20);
         }
 }  
@@ -367,12 +381,10 @@ void drawMouse(){
   //TODO juntar depois
   
   if ( iMenu == 1 ){
-
        drawIconsMenu();
   }
   else if (iMenu > 1){
     drawIconsMenu();
     drawSeta();
-  }
-   
+  }  
 }

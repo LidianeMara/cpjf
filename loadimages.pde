@@ -21,8 +21,6 @@ void loadimages () {
   headerNarrativa[3] = requestImage("narrativa/E_Bernardo/E000_header.png");
   headerNarrativa[4] = requestImage("narrativa/F_Samira/F000_header.png");
 
-
-
   //img = requestImage("narrativa/B_João/G002_maoEsquerda.png");
   //grade? narrativa/G_geral/G003_grade.png
 
