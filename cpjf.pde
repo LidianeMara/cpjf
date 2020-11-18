@@ -47,6 +47,7 @@ PImage[]headerNarrativa = new PImage [5];
 
 PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconMaoET, iconMaoDT;
+PImage iconMenu;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
@@ -84,20 +85,21 @@ void setup() {
   //imageHeaderTD = loadImage("tela descanso/TD000_header.png");
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
+  iconMenu = loadImage("geral/G001_btnMenu.png");
   
   //imagens tutorial, primeira tela
   overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
   overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
   
  
-  iconProgEsqOn = loadImage("geral/G005_progressoEsquerda_off.png");
-  iconProgEsqOff = loadImage("geral/G005_progressoEsquerda_on.png");
-  iconProgDirOn = loadImage("geral/G005_progressoDireita_on.png");
-  iconProgDirOff = loadImage("geral/G005_progressoDireita_on.png");
+  iconProgEsqOn = loadImage("geral/G002_setaON.png");
+  iconProgEsqOff = loadImage("geral/G002_setaOFF.png");
+  iconProgDirOn = loadImage("geral/G002_setaON.png");
+  iconProgDirOff = loadImage("geral/G002_setaOFF.png");
 
-  
+   //carrega tabelas de imagens das narrativas 
   loadimages();
- delay(3000);
+  delay(3000);
   try {
     robot = new Robot();
   } 
@@ -108,7 +110,6 @@ void setup() {
   
   robot.mouseMove(width/2, height/2);
   
- 
   // inicializa relogio  
   startTime = millis()/1000 + countdown;
     cena(0,true);
@@ -132,14 +133,14 @@ void draw () {
           if (!tutorialSobre && seconds < countdown -5){
             println("aqui");
              tint(255, 255);
-             printImage(overTutorialAOn, offset*2, height-400, overTutorialAOn.width, overTutorialAOn.height);           
+             printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
              startTime = millis()/1000 + countdown;
              tutorialSobre=!tutorialSobre;
            
           }
           else if (seconds < countdown -10){
             println("ali");
-            printImage(overTutorialAOff, offset*2, height-400, overTutorialAOn.width, overTutorialAOn.height);
+            printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
             startTime = millis()/1000 + countdown;
             tutorialSobre=!tutorialSobre;
           }
