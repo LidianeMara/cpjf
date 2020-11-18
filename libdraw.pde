@@ -328,17 +328,16 @@ void drawSeta(){
         }
         
         //barra e setas da direita
-        //barra 
         if (mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
           fill(blue);
-          stroke(255,0,0);
+          stroke(blue);
           rectMode(CORNER);        
           
           rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
           fill(bgcolor);
           stroke(bgcolor);
           rectMode(CORNER);
-          rect(offset*5, height+offset*6, mouseX-width/2-offset*4-offset, 12);
+          rect(offset*5, height-offset-6, mouseX-offset*4,12);
           //rect(offset+5, height-offset-6, mouseX-offset+5,12);
           
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 15, 20);
@@ -554,17 +553,15 @@ void drawSetaMenu(){
         }
         
         //barra e setas da direita
-        //barra 
         if (  mouseX > width/2 + offset*5 && mouseX < width-offset-10 ){
           fill(blue);
-          stroke(255,0,0);
+          stroke(blue);
           rectMode(CORNER);        
-          
           rect(mouseX, height-offset-6, dist(mouseX,0,width/2-offset*4.5,0),12);
           fill(bgcolor);
           stroke(bgcolor);
           rectMode(CORNER);
-          rect(offset*5, height+offset*6, mouseX-width/2-offset*4-offset, 12);
+          rect(offset*5, height-offset-6, mouseX-offset*4,12);
           //rect(offset+5, height-offset-6, mouseX-offset+5,12);
           
           printImage(iconProgDirOff, width-offset+10, height-offset-10, 15, 20);
