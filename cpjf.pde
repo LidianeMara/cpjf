@@ -10,7 +10,7 @@ int indice = 0; // TODO conferir uso
 
 int slideTempo = 5; // TODO conferir uso
 byte countdown = 60; // segundos
-int seconds, startTime; //<>//
+int seconds, startTime; //<>// //<>//
 
 boolean iddle = true; // sem interação = true
 boolean fade = true;  // transição
@@ -49,7 +49,6 @@ PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
-PImage imageHeaderTD;
 
 float scaleE;
 float scaleD;
@@ -68,12 +67,12 @@ boolean auto = true; // TODO conferir uso
 void setup() {
   //TODO fullscreen
   //fullScreen();
-  size(displayHeight, displayWidth,P2D);
+  //size(displayHeight, displayWidth,P2D);
+  size(displayHeight, displayWidth);
   iconMaoE = requestImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = requestImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
-  imageHeaderTD = requestImage("tela descanso/TD000_header.png");
   
   /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
   iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");

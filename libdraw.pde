@@ -20,7 +20,25 @@ void drawCabecalho() {
 }
 
 void drawCabecalhoB() {
-  printImage(headerNarrativa[iMenu - 2], 0, 0, width, height/2);    
+  printImage(headerNarrativa[iMenu - 2], width/500, 0, width, height/5);    
+}
+void drawBackgroundB() {
+final int WIDTH =  1000;
+final int HEIGHT = 1000;
+final int BLOCKX = WIDTH/12;
+final int BLOCKY = HEIGHT/12;
+
+for (int i = 0; i < 24; i ++) {
+    for (int j = 0; j < 24; j ++) {
+      if ((i + j + 1) % 2 == 0) {
+        fill(253,245,232);
+      } else {
+        fill(253,245,232);
+      }
+      rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
+      stroke(206, 183, 145, 26);
+    } 
+  }
 }
 
 
