@@ -20,9 +20,9 @@ void drawCabecalho() {
 }
 
 void drawCabecalhoB() {
-<<<<<<< HEAD
   printImage(headerNarrativa[iMenu - 2], width/500, 0, width, height/5);    
 }
+
 void drawBackgroundB() {
 final int WIDTH =  1000;
 final int HEIGHT = 1000;
@@ -40,9 +40,7 @@ for (int i = 0; i < 24; i ++) {
       stroke(206, 183, 145, 26);
     } 
   }
-=======
   printImage(headerNarrativa[iMenu - 2], 0, 0, width, 426);    
->>>>>>> f9c45ca8b26fc813571402688c26e115c73306fb
 }
 
 

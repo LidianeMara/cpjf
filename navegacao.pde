@@ -7,19 +7,13 @@ void cena(int param, boolean refresh){
   }
   
   if (iMenu == 0) {
-<<<<<<< HEAD
       background(bgcolor);
-<<<<<<< HEAD
       tint(255, transparency);
-=======
       iNarrativaT = iNarrativaT + param;
->>>>>>> f9c45ca8b26fc813571402688c26e115c73306fb
       printImage(narrativaT[iNarrativaT],width/500,height/750,width,height);
-=======
       //background(bgcolor);
       iNarrativaT = iNarrativaT + param;
       printImage(narrativaT[iNarrativaT],0,0,width,height);
->>>>>>> 8f2a2082bbd67904520113bc7b4e15bef541292c
   }
   //MENU PRINCIPAL
   else if (iMenu == 1) {

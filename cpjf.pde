@@ -35,7 +35,7 @@ PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
 float timer = 0.0; //TODO conferir uso
-PImage[] narrativaT = new PImage[5];
+PImage[] narrativaT = new PImage[4];
 PImage[] narrativaM = new PImage[5];
 PImage[] narrativaB = new PImage[61];
 PImage[] narrativaC = new PImage[36];
@@ -80,9 +80,7 @@ void setup() {
   iconMaoEOn = requestImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = requestImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = requestImage("menu/A006_maoDireita_on.png");
-<<<<<<< HEAD
-=======
-  imageHeaderTD = requestImage("tela descanso/TD000_header.png");
+  //imageHeaderTD = requestImage("tela descanso/TD000_header.png");
   iconMaoET = requestImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = requestImage("tela descanso/iconemaodireita.png");
   
@@ -90,7 +88,6 @@ void setup() {
   overTutorialAOn = requestImage("tela descanso/TD001_sobreposição.png");
   overTutorialAOff = requestImage("tela descanso/TD001_sobreposicaoOFF.png");
   
->>>>>>> 8f2a2082bbd67904520113bc7b4e15bef541292c
   
   /*iconProgEsqOn = requestImage("geral/G005_progressoEsquerda_off.png");
   iconProgEsqOff = requestImage("geral/G005_progressoEsquerda_on.png");
@@ -143,13 +140,11 @@ void draw () {
    
   println(seconds);
   if (iMenu ==0 && iNarrativaT ==0 && seconds < countdown -5){
-    println("aqui");
-    cena(1,true); 
+    
     startTime = millis()/1000 + countdown;
   }
   else if (iMenu ==0 && iNarrativaT ==1 && seconds < countdown-5){
-    println("ou aqui");
-    cena(-1,true);
+    
     startTime = millis()/1000 + countdown;
    }
 
