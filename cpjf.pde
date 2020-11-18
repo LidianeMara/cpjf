@@ -130,16 +130,14 @@ void draw () {
      if ( iMenu == 0){
         if ( iNarrativaT == 0 ){
           drawIconsTutorialA ( verde );
-          if (!tutorialSobre && seconds < countdown -5){
-            println("aqui");
+          if (!tutorialSobre && seconds < countdown -20){
              tint(255, 255);
              printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
              startTime = millis()/1000 + countdown;
              tutorialSobre=!tutorialSobre;
            
           }
-          else if (seconds < countdown -10){
-            println("ali");
+          else if (seconds < countdown -30){
             printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
             startTime = millis()/1000 + countdown;
             tutorialSobre=!tutorialSobre;
