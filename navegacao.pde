@@ -46,6 +46,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaB != 0){    
          drawBackgroundB();
+         drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
@@ -75,6 +76,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaC != 0){    
           drawBackgroundB();
+          drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaC[iNarrativaC],width/100,height/100,width,height);
@@ -103,6 +105,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaD != 0){    
           drawBackgroundB();
+          drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
@@ -131,6 +134,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaE != 0){    
           drawBackgroundB();
+          drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);
@@ -152,6 +156,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaF != 0){     
          drawBackgroundB();
+         drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
@@ -168,6 +173,7 @@ void cena(int param, boolean refresh){
       tint(255, 255);
       if (iNarrativaF != 0){     
          drawBackgroundB();
+         drawSeta();
        }
       printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
     }

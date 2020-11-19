@@ -44,7 +44,7 @@ PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconMaoET, iconMaoDT;
 PImage iconMenu;
 PImage iconSelecionar;
-PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff;
+PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff, ProgBar;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
 PImage iconVoltar, iconAvancar;
@@ -99,6 +99,7 @@ void setup() {
   iconProgEsqOff = loadImage("geral/G002_setaOFF.png");
   iconProgDirOn = loadImage("geral/G002_setaDireitaON.png");
   iconProgDirOff = loadImage("geral/G002_setaDireitaOFF.png");
+  ProgBar = loadImage("geral/G000_rodape.png");
 
    //carrega tabelas de imagens das narrativas 
   loadimages();
@@ -167,7 +168,7 @@ void draw () {
          cena(0,true);
          delay(1000);
        }
-       drawSetaMenu();
+       drawSeta();
        getMouse();
      }
      else if (iMenu >= 2){
