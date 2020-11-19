@@ -104,39 +104,25 @@ void drawIconsTutorialA(color cor){
 }
 
 void drawIconsTutorialAvancar(){
-  if (scaleTA >= 30 ){
-    scaleTA-=0.25;
-  }
-  else{
-    scaleTA = 60;
-    //up = false;
-  } 
   //    println(scaleE);
   noStroke();
   fill(bgcolorT);
   rect(width/2-offset*5, offy-40, offset*10 ,445 );
-  image(iconAvancar, 440, offy, 3*scaleTA, 3*scaleTA);
+  image(iconAvancar, 440, offy, 300, 250);
 }
 
-void drawIconsTutorialVoltar(){
-  if (scaleTA >= 30 ){
-    scaleTA-=0.25;
-  }
-  else{
-    scaleTA = 60;
-    //up = false;
-  } 
+void drawIconsTutorialVoltar(){ 
   //    println(scaleE);
   noStroke();
   fill(bgcolorT);
   rect(width/2-offset*5, offy-40, offset*10 ,445 );
-  image(iconVoltar, 440, offy, 3*scaleTA, 3*scaleTA);
+  image(iconVoltar, 440, offy, 300, 250);
 }
 
 
 // setas de navegação dos menus
 void drawSeta(){
-  color blue = color(10,30,250); 
+  color blue = color(15,76,129); 
   color cream = color (226,220,208);
   printImage(ProgBar, 0, height-offset*4, ProgBar.width, ProgBar.height);
 
