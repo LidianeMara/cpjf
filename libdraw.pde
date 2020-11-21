@@ -7,15 +7,16 @@ void drawCabecalho() {
   fill(253,245,232);
   p = createFont("fonts/IBMPlexMono-Medium.ttf", 40);
   textFont(p);
+  textAlign(LEFT);
   text("Aqui você pode trilhar alguns dos diferentes", width/50, 120);
-  fill(253,245,232);
-  rectMode(CENTER);
+//  fill(253,245,232);
+//  rectMode(CENTER);
   text("caminhos de um processo judicial na Justiça", width/50, 170);
-  fill(253,245,232);
-  rectMode(CENTER);
+  //fill(253,245,232);
+ // rectMode(CENTER);
   text("Federal. As histórias são ilustrativas e os", width/50, 210);
-  fill(253,245,232);
-  rectMode(CENTER);
+  //fill(253,245,232);
+ // rectMode(CENTER);
   text("personagens fictícios.", width/50, 260);
 }
 

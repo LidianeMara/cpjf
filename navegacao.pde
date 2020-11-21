@@ -58,8 +58,7 @@ void cena(int param, boolean refresh){
          drawBackgroundB();
        }
       //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
-    }
-    
+    }   
 
   }
   //NARRATIVA C

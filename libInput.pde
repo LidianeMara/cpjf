@@ -32,11 +32,15 @@ void getMouse(){
     if (iNarrativaT == 1 ){
       if (mouseX > width - offset){
           cena(1,true);
+          robot.mouseMove(width/2, mouseY);
+          delay(300);
        }
     }
     else if (iNarrativaT == 2){
       if (mouseX < offset){
           cena(1,true);
+          robot.mouseMove(width/2, mouseY);
+           delay(300);
         }
       }
   }
@@ -68,7 +72,7 @@ void getMouse(){
      else if (mouseX > width-offset){
       fade=true;
       cena (1,true);
-      //delay(300);
+     //delay(300);
     }      
     
  }

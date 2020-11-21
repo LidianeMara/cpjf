@@ -6,7 +6,7 @@ Robot robot;
 /* CONFIG */ 
 int offset = 50;
 
-byte countdown = 60; // segundos
+int countdown = 120; // segundos
 int seconds, startTime; //<>// //<>//
 
 boolean iddle = true; // sem interação = true
@@ -71,9 +71,9 @@ color quasebranco = color (252,247,239);
 
 void setup() {
   //TODO fullscreen
-  //fullScreen();
+  fullScreen();
   //size(displayHeight, displayWidth,P2D);
-  size(displayHeight, displayWidth);
+  //size(displayWidth, displayHeight);
   iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = loadImage("menu/A006_maoDireita_off.png");
@@ -134,14 +134,14 @@ void draw () {
      if ( iMenu == 0){
         if ( iNarrativaT == 0 ){
           drawIconsTutorialA ( verde );
-          if (!tutorialSobre && seconds < countdown -20){
+          if (!tutorialSobre && seconds < countdown - 5){
              tint(255, 255);
              printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
              startTime = millis()/1000 + countdown;
              tutorialSobre=!tutorialSobre;
            
           }
-          else if (seconds < countdown -30){
+          else if (seconds < countdown - 10){
             printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
             startTime = millis()/1000 + countdown;
             tutorialSobre=!tutorialSobre;
@@ -163,7 +163,7 @@ void draw () {
         getMouse(); 
      }
      else if (iMenu == 1){
-       if ( seconds <=0) {
+       if ( seconds <= 0) {
          zeracenas(); // reinicializa todos indices
          cena(0,true);
          delay(1000);
