@@ -1,9 +1,9 @@
 //CH: sem uso
-void mouseMoved(){
+//void mouseMoved(){
   //handle cursor pointer effects
-  if( mouseX < 10 || mouseX > width-10 || mouseY > 300) cursor(HAND);  
-  else                                                  cursor(ARROW);
-}
+  //if( mouseX < 10 || mouseX > width-10 || mouseY > 300) cursor(HAND);  
+  //else                                                  cursor(ARROW);
+//}
 
 //CH: sem uso
 /*void mousePressed(){
@@ -47,32 +47,39 @@ void getMouse(){
   
   else if ( iMenu == 1 ){
     // TROCA CENA - ACIONA ESQUERDA / direita
-    if (mouseX < offset)  {
+    if (mouseX < offsetMouse)  {
       fade=true;
+      robot.mouseMove(width/2, height);
+      delay(500);
       cena(-1,true);
-      robot.mouseMove(width/2, mouseY);
-      delay(300);
+
     }
-     else if (mouseX > width-offset){
+     else if (mouseX > width-offsetMouse){
        fade=true;
-      cena (1,true);
-      robot.mouseMove(width/2, mouseY);
-      delay(300);
+       robot.mouseMove(width/2, height);
+       delay(500);
+       cena (1,true);
+  
     }
   }
   //TROCA Narrativas
   else if ( iMenu > 1){
   
     // ACIONA ESQUERDA / direita
-    if (mouseX < offset)  {
+    if (mouseX < offsetMouse)  {
       fade=true;
+      robot.mouseMove(width/2, height);
+      delay(500);
       cena(-1,true);
-      //delay(300);
+      
+      
     }
-     else if (mouseX > width-offset){
+     else if (mouseX > width-offsetMouse){
       fade=true;
+      robot.mouseMove(width/2, height);
+      delay(500);
       cena (1,true);
-     //delay(300);
+
     }      
     
  }
@@ -150,7 +157,5 @@ void keyPressed() {
         iMenu=1;
         cena(0,true);
       }
-     }
-
-   
+     }  
 }

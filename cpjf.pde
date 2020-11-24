@@ -5,6 +5,7 @@ Robot robot;
 
 /* CONFIG */ 
 int offset = 50;
+int offsetMouse = 300;
 
 int countdown = 120; // segundos
 int seconds, startTime; //<>// //<>//
@@ -12,6 +13,8 @@ int seconds, startTime; //<>// //<>//
 boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>//
 
+
+//TODO desligar na instalação
 boolean debug = true; //desliga mouse quando ligado
 
 
@@ -71,9 +74,16 @@ color quasebranco = color (252,247,239);
 
 void setup() {
   //TODO fullscreen
-  fullScreen();
-  //size(displayHeight, displayWidth,P2D);
+  //fullScreen();
+  size(displayHeight, displayWidth,P2D);
   //size(displayWidth, displayHeight);
+  
+
+  //Desliga icone mouse
+  //não funciona em fullscreen (present)
+  noCursor();
+  
+  
   iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = loadImage("menu/A006_maoDireita_off.png");
@@ -121,6 +131,8 @@ void setup() {
  }
 
 void draw () {
+
+  
   seconds = startTime - millis()/1000;
   //println(seconds);
   //desenha icones

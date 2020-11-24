@@ -120,9 +120,109 @@ void drawIconsTutorialVoltar(){
   image(iconVoltar, 440, offy, 300, 250);
 }
 
+// Novas setas de navegação dos menus
+// TODO remover drawSeta2 backup da barra antiga
+void drawSeta(){
+  //ajuste antes de ativação
+  int miniOffset=15;
+  color blue = color(15,76,129); 
+  color cream = color (226,220,208);
+  //imagem limpadora da barra
+  printImage(ProgBar, 0, height-offset*4, ProgBar.width, ProgBar.height);
+  
+  if (debug){
+    fill(255,0,0);
+    stroke(cream);          
+    rectMode(CORNER);
+    rect(offsetMouse, height-miniOffset, 2, miniOffset );
+    rect(width/2-1, height-miniOffset, 2, miniOffset );
+    rect(width-offsetMouse, height-miniOffset, 2, miniOffset );
+  }
+
+  //barra e seta esquerdas        
+  if ( mouseX >= offsetMouse+miniOffset && mouseX < width/2){
+    fill(blue);
+    stroke(cream);          
+    rectMode(CORNER);
+    //retangulo da barra
+    rect(mouseX, height-offset-6, dist(mouseX,0,width/2,0),20);
+    
+    printImage(iconProgEsqOff, offsetMouse-miniOffset*2, height-offset-10,30, 30);        
+  }
+
+  //ativação barra e seta esquerdas
+  else if (mouseX < offsetMouse+miniOffset ){
+    fill(blue);
+    stroke(cream);
+    rect(offsetMouse-2, height-offset-6, dist(mouseX,0,offsetMouse,0)*2, 20);
+    printImage(iconProgEsqOn, offsetMouse-miniOffset*2, height-offset-10, 30, 30);
+  }
+  else {
+    //desenha desligada
+    //fill(bgcolor);
+    //stroke(bgcolor);
+    //rectMode(CORNER);
+    //rect(offsetMouse+miniOffset, height-offset-6, 20, 20);
+    printImage(iconProgEsqOff, offsetMouse-miniOffset, height-offset-10, 30, 30);
+  }
+
+  // centro do footer - imagem do meio
+  if (iMenu == 2 && iNarrativaB == 0 || iMenu == 3 && iNarrativaC == 0 ||
+      iMenu == 4 && iNarrativaD == 0 || iMenu == 5 && iNarrativaE == 0 ||
+      iMenu == 6 && iNarrativaF == 0 || iMenu == 1  ){
+
+    printImage(iconMenu, width/2-iconMenu.width/2, height-offset*3.5, iconMenu.width, iconMenu.height);
+
+  }
+  else{
+    String string = "";
+    // imagem do meio
+    printImage(iconMenu, width/2-iconMenu.width/2, height-offset*3.5, iconMenu.width, iconMenu.height);
+    fill(cream);
+    p = createFont("fonts/IBMPlexMono-Medium.ttf", 30);
+    textFont(p);
+    if (iMenu == 2)       { string = iNarrativaB + "/" + narrativaB.length;  }
+    else if (iMenu == 3)  { string = iNarrativaC + "/" + narrativaC.length; }
+    else if (iMenu == 4)  { string = iNarrativaD + "/" + narrativaD.length; }
+    else if (iMenu == 5)  { string = iNarrativaE + "/" + narrativaE.length; }
+    else if (iMenu == 6)  { string = iNarrativaF + "/" + narrativaF.length; }
+    textAlign(CENTER);
+    text(string, width/2, height-10);
+  }
+
+  //barra e setas da direita
+  if (mouseX >= width/2  && mouseX < width-offsetMouse-miniOffset ){
+    fill(blue);
+    stroke(cream);
+    rectMode(CORNER);
+    //retangulo da barra
+    rect(width/2, height-offset-6, dist(mouseX,0,width/2,0),20);
+    
+    //primeira seta direita 
+    printImage(iconProgDirOff, width-offsetMouse, height-offset-10, 30, 30);
+  }
+  //ativa seta e barra na direita 
+  else if (mouseX > width-offsetMouse-miniOffset ){
+    fill(blue);
+    stroke(cream);
+    rect(width-offsetMouse, height-offset-6, -dist(mouseX,0,width-offsetMouse,0)*2, 20);
+    //primeira seta direita
+    printImage(iconProgDirOn, width-offsetMouse, height-offset-10, 30, 30);
+  }
+  else {
+    //desenha seta direita desligada
+    fill(bgcolor);
+    stroke(bgcolor);
+    rectMode(CORNER);
+    //rect(width/2+offsetMouse+miniOffset, height-offset-6, 20, 20);
+    printImage(iconProgDirOff, width-offsetMouse-miniOffset, height-offset-10, 30, 30);
+  }
+}
+
+
 
 // setas de navegação dos menus
-void drawSeta(){
+void drawSetaBack(){
   color blue = color(15,76,129); 
   color cream = color (226,220,208);
   printImage(ProgBar, 0, height-offset*4, ProgBar.width, ProgBar.height);
