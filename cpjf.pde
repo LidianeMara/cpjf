@@ -34,7 +34,7 @@ PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
 PImage[] narrativaT = new PImage[4];
-PImage[] narrativaM = new PImage[5];
+PImage[] narrativaM = new PImage[6];
 PImage[] narrativaB = new PImage[61];
 PImage[] narrativaC = new PImage[36];
 PImage[] narrativaD = new PImage[33];
@@ -43,11 +43,10 @@ PImage[] narrativaF = new PImage[35];
 
 PImage[]headerNarrativa = new PImage [5];
 
-PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
+
+//PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconMaoET, iconMaoDT;
-PImage iconMenu;
-PImage iconSelecionar;
-PImage iconProgEsqOn, iconProgEsqOff, iconProgDirOn, iconProgDirOff, ProgBar;
+PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
 PImage iconVoltar, iconAvancar;
@@ -84,11 +83,12 @@ void setup() {
   noCursor();
   
   
+  /* TODO remover desabilitado ultima revisao
   iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = loadImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = loadImage("menu/A006_maoDireita_on.png");
-  
+  */ 
   //Tutorial
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
@@ -97,19 +97,19 @@ void setup() {
   iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
   
   
-  iconMenu = loadImage("geral/G001_btnMenu.png");
-  iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
+  //TODO imagem apagada
+  //iconMenu = loadImage("geral/G001_btnMenu.png");
+  //iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
   
   //imagens tutorial, primeira tela
   overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
   overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
   
  
-  iconProgEsqOn = loadImage("geral/G002_setaON.png");
-  iconProgEsqOff = loadImage("geral/G002_setaOFF.png");
-  iconProgDirOn = loadImage("geral/G002_setaDireitaON.png");
-  iconProgDirOff = loadImage("geral/G002_setaDireitaOFF.png");
-  ProgBar = loadImage("geral/G000_rodape.png");
+  iconProgEsq = loadImage("geral/SetaESQ.png");
+  iconProgDir = loadImage("geral/SetaDIR.png");
+  rodapeMenu = loadImage("geral/G000_rodapeMenu.png");
+  rodapeNarrativa = loadImage("geral/G000_rodapeNarrativa.png");
 
    //carrega tabelas de imagens das narrativas 
   loadimages();

@@ -25,35 +25,36 @@ void cena(int param, boolean refresh){
     
     if (refresh == false && transparency != 255) {  
        tint(255, transparency);
-       printImage(narrativaM[iNarrativaM],width/500,height/50,width,height);
+       printImage(narrativaM[0],width/500,height/50,width,height);
+       printImage(narrativaM[iNarrativaM+1],width/500,height/50,width,height);
     }
     else {
       background(bgcolor);
       drawCabecalho();
     }
   }
-  //NARRATIVA B
+  //iMenu 2 - NARRATIVA F  Samira
   else if (iMenu == 2){
-    iNarrativaB = iNarrativaB + param;
-      if (iNarrativaB >= narrativaB.length) {
-        iNarrativaB = narrativaB.length-1;
-      } else if (iNarrativaB < 0) {
-        iNarrativaB = 0;
+    iNarrativaF = iNarrativaF + param;
+      if (iNarrativaF >= narrativaF.length) {
+        iNarrativaF = narrativaF.length-1;
+      } else if (iNarrativaF < 0) {
+        iNarrativaF = 0;
       }
       
     if (refresh == false && transparency != 255) {  
       background(bgcolor);
        tint(255, 255);
-       if (iNarrativaB != 0){    
+       if (iNarrativaF != 0){    
          drawBackgroundB();
-         drawSeta();
+         //drawSeta();
        }
        tint(255, transparency);
-       printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
+       printImage(narrativaF[iNarrativaB],width/100,height/100,width,height);
 
     }
     else{
-      if (iNarrativaB != 0){
+      if (iNarrativaF != 0){
         background(bgcolor);
          drawBackgroundB();
        }
@@ -61,7 +62,7 @@ void cena(int param, boolean refresh){
     }   
 
   }
-  //NARRATIVA C
+  //iMenu 3 NARRATIVA C Julia
   else if (iMenu == 3){ 
     iNarrativaC = iNarrativaC + param;
       if (iNarrativaC >= narrativaC.length) {
@@ -90,37 +91,8 @@ void cena(int param, boolean refresh){
     }
     
   }
-  //NARRATIVA D
+  // iMenu 4 - NARRATIVA E -  Bernardo
   else if (iMenu == 4){ 
-    iNarrativaD = iNarrativaD + param;
-      if (iNarrativaD >= narrativaD.length) {
-        iNarrativaD = narrativaD.length-1;
-      } else if (iNarrativaD < 0) {
-        iNarrativaD = 0;
-      }
-      
-    if (refresh == false && transparency != 255) {  
-      background(bgcolor);
-       tint(255, 255);
-       if (iNarrativaD != 0){    
-          drawBackgroundB();
-          drawSeta();
-       }
-       tint(255, transparency);
-       printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
-
-    }
-    else{
-      if (iNarrativaD != 0){
-        background(bgcolor);
-         drawBackgroundB();
-       }
-      //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
-    }
-    
-  }
-  //NARRATIVA E
-  else if (iMenu == 5){ 
     iNarrativaE = iNarrativaE + param;
       if (iNarrativaE >= narrativaE.length) {
         iNarrativaE = narrativaE.length-1;
@@ -146,35 +118,64 @@ void cena(int param, boolean refresh){
        }
       //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
     }
+   
+  }
+  //iMenu 5 NARRATIVA D - Camila
+  else if (iMenu == 5){ 
+iNarrativaD = iNarrativaD + param;
+      if (iNarrativaD >= narrativaD.length) {
+        iNarrativaD = narrativaD.length-1;
+      } else if (iNarrativaD < 0) {
+        iNarrativaD = 0;
+      }
+      
+    if (refresh == false && transparency != 255) {  
+      background(bgcolor);
+       tint(255, 255);
+       if (iNarrativaD != 0){    
+          drawBackgroundB();
+          drawSeta();
+       }
+       tint(255, transparency);
+       printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
+
+    }
+    else{
+      if (iNarrativaD != 0){
+        background(bgcolor);
+         drawBackgroundB();
+       }
+      //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
+    }    
     
   }
-  //NARRATIVA F
+  //iMenu 6 - NARRATIVA B João
   else if (iMenu == 6){ 
     if (refresh == false && transparency != 255) {  
        //background(bgcolor);
        tint(255, 255);
-       if (iNarrativaF != 0){     
+       if (iNarrativaB != 0){     
          drawBackgroundB();
          drawSeta();
        }
        tint(255, transparency);
-       printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
+       printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
        
     }
     else{
-      iNarrativaF = iNarrativaF + param;
-      if (iNarrativaF >= narrativaF.length) {
-        iNarrativaF = narrativaF.length-1;
-      } else if (iNarrativaF < 0) {
-        iNarrativaF =0;
+      iNarrativaB = iNarrativaB + param;
+      if (iNarrativaB >= narrativaB.length) {
+        iNarrativaB = narrativaB.length-1;
+      } else if (iNarrativaB < 0) {
+        iNarrativaB =0;
       }
       background(bgcolor);
       tint(255, 255);
-      if (iNarrativaF != 0){     
+      if (iNarrativaB != 0){     
          drawBackgroundB();
          drawSeta();
        }
-      printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
+      printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
     }
   } 
 }
