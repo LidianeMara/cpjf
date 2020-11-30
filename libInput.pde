@@ -64,21 +64,24 @@ void getMouse(){
   }
   //TROCA Narrativas
   else if ( iMenu > 1){
-  
+
     // ACIONA ESQUERDA / direita
-    if (mouseX < offsetMouse)  {
-      fade=true;
-      robot.mouseMove(width/2, height);
-      delay(500);
-      cena(-1,true);
-      
+    if (mouseX < offsetMouse )  {
+      if (iNarrativaB>0 || iNarrativaC>0 || iNarrativaD>0 || iNarrativaE>0 || iNarrativaF>0){
+        fade=false;
+        delay(500);
+        robot.mouseMove(width/2, height);
+        cena(-1,true);
+        robot.mouseMove(width/2, height);
+      }
       
     }
      else if (mouseX > width-offsetMouse){
-      fade=true;
-      robot.mouseMove(width/2, height);
+      fade=false;
       delay(500);
+      robot.mouseMove(width/2, height);
       cena (1,true);
+      robot.mouseMove(width/2, height);
 
     }      
     

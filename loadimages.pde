@@ -7,7 +7,7 @@ void loadimages () {
   narrativaM[2] = requestImage("menu/A002.png"); //Julia 3 C
   narrativaM[3] = requestImage("menu/A003.png"); //Bernardo 4 E
   narrativaM[4] = requestImage("menu/A004.png"); //Camila 5 D
-  narrativaM[5] = requestImage("menu/A005.png"); //João 6 E
+  narrativaM[5] = requestImage("menu/A005.png"); //João 6 B
   //era  joao 2 B,  julia 3 C , camila 4 D, bernardo 5E,  samira 6F
   // agora é samira 2f, julia 3c, bernardo 4e, camila 5d, joao 6e
   
@@ -19,11 +19,12 @@ void loadimages () {
   narrativaT[2] = requestImage("tela descanso/TD003.png");
   narrativaT[3] = requestImage("tela descanso/TD004.png");
   
-  headerNarrativa[0] = requestImage("narrativa/B_João/B000_header.png");
+  headerNarrativa[0] = requestImage("narrativa/F_Samira/F000_header.png");
   headerNarrativa[1] = requestImage("narrativa/C_Julia/C000_header.png");
-  headerNarrativa[2] = requestImage("narrativa/D_Camila/D000_header.png");
-  headerNarrativa[3] = requestImage("narrativa/E_Bernardo/E000_header.png");
-  headerNarrativa[4] = requestImage("narrativa/F_Samira/F000_header.png");
+  headerNarrativa[2] = requestImage("narrativa/B_João/B000_header.png");
+  headerNarrativa[3] = requestImage("narrativa/D_Camila/D000_header.png");
+  headerNarrativa[4] = requestImage("narrativa/E_Bernardo/E000_header.png");
+  
 
   //img = requestImage("narrativa/B_João/G002_maoEsquerda.png");
   //grade? narrativa/G_geral/G003_grade.png

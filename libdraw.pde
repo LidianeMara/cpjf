@@ -43,8 +43,8 @@ void drawBackgroundB() {
 
 void printImage(PImage photo, float X, float Y, float W, float H)
 {
-  println("X" + X + " Y: " + Y);
-  println("W" + W + " H: " + H);
+  //println("X" + X + " Y: " + Y);
+  //println("W" + W + " H: " + H);
   if (photo.width > 0)
   {
     image(photo,X,Y,W,H);
@@ -129,44 +129,46 @@ void drawIconsTutorialVoltar(){
 // TODO remover drawSeta2 backup da barra antiga
 void drawSeta(){
   //ajuste antes de ativação
-  int miniOffset=15;
+  
   color blue = color(15,76,129); 
   color cream = color (226,220,208);
   //imagem limpadora da barra
   if (iMenu==1){
-    printImage(rodapeMenu, 0, height-offset*4, rodapeMenu.width, rodapeMenu.height);
+    printImage(rodapeMenu, 0, height-rodapeMenu.height, rodapeMenu.width, rodapeMenu.height);
   }
   else if (iMenu >= 2){
-    printImage(rodapeNarrativa, 0, height-offset*4, rodapeNarrativa.width, rodapeNarrativa.height);
+    printImage(rodapeNarrativa, 0, height-rodapeNarrativa.height, rodapeNarrativa.width, rodapeNarrativa.height);
   }
     
-
   if (debug){
     fill(255,0,0);
     stroke(cream);          
     rectMode(CORNER);
     rect(offsetMouse, height-miniOffset, 2, miniOffset );
+    rect(offsetMouse+miniOffset, height-miniOffset, 2, miniOffset );
     rect(width/2-1, height-miniOffset, 2, miniOffset );
     rect(width-offsetMouse, height-miniOffset, 2, miniOffset );
+    rect(width-offsetMouse-miniOffset, height-miniOffset, 2, miniOffset );
   }
 
-  //barra e seta esquerdas        
+  //barra esquerda        
   if ( mouseX >= offsetMouse && mouseX < width/2){
     fill(blue);
     stroke(cream);          
     rectMode(CORNER); 
-    rect(mouseX, height-offset-6, dist(mouseX,0,width/2,0),20);
+    rect(mouseX, height-offset*3.5, dist(mouseX,0,width/2,0),45);
   }
 
-  //ativação barra e seta esquerdas
-  else if (mouseX < offsetMouse+miniOffset ){
-    printImage(iconProgEsq, offsetMouse-miniOffset*2, height-offset-10, 30, 30);
+  //ativação  seta esquerdas
+  if (mouseX < offsetMouse+miniOffset ){
+    printImage(iconProgEsq, offsetMouse-miniOffset, height-offset*4.4, iconProgEsq.width, iconProgEsq.height);
+    println("ativa seta esquerda");
   }
   
   // centro do footer - imagem do meio
-  if (iMenu == 2 && iNarrativaB == 0 || iMenu == 3 && iNarrativaC == 0 ||
-      iMenu == 4 && iNarrativaD == 0 || iMenu == 5 && iNarrativaE == 0 ||
-      iMenu == 6 && iNarrativaF == 0 || iMenu == 1  ){
+  if (iMenu == 2 && iNarrativaF == 0 || iMenu == 3 && iNarrativaC == 0 ||
+      iMenu == 4 && iNarrativaE == 0 || iMenu == 5 && iNarrativaD == 0 ||
+      iMenu == 6 && iNarrativaB == 0   ){
 
     //printImage(iconMenu, width/2-iconMenu.width/2, height-offset*3.5, iconMenu.width, iconMenu.height);
 
@@ -175,16 +177,23 @@ void drawSeta(){
     String string = "";
     // imagem do meio
     //printImage(iconMenu, width/2-iconMenu.width/2, height-offset*3.5, iconMenu.width, iconMenu.height);
-    fill(cream);
-    p = createFont("fonts/IBMPlexMono-Medium.ttf", 30);
-    textFont(p);
-    if (iMenu == 2)       { string = iNarrativaF + "/" + narrativaF.length;  }
+    
+    if (iMenu == 1)       { 
+      int iM=iNarrativaM+1;
+      int iL=narrativaM.length-1;
+      string = iM + "/" + iL;  
+    }
+    else if (iMenu == 2)       { string = iNarrativaF + "/" + narrativaF.length;  }
     else if (iMenu == 3)  { string = iNarrativaC + "/" + narrativaC.length; }
     else if (iMenu == 4)  { string = iNarrativaE + "/" + narrativaE.length; }
     else if (iMenu == 5)  { string = iNarrativaD + "/" + narrativaD.length; }
     else if (iMenu == 6)  { string = iNarrativaB + "/" + narrativaB.length; }
+    
+    fill(cream);
+    p = createFont("fonts/IBMPlexMono-Medium.ttf", 50);
+    textFont(p);
     textAlign(CENTER);
-    text(string, width/2, height-10);
+    text(string, offset, height-offset*2);
   }
 
   //barra e setas da direita
@@ -193,11 +202,11 @@ void drawSeta(){
     fill(blue);
     stroke(cream);
     rectMode(CORNER);
-    rect(width/2, height-offset-6, dist(mouseX,0,width/2,0),20);
+    rect(width/2, height-offset*3.5, dist(mouseX,0,width/2,0),45);
   }
   //ativa seta na direita 
-  else if (mouseX > width-offsetMouse-miniOffset ){
-    printImage(iconProgDir, width-offsetMouse, height-offset-10, 30, 30);
+   if (mouseX > width-offsetMouse-miniOffset ){
+    printImage(iconProgDir, width+offsetMouse-miniOffset, height-offset*4.5, iconProgEsq.width, iconProgEsq.height);
   }
 }
 

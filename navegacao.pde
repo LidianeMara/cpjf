@@ -50,7 +50,7 @@ void cena(int param, boolean refresh){
          //drawSeta();
        }
        tint(255, transparency);
-       printImage(narrativaF[iNarrativaB],width/100,height/100,width,height);
+       printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
 
     }
     else{
@@ -112,11 +112,11 @@ void cena(int param, boolean refresh){
 
     }
     else{
-      if (iNarrativaB != 0){
+      if (iNarrativaE != 0){
         background(bgcolor);
          drawBackgroundB();
        }
-      //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
+      //printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);      
     }
    
   }
@@ -145,7 +145,7 @@ iNarrativaD = iNarrativaD + param;
         background(bgcolor);
          drawBackgroundB();
        }
-      //printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);      
+      //printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);      
     }    
     
   }

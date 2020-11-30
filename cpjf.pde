@@ -5,7 +5,8 @@ Robot robot;
 
 /* CONFIG */ 
 int offset = 50;
-int offsetMouse = 300;
+int offsetMouse = 400;
+int miniOffset=30;
 
 int countdown = 120; // segundos
 int seconds, startTime; //<>// //<>//
@@ -83,12 +84,12 @@ void setup() {
   noCursor();
   
   
-  /* TODO remover desabilitado ultima revisao
-  iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
+  //TODO remover desabilitado ultima revisao
+  /*iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
   iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
   iconMaoD = loadImage("menu/A006_maoDireita_off.png");
   iconMaoDOn = loadImage("menu/A006_maoDireita_on.png");
-  */ 
+   */
   //Tutorial
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
@@ -199,7 +200,7 @@ void draw () {
       
       if (fade){
         if (transparency > 0 ){
-           transparency -= 2.5;
+           transparency -= 50;
         }
         else {
           fade = false;
