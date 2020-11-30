@@ -68,19 +68,19 @@ void getMouse(){
     // ACIONA ESQUERDA / direita
     if (mouseX < offsetMouse )  {
       if (iNarrativaB>0 || iNarrativaC>0 || iNarrativaD>0 || iNarrativaE>0 || iNarrativaF>0){
+
         fade=false;
+        cena(-1,true);
         delay(500);
         robot.mouseMove(width/2, height);
-        cena(-1,true);
-        robot.mouseMove(width/2, height);
       }
-      
     }
      else if (mouseX > width-offsetMouse){
       fade=false;
+      cena (1,true);
       delay(500);
       robot.mouseMove(width/2, height);
-      cena (1,true);
+      
       robot.mouseMove(width/2, height);
 
     }      

@@ -152,17 +152,20 @@ void drawSeta(){
   }
 
   //barra esquerda        
-  if ( mouseX >= offsetMouse && mouseX < width/2){
+  if ( mouseX >= offsetMouse-15 && mouseX < width/2){
     fill(blue);
     stroke(cream);          
     rectMode(CORNER); 
-    rect(mouseX, height-offset*3.5, dist(mouseX,0,width/2,0),45);
+    rect(mouseX, height-offset*3.4, dist(mouseX,0,width/2,0),45);
   }
 
-  //ativação  seta esquerdas
+  //ativação  seta esquerda
   if (mouseX < offsetMouse+miniOffset ){
-    printImage(iconProgEsq, offsetMouse-miniOffset, height-offset*4.4, iconProgEsq.width, iconProgEsq.height);
-    println("ativa seta esquerda");
+    fill(blue);
+    stroke(cream);          
+    rectMode(CORNER); 
+    rect(offsetMouse-15, height-offset*3.4, width/2-offsetMouse+15,45);
+    printImage(iconProgEsq, offsetMouse-miniOffset-15, height-offset*4.3, iconProgEsq.width, iconProgEsq.height);
   }
   
   // centro do footer - imagem do meio
@@ -193,7 +196,7 @@ void drawSeta(){
     p = createFont("fonts/IBMPlexMono-Medium.ttf", 50);
     textFont(p);
     textAlign(CENTER);
-    text(string, offset, height-offset*2);
+    text(string, offset*2.5, height-offset*2);
   }
 
   //barra e setas da direita
@@ -202,11 +205,16 @@ void drawSeta(){
     fill(blue);
     stroke(cream);
     rectMode(CORNER);
-    rect(width/2, height-offset*3.5, dist(mouseX,0,width/2,0),45);
+    rect(width/2, height-offset*3.4, dist(mouseX,0,width/2,0),45);
   }
+  
   //ativa seta na direita 
    if (mouseX > width-offsetMouse-miniOffset ){
-    printImage(iconProgDir, width+offsetMouse-miniOffset, height-offset*4.5, iconProgEsq.width, iconProgEsq.height);
+     fill(blue);
+    stroke(cream);
+    rectMode(CORNER);
+    rect(width/2, height-offset*3.4, width/2-offsetMouse+miniOffset,45);
+    printImage(iconProgDir, width-offsetMouse-miniOffset, height-offset*4.3, iconProgDir.width, iconProgDir.height);
   }
 }
 
