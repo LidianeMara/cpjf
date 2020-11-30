@@ -47,7 +47,7 @@ void cena(int param, boolean refresh){
        tint(255, 255);
        if (iNarrativaF != 0){    
          drawBackgroundB();
-         //drawSeta();
+         drawSeta();
        }
        tint(255, transparency);
        printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
