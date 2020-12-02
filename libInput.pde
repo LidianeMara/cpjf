@@ -97,18 +97,26 @@ void getMouse(){
       //PRIMEIRA TELA
       if (iNarrativaT ==0) {
         cena(1);
+      robot.mouseMove(width/2, mouseY);
+      delay(500);
+      
+      robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
       else if (iNarrativaT==3){
         iMenu=1;
         cena(1);
+      robot.mouseMove(width/2, mouseY);
+      delay(500);
+      
+      robot.mouseMove(width/2, mouseY);
       }
     }
     //Clicks no menu principal
     else if (iMenu ==1){
       iMenu=iNarrativaM+2;
       cena (0);
-      delay(300);
+      delay(1000);
       robot.mouseMove(width/2, mouseY);
 
     }
@@ -117,7 +125,7 @@ void getMouse(){
       //Força o retorno ao menu principal (escolha das narrativas)
       iMenu=1;
       cena(0);
-      delay(300);
+      delay(1000);
       robot.mouseMove(width/2, mouseY);
 
     }

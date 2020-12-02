@@ -182,7 +182,7 @@ void drawSeta(){
     }
     
     fill(112,112,112);
-    p = createFont("fonts/inter/Inter-VariableFont_slnt,wght.ttf", 80);
+
     textFont(p);
     textAlign(CENTER);
     text(string, offset*2.5, height-offset*2.5);

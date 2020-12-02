@@ -15,7 +15,7 @@ boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>// //<>//
 
 //TODO desligar na instalação
-boolean debug = true; //desliga mouse quando ligado
+boolean debug = false; //desliga mouse quando ligado
 
 int iMenu = 0;
 int iNarrativaT = 0 ; // indice tutorial
@@ -31,16 +31,17 @@ String bgpath=""; //TODO conferir uso
 /*  FONTES  */
 PFont f, p, p1, p2, p3;
 
+
 /*  IMAGENS    */
-PImage[] narrativaT = new PImage[4]; // Menu tutorial
-PImage[] narrativaM = new PImage[6]; //Menu Principal personagens
+PImage[] narrativaT = new PImage[4];  // Menu tutorial
+PImage[] narrativaM = new PImage[6];  // Menu Principal personagens
 PImage[] narrativaB = new PImage[23]; // B Samira
 PImage[] narrativaC = new PImage[25]; // C Julia
-PImage[] narrativaD = new PImage[41]; //D Bernardo
-PImage[] narrativaE = new PImage[26]; //E Camila 
+PImage[] narrativaD = new PImage[41]; // D Bernardo
+PImage[] narrativaE = new PImage[26]; // E Camila 
 PImage[] narrativaF = new PImage[47]; // F João
 
-PImage[]headerNarrativa = new PImage [5];
+PImage[] headerNarrativa = new PImage [5];
 
 
 //PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
@@ -80,20 +81,14 @@ void setup() {
   //não funciona em fullscreen (present)
   noCursor();
   
-  
-  //TODO remover desabilitado ultima revisao
-  /*iconMaoE = loadImage("menu/A006_maoEsquerda_off.png");
-  iconMaoEOn = loadImage("menu/A006_maoEsquerda_on.png");
-  iconMaoD = loadImage("menu/A006_maoDireita_off.png");
-  iconMaoDOn = loadImage("menu/A006_maoDireita_on.png");
-   */
-  //Tutorial
+    //Tutorial
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
   iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
   
   iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
   iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
-  
+
+  p = createFont("fonts/inter/Inter-VariableFont_slnt,wght.ttf", 80);
   
   //TODO imagem apagada
   //iconMenu = loadImage("geral/G001_btnMenu.png");
