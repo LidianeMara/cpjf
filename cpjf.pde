@@ -73,13 +73,14 @@ color quasebranco = color (252,247,239);
 void setup() {
   //TODO fullscreen
   //fullScreen();
-  size(displayHeight, displayWidth,P2D);
+  //size(displayHeight, displayWidth,P2D);
+  size(displayHeight, displayWidth);
   //size(displayWidth, displayHeight);
   
 
   //Desliga icone mouse
   //não funciona em fullscreen (present)
-  noCursor();
+  //noCursor();
   
     //Tutorial
   iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");

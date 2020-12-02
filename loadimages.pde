@@ -13,12 +13,12 @@ void loadimages () {
   
 
   //Imagens do menu tutorial
-
   narrativaT[0] = loadImage("tela descanso/TD001.png");
   narrativaT[1] = loadImage("tela descanso/TD002.png");
   narrativaT[2] = requestImage("tela descanso/TD003.png");
   narrativaT[3] = requestImage("tela descanso/TD004.png");
   
+  // Cabeçalho das narrativas
   headerNarrativa[0] = requestImage("narrativa/B_Samira/B000_header.png");
   headerNarrativa[1] = requestImage("narrativa/C_Julia/C000_header.png");
   headerNarrativa[2] = requestImage("narrativa/D_Bernardo/D000_header.png");

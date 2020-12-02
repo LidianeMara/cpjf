@@ -21,7 +21,7 @@ void cena(int param){
     }
     //background(bgcolor);
     printImage(narrativaM[0],width/500,height/50,width,height);
-    printImage(narrativaM[iNarrativaM+1],width/500,height/50,width,height);
+    printImage(narrativaM[iNarrativaM],width/500,height/50,width,height);
   }
 
   //iMenu 2 - NARRATIVA B  Samira
@@ -37,7 +37,7 @@ void cena(int param){
       drawBackgroundB();
       //drawSeta();
     }
-    printImage(narrativaB[iNarrativaB],width/100,height/100,width,height);
+    printImage(narrativaB[iNarrativaB],width/500,height/500,width,height);
 
   }
   //iMenu 3 NARRATIVA C Julia
@@ -55,7 +55,7 @@ void cena(int param){
          //drawSeta();
       }
      
-      printImage(narrativaC[iNarrativaC],width/100,height/100,width,height);    
+      printImage(narrativaC[iNarrativaC],width/500,height/500,width,height);    
   }
   
   // iMenu 4 - NARRATIVA D -  Bernardo
@@ -71,7 +71,7 @@ void cena(int param){
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaD[iNarrativaD],width/100,height/100,width,height);
+       printImage(narrativaD[iNarrativaD],width/500,height/500,width,height);
   }
   
   //iMenu 5 NARRATIVA E - Camila
@@ -88,7 +88,7 @@ void cena(int param){
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaE[iNarrativaE],width/100,height/100,width,height);  
+       printImage(narrativaE[iNarrativaE],width/500,height/500,width,height);  
   }
   //iMenu 6 - NARRATIVA F João
   else if (iMenu == 6){ 
@@ -104,7 +104,7 @@ void cena(int param){
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaF[iNarrativaF],width/100,height/100,width,height);
+       printImage(narrativaF[iNarrativaF],width/500,height/500,width,height);
     }
   } 
 
