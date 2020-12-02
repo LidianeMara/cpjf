@@ -5,19 +5,17 @@ Robot robot;
 
 /* CONFIG */ 
 int offset = 50;
-int offsetMouse = 400;
-int miniOffset=30;
+int offsetMouse = 370;
+int miniOffset=15;
 
-int countdown = 120; // segundos
-int seconds, startTime; //<>// //<>//
+int countdown = 90; // segundos
+int seconds, startTime; //<>// //<>// //<>//
 
 boolean iddle = true; // sem interação = true
-boolean fade = false;  // transição //<>//
-
+boolean fade = false;  // transição //<>// //<>//
 
 //TODO desligar na instalação
 boolean debug = true; //desliga mouse quando ligado
-
 
 int iMenu = 0;
 int iNarrativaT = 0 ; // indice tutorial
@@ -34,13 +32,13 @@ String bgpath=""; //TODO conferir uso
 PFont f, p, p1, p2, p3;
 
 /*  IMAGENS    */
-PImage[] narrativaT = new PImage[4];
-PImage[] narrativaM = new PImage[6];
-PImage[] narrativaB = new PImage[61];
-PImage[] narrativaC = new PImage[36];
-PImage[] narrativaD = new PImage[33];
-PImage[] narrativaE = new PImage[52];
-PImage[] narrativaF = new PImage[35];
+PImage[] narrativaT = new PImage[4]; // Menu tutorial
+PImage[] narrativaM = new PImage[6]; //Menu Principal personagens
+PImage[] narrativaB = new PImage[23]; // B Samira
+PImage[] narrativaC = new PImage[25]; // C Julia
+PImage[] narrativaD = new PImage[41]; //D Bernardo
+PImage[] narrativaE = new PImage[26]; //E Camila 
+PImage[] narrativaF = new PImage[47]; // F João
 
 PImage[]headerNarrativa = new PImage [5];
 
@@ -64,7 +62,6 @@ boolean tutorialSobre = false;
 
 int offx = 50, offy = 900; //MAO ESQUERDA
 int offx1 = width*10, offy1 = 900; // MAO DIREITA
-float transparency = 255;
 
 color bgcolor = color(253,245,232);
 color bgcolorT = color (255,250,242); 
@@ -121,13 +118,13 @@ void setup() {
   catch (Throwable e) {}
   //reset mouse
   
-  cena(0,true);
+  cena(0);
   
   robot.mouseMove(width/2, height/2);
   
   // inicializa relogio  
   startTime = millis()/1000 + countdown;
-    cena(0,true);
+    cena(0);
 
  }
 
@@ -178,7 +175,7 @@ void draw () {
      else if (iMenu == 1){
        if ( seconds <= 0) {
          zeracenas(); // reinicializa todos indices
-         cena(0,true);
+         cena(0);
          delay(1000);
        }
        drawSeta();
@@ -188,7 +185,7 @@ void draw () {
          if ( seconds <=0) {
            zeracenas(); // reinicializa todos indices
            delay(1000);
-           cena(0,true);
+           cena(0);
        }
         
        drawSeta();
@@ -196,36 +193,8 @@ void draw () {
      }
    }
    else{
-     //println("not iddle");
-      
-      if (fade){
-        if (transparency > 0 ){
-           transparency -= 50;
-        }
-        else {
-          fade = false;
-        }
-      }
-      else {   
-        if (transparency < 255){
-          transparency += 10; // sem p2d conferir 
-          cena(0,false);
-        //  return;
-        }
-        else{
-          //fade=true;
           iddle=true;
           startTime = millis()/1000 + countdown;
         }
-        
-        
-    }
-  }
-    //zera timer
-    
-
-   
-    //
-    
-// !   }  
+ 
   }

@@ -31,14 +31,14 @@ void getMouse(){
   if (iMenu == 0){
     if (iNarrativaT == 1 ){
       if (mouseX > width - offset){
-          cena(1,true);
+          cena(1);
           robot.mouseMove(width/2, mouseY);
           delay(300);
        }
     }
     else if (iNarrativaT == 2){
       if (mouseX < offset){
-          cena(1,true);
+          cena(1);
           robot.mouseMove(width/2, mouseY);
            delay(300);
         }
@@ -49,16 +49,16 @@ void getMouse(){
     // TROCA CENA - ACIONA ESQUERDA / direita
     if (mouseX < offsetMouse)  {
       fade=true;
-      robot.mouseMove(width/2, height);
+      robot.mouseMove(width/2, mouseY);
       delay(500);
-      cena(-1,true);
+      cena(-1);
 
     }
      else if (mouseX > width-offsetMouse){
        fade=true;
-       robot.mouseMove(width/2, height);
+       robot.mouseMove(width/2, mouseY);
        delay(500);
-       cena (1,true);
+       cena (1);
   
     }
   }
@@ -68,20 +68,18 @@ void getMouse(){
     // ACIONA ESQUERDA / direita
     if (mouseX < offsetMouse )  {
       if (iNarrativaB>0 || iNarrativaC>0 || iNarrativaD>0 || iNarrativaE>0 || iNarrativaF>0){
-
-        fade=false;
-        cena(-1,true);
+        cena(-1);
+        robot.mouseMove(width/2, mouseY);
         delay(500);
-        robot.mouseMove(width/2, height);
+        robot.mouseMove(width/2, mouseY);
       }
     }
      else if (mouseX > width-offsetMouse){
-      fade=false;
-      cena (1,true);
+      cena (1);
+      robot.mouseMove(width/2, mouseY);
       delay(500);
-      robot.mouseMove(width/2, height);
       
-      robot.mouseMove(width/2, height);
+      robot.mouseMove(width/2, mouseY);
 
     }      
     
@@ -95,31 +93,33 @@ void getMouse(){
     //CLICKS DO TUTORIAL
  
     if (iMenu == 0 ){
-      cena(0,true);
+      cena(0);
       //PRIMEIRA TELA
       if (iNarrativaT ==0) {
-        cena(1,true);
+        cena(1);
       }
       //ULTIMA TELA
       else if (iNarrativaT==3){
         iMenu=1;
-        cena(1,true);
+        cena(1);
       }
     }
     //Clicks no menu principal
     else if (iMenu ==1){
       iMenu=iNarrativaM+2;
-      cena (0,true);
-      robot.mouseMove(width/2, mouseY);
+      cena (0);
       delay(300);
+      robot.mouseMove(width/2, mouseY);
+
     }
     //Narrativas B-F
     else if (iMenu > 1){
       //Força o retorno ao menu principal (escolha das narrativas)
       iMenu=1;
-      cena(0,true);
-      robot.mouseMove(width/2, mouseY);
+      cena(0);
       delay(300);
+      robot.mouseMove(width/2, mouseY);
+
     }
   }
   
@@ -131,34 +131,34 @@ void keyPressed() {
     if (keyCode == 97){
       iNarrativaT=0;
       iMenu=0;
-      cena(0,true);
+      cena(0);
     }
    else if (keyCode == 98){
       iNarrativaM=0;
       iMenu=1;
-      cena(0,true);
+      cena(0);
     }
     else if (keyCode == LEFT) {
-      cena(-1,true);
+      cena(-1);
       delay(300);
     }
     else if (keyCode == RIGHT ){
-      cena (1,true);
+      cena (1);
       delay(300);
     }
     else if (keyCode == DOWN || keyCode == UP ){
       if ( iMenu == 0) {
         iMenu=1;
-        cena (0,true);
+        cena (0);
       }
       if ( iMenu == 1) {
         iMenu=iNarrativaM+2;
-        cena (0,true);
+        cena (0);
       }
       else
       {
         iMenu=1;
-        cena(0,true);
+        cena(0);
       }
      }  
 }
