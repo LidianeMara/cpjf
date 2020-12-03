@@ -72,37 +72,37 @@ void drawIconsMenu(){
 }
 */
 
-void drawIconsTutorialA(color cor){
-  if (scaleTA >= 30 ){
-    scaleTA-=0.25;
-  }
-  else{
-    scaleTA = 60;
-    //up = false;
-  } 
+// void drawIconsTutorialA(color cor){
+//   if (scaleTA >= 30 ){
+//     scaleTA-=0.25;
+//   }
+//   else{
+//     scaleTA = 60;
+//     //up = false;
+//   } 
   
-  noStroke();
-  fill(cor);
-  rect(width/2-offset*3, offy-40, offset*7 ,330 );
-  image(iconMaoET, 440, offy, 1*scaleTA, 2*scaleTA);
-  image(iconMaoDT, 620, offy, 1*scaleTA, 2*scaleTA);
-}
+//   noStroke();
+//   fill(cor);
+//   rect(width/2-offset*3, offy-40, offset*7 ,330 );
+//   //image(iconMaoET, 440, offy, 1*scaleTA, 2*scaleTA);
+//   //image(iconMaoDT, 620, offy, 1*scaleTA, 2*scaleTA);
+// }
 
-void drawIconsTutorialAvancar(){
-  //    println(scaleE);
-  noStroke();
-  fill(bgcolorT);
-  rect(width/2-offset*5, offy-40, offset*10 ,445 );
-  image(iconAvancar, 440, offy, 300, 250);
-}
+// void drawIconsTutorialAvancar(){
+//   //    println(scaleE);
+//   noStroke();
+//   fill(bgcolorT);
+//   rect(width/2-offset*5, offy-40, offset*10 ,445 );
+//   image(iconAvancar, 440, offy, 300, 250);
+// }
 
-void drawIconsTutorialVoltar(){ 
-  //    println(scaleE);
-  noStroke();
-  fill(bgcolorT);
-  rect(width/2-offset*5, offy-40, offset*10 ,445 );
-  image(iconVoltar, 440, offy, 300, 250);
-}
+// void drawIconsTutorialVoltar(){ 
+//   //    println(scaleE);
+//   noStroke();
+//   fill(bgcolorT);
+//   rect(width/2-offset*5, offy-40, offset*10 ,445 );
+//   image(iconVoltar, 440, offy, 300, 250);
+// }
 
 // Novas setas de navegação dos menus
 void drawSeta(){

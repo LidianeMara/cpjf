@@ -9,10 +9,10 @@ int offsetMouse = 370;
 int miniOffset=15;
 
 int countdown = 90; // segundos
-int seconds, startTime; //<>// //<>// //<>//
+int seconds, startTime; //<>// //<>// //<>// //<>//
 
 boolean iddle = true; // sem interação = true
-boolean fade = false;  // transição //<>// //<>//
+boolean fade = false;  // transição //<>// //<>// //<>//
 
 //TODO desligar na instalação
 boolean debug = false; //desliga mouse quando ligado
@@ -33,7 +33,7 @@ PFont f, p, p1, p2, p3;
 
 
 /*  IMAGENS    */
-PImage[] narrativaT = new PImage[4];  // Menu tutorial
+PImage[] narrativaT = new PImage[8];  // Menu tutorial
 PImage[] narrativaM = new PImage[6];  // Menu Principal personagens
 PImage[] narrativaB = new PImage[23]; // B Samira
 PImage[] narrativaC = new PImage[25]; // C Julia
@@ -45,7 +45,6 @@ PImage[] headerNarrativa = new PImage [5];
 
 
 //PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
-PImage iconMaoET, iconMaoDT;
 PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
@@ -82,12 +81,8 @@ void setup() {
   //não funciona em fullscreen (present)
   //noCursor();
   
-    //Tutorial
-  iconMaoET = loadImage("tela descanso/iconemaoesquerda.png");
-  iconMaoDT = loadImage("tela descanso/iconemaodireita.png");
-  
-  iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
-  iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
+  //iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
+  //iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
 
   p = createFont("fonts/inter/Inter-VariableFont_slnt,wght.ttf", 80);
   
@@ -96,8 +91,8 @@ void setup() {
   //iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
   
   //imagens tutorial, primeira tela
-  overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
-  overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
+  //overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
+  //overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
   
  
   iconProgEsq = loadImage("geral/SetaESQ.png");
@@ -138,34 +133,34 @@ void draw () {
    if (iddle){
      //print ("iddle" + seconds);   
      if ( iMenu == 0){
-        if ( iNarrativaT == 0 ){
-          drawIconsTutorialA ( verde );
+        if ( iNarrativaT >= 0 ){
+          // drawIconsTutorialA ( verde );
           if (!tutorialSobre && seconds < countdown - 5){
              tint(255, 255);
-             printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
+             //printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
              startTime = millis()/1000 + countdown;
              tutorialSobre=!tutorialSobre;
            
           }
           else if (seconds < countdown - 10){
-            printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
+            //printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
             startTime = millis()/1000 + countdown;
             tutorialSobre=!tutorialSobre;
           }
         }
         //icone tutorial narrativa tela B
-        else if( iNarrativaT == 1)
-        {
-          drawIconsTutorialAvancar();
-        }
-        else if( iNarrativaT == 2)
-        {
-           drawIconsTutorialVoltar();
-        }
-        else if( iNarrativaT == 3)
-        {
-          drawIconsTutorialA( bgcolorT );
-        }
+        // else if( iNarrativaT == 1)
+        // {
+        //   drawIconsTutorialAvancar();
+        // }
+        // else if( iNarrativaT == 2)
+        // {
+        //    drawIconsTutorialVoltar();
+        // }
+        // else if( iNarrativaT == 3)
+        // {
+        //   drawIconsTutorialA( bgcolorT );
+        // }
         getMouse(); 
      }
      else if (iMenu == 1){
