@@ -93,23 +93,20 @@ void getMouse(){
     //CLICKS DO TUTORIAL
  
     if (iMenu == 0 ){
-      cena(0);
       //PRIMEIRA TELA
       if (iNarrativaT ==0) {
         cena(1);
-      robot.mouseMove(width/2, mouseY);
-      delay(500);
-      
-      robot.mouseMove(width/2, mouseY);
+        robot.mouseMove(width/2, mouseY);
+        delay(500);
+        robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==3){
+      else if (iNarrativaT==19){
         iMenu=1;
         cena(1);
-      robot.mouseMove(width/2, mouseY);
-      delay(500);
-      
-      robot.mouseMove(width/2, mouseY);
+        robot.mouseMove(width/2, mouseY);
+        delay(500);
+        robot.mouseMove(width/2, mouseY);
       }
     }
     //Clicks no menu principal

@@ -79,7 +79,7 @@ void setup() {
 
   //Desliga icone mouse
   //não funciona em fullscreen (present)
-  //noCursor();
+  noCursor();
 
   //iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
   //iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
@@ -161,11 +161,14 @@ void draw () {
       // {
       //   drawIconsTutorialA( bgcolorT );
       // }
-      if ( iNarrativaT >= 0 ) {
+      if ( iNarrativaT >= 0 && iNarrativaT < 19 ) {
             delay(3000);
             cena(1);
       }
-      getMouse();
+      else
+      {
+        getMouse();
+      }
     } else if (iMenu == 1) {
       if ( seconds <= 0) {
         zeracenas(); // reinicializa todos indices
