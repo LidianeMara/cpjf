@@ -7,6 +7,12 @@ void cena(int param){
   //MENU 0 - tutorial
   if (iMenu == 0) {
     iNarrativaT = iNarrativaT + param;
+    if (iNarrativaT >= narrativaT.length) {
+      iNarrativaT = narrativaT.length-1;
+    }
+    else if (iNarrativaT < 0) {
+      iNarrativaT = 0;
+    }
     printImage(narrativaT[iNarrativaT],0,0,width,height);
   }
 

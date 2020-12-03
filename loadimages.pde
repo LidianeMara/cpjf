@@ -15,12 +15,27 @@ void loadimages () {
   //Imagens do menu tutorial
   narrativaT[0] = requestImage("tela descanso/TD001.png");
   narrativaT[1] = requestImage("tela descanso/TD002-1.png");
-  narrativaT[2] = requestImage("tela descanso/TD003-1.png");
-  narrativaT[3] = requestImage("tela descanso/TD003-2.png");
-  narrativaT[4] = requestImage("tela descanso/TD004-1.png");
-  narrativaT[5] = requestImage("tela descanso/TD004-2.png");
-  narrativaT[6] = requestImage("tela descanso/TD004-3.png");
-  narrativaT[7] = requestImage("tela descanso/TD005.png");
+  narrativaT[2] = requestImage("tela descanso/TD002-2.png");
+  narrativaT[3] = requestImage("tela descanso/TD003-1.png");
+  narrativaT[4] = requestImage("tela descanso/TD003-2.png");
+  narrativaT[5] = requestImage("tela descanso/TD004-1.png");
+  narrativaT[6] = requestImage("tela descanso/TD004-2.png");
+  narrativaT[7] = requestImage("tela descanso/TD004-3.png");
+  narrativaT[8] = requestImage("tela descanso/TD005.png");
+  narrativaT[9] = requestImage("tela descanso/TD006-1.png");
+  narrativaT[10] = requestImage("tela descanso/TD006-2.png");
+  narrativaT[11] = requestImage("tela descanso/TD006-3.png");
+  narrativaT[12] = requestImage("tela descanso/TD007-1.png");
+  narrativaT[13] = requestImage("tela descanso/TD007-2.png");
+  narrativaT[14] = requestImage("tela descanso/TD007-3.png");
+  narrativaT[15] = requestImage("tela descanso/TD008-1.png");
+  narrativaT[16] = requestImage("tela descanso/TD008-2.png");
+  narrativaT[17] = requestImage("tela descanso/TD009-1.png");
+  narrativaT[18] = requestImage("tela descanso/TD009-2.png");
+  narrativaT[19] = requestImage("tela descanso/TD010.png");
+  
+  
+  
   
   // Cabeçalho das narrativas
   headerNarrativa[0] = requestImage("narrativa/B_Samira/B000_header.png");

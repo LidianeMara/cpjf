@@ -29,7 +29,7 @@ void getMouse(){
 
   //Tutorial 
   if (iMenu == 0){
-    if (iNarrativaT == 1 ){
+    if (iNarrativaT == 0 ){
       if (mouseX > width - offset){
           cena(1);
           robot.mouseMove(width/2, mouseY);
