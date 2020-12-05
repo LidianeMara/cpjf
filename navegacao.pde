@@ -4,7 +4,7 @@ void cena(int param){
 
   debug();
   int delayPadrao=250; //TODO 
-  int delaySegundo= 100; //TODO
+  int delaySegundo= 1000; //TODO
   //MENU 0 - Tela descanso
   if (iMenu == 0) {
      println("iDescanso: " + iDescanso);
@@ -137,13 +137,13 @@ void cena(int param){
     }
     //tela 6a 1a imagem 
     else if (iDescanso == 35){
-      iNarrativaT=10;
+      iNarrativaT=9;
       iDescanso++;
     }
     //tela 6a delay 10 * segundos
     else if (iDescanso == 36){
       delay(10 * delaySegundo);
-      iNarrativaT=11;
+      iNarrativaT=10;
       iDescanso++;
     }
     
@@ -163,13 +163,13 @@ void cena(int param){
       }
 
       // muda imagem em 1 segundo TODO
-      if (!descansoInverso && seconds < countdown - 1){
+      if (!descansoInverso && seconds < countdown - 2){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=10;
+        iNarrativaT=11;
       }
-      else if (seconds < countdown - 2){
-         iNarrativaT=11;
+      else if (seconds < countdown - 4){
+         iNarrativaT=10;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }
@@ -184,7 +184,7 @@ void cena(int param){
         descansoAcao=true;
       }
       else if (seconds2 < countdown-15){
-       iNarrativaT=14; // carrega proxima cena tela 8
+       iNarrativaT=15;// carrega proxima cena tela 8
        iDescanso++;
        descansoAcao=false;
       }
@@ -235,36 +235,34 @@ void cena(int param){
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=16;
+        iNarrativaT=17;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=15;
+         iNarrativaT=16;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }  
+      getMouse();
       drawSeta();
     }
-    //tela 8 b - mao esquerda - voltar
+    //tela 9 - mao esquerda - voltar
     else if (iDescanso == 41){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=18;
+        iNarrativaT=19;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=17;
+         iNarrativaT=18;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }
-      /* TODO else {
-        iNarrativaT=
-      }*/
-      
+      getMouse();
       drawSeta();
     }
     
-    //tela 9 -- passagem com click
+    //tela 10 -- passagem com click
     else if (iDescanso == 42){
         iNarrativaT=19;
         iDescanso++;
@@ -273,9 +271,6 @@ void cena(int param){
     else if (iDescanso > 43){
       getMouse();
     }
-    
-    
-    
     
     //exibe tela de descanso    
     if (iNarrativaT >= narrativaT.length) {

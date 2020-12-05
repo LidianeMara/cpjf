@@ -47,6 +47,8 @@ PImage[] headerNarrativa = new PImage [5];
 
 //PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
+PImage rodapeDescansoA, rodapeDescansoV;
+
 PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
 PImage iconVoltar, iconAvancar;
@@ -101,6 +103,8 @@ void setup() {
   iconProgDir = loadImage("geral/SetaDIR.png");
   rodapeMenu = loadImage("geral/G000_rodapeMenu.png");
   rodapeNarrativa = loadImage("geral/G000_rodapeNarrativa.png");
+  rodapeDescansoA = loadImage("tela descanso/TD_rodapeA.png");
+  rodapeDescansoV = loadImage("tela descanso/TD_rodapeV.png");
 
   //carrega tabelas de imagens das narrativas 
   loadimages();

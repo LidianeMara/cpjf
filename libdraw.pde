@@ -111,12 +111,21 @@ void drawSeta(){
   color blue = color(15,76,129); 
   color cream = color (226,220,208);
   //imagem limpadora da barra
-  if (iMenu==1){
-    printImage(rodapeMenu, 0, height-rodapeMenu.height, rodapeMenu.width, rodapeMenu.height);
+  if (iMenu ==0){
+    if (iDescanso == 40 ) {
+            printImage(rodapeDescansoA, 0, height-rodapeDescansoA.height, rodapeDescansoA.width, rodapeDescansoA.height);
+    }
+    else if (iDescanso == 41 ) {
+            printImage(rodapeDescansoV, 0, height-rodapeDescansoV.height, rodapeDescansoV.width, rodapeDescansoV.height);
+    }
+  }
+  else if (iMenu==1){
+      printImage(rodapeMenu, 0, height-rodapeMenu.height, rodapeMenu.width, rodapeMenu.height);
   }
   else if (iMenu >= 2){
-    printImage(rodapeNarrativa, 0, height-rodapeNarrativa.height, rodapeNarrativa.width, rodapeNarrativa.height);
+      printImage(rodapeNarrativa, 0, height-rodapeNarrativa.height, rodapeNarrativa.width, rodapeNarrativa.height);
   }
+  
     
   if (debug){
     fill(255,0,0);
@@ -181,12 +190,14 @@ void drawSeta(){
       string = iNarrativaF + "/" + total;
     }
     
-    fill(112,112,112);
+    if(iMenu>1){
+          textFont(p);
+          textAlign(CENTER);
+          fill(112,112,112);
+          text(string, offset*2.5, height-offset*2.5);
+    }
+    
 
-    textFont(p);
-    textAlign(CENTER);
-    text(string, offset*2.5, height-offset*2.5);
-  
   //barra e setas da direita
   if (mouseX >= width/2  && mouseX <= width-offsetMouse+miniOffset ){
     //TODO revisar vazio

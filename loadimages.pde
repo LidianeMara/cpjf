@@ -36,7 +36,7 @@ void loadimages () {
   narrativaT[18] = loadImage("tela descanso/TD009-1.png");
   narrativaT[19] = loadImage("tela descanso/TD009-2.png");
   narrativaT[20] = loadImage("tela descanso/TD010.png");
-    
+  
   
   // Cabeçalho das narrativas
   headerNarrativa[0] = requestImage("narrativa/B_Samira/B000_header.png");

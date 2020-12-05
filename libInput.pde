@@ -102,7 +102,7 @@ void getMouse(){
         robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
-      else if (iDescanso>42){
+      else if (iDescanso>43){
         iMenu=1;
         cena(1);
         robot.mouseMove(width/2, mouseY);
