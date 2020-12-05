@@ -13,26 +13,28 @@ void loadimages () {
   
 
   //Imagens do menu tutorial
-  narrativaT[0] = requestImage("tela descanso/TD001.png");
-  narrativaT[1] = requestImage("tela descanso/TD002-1.png");
-  narrativaT[2] = requestImage("tela descanso/TD002-2.png");
-  narrativaT[3] = requestImage("tela descanso/TD003-1.png");
-  narrativaT[4] = requestImage("tela descanso/TD003-2.png");
-  narrativaT[5] = requestImage("tela descanso/TD004-1.png");
-  narrativaT[6] = requestImage("tela descanso/TD004-2.png");
-  narrativaT[7] = requestImage("tela descanso/TD004-3.png");
-  narrativaT[8] = requestImage("tela descanso/TD005.png");
-  narrativaT[9] = requestImage("tela descanso/TD006-1.png");
-  narrativaT[10] = requestImage("tela descanso/TD006-2.png");
-  narrativaT[11] = requestImage("tela descanso/TD006-3.png");
-  narrativaT[12] = requestImage("tela descanso/TD007-1.png");
-  narrativaT[13] = requestImage("tela descanso/TD007-2.png");
-  narrativaT[14] = requestImage("tela descanso/TD007-3.png");
-  narrativaT[15] = requestImage("tela descanso/TD008-1.png");
-  narrativaT[16] = requestImage("tela descanso/TD008-2.png");
-  narrativaT[17] = requestImage("tela descanso/TD009-1.png");
-  narrativaT[18] = requestImage("tela descanso/TD009-2.png");
-  narrativaT[19] = requestImage("tela descanso/TD010.png");
+  narrativaT[0] = loadImage("tela descanso/TD001.png");
+  narrativaT[1] = loadImage("tela descanso/TD002-1.png");
+  //TODO 
+  //narrativaT[1] = loadImage("tela descanso/TD002-1_telaPequena.png");
+  narrativaT[2] = loadImage("tela descanso/TD002-2.png");
+  narrativaT[3] = loadImage("tela descanso/TD003-1.png");
+  narrativaT[4] = loadImage("tela descanso/TD003-2.png");
+  narrativaT[5] = loadImage("tela descanso/TD004-1.png");
+  narrativaT[6] = loadImage("tela descanso/TD004-2.png");
+  narrativaT[7] = loadImage("tela descanso/TD004-3.png");
+  narrativaT[8] = loadImage("tela descanso/TD005.png");
+  narrativaT[9] = loadImage("tela descanso/TD006-1.png");
+  narrativaT[10] = loadImage("tela descanso/TD006-2.png");
+  narrativaT[11] = loadImage("tela descanso/TD006-3.png");
+  narrativaT[12] = loadImage("tela descanso/TD007-1.png");
+  narrativaT[13] = loadImage("tela descanso/TD007-2.png");
+  narrativaT[14] = loadImage("tela descanso/TD007-3.png");
+  narrativaT[15] = loadImage("tela descanso/TD008-1.png");
+  narrativaT[16] = loadImage("tela descanso/TD008-2.png");
+  narrativaT[17] = loadImage("tela descanso/TD009-1.png");
+  narrativaT[18] = loadImage("tela descanso/TD009-2.png");
+  narrativaT[19] = loadImage("tela descanso/TD010.png");
   
   
   

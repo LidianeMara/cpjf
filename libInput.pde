@@ -29,15 +29,15 @@ void getMouse(){
 
   //Tutorial 
   if (iMenu == 0){
-    if (iNarrativaT == 0 ){
-      if (mouseX > width - offset){
+    if (iDescanso == 39 ){
+      if (mouseX > width-offsetMouse){
           cena(1);
           robot.mouseMove(width/2, mouseY);
           delay(300);
        }
     }
-    else if (iNarrativaT == 2){
-      if (mouseX < offset){
+    else if (iDescanso == 40){
+      if (mouseX < offsetMouse){
           cena(1);
           robot.mouseMove(width/2, mouseY);
            delay(300);
@@ -94,14 +94,15 @@ void getMouse(){
  
     if (iMenu == 0 ){
       //PRIMEIRA TELA
-      if (iNarrativaT ==0) {
+      if (iDescanso ==31) {
+        descansoAcao=true;
         cena(1);
         robot.mouseMove(width/2, mouseY);
         delay(500);
         robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
-      else if (iNarrativaT==19){
+      else if (iDescanso>42){
         iMenu=1;
         cena(1);
         robot.mouseMove(width/2, mouseY);
@@ -111,7 +112,7 @@ void getMouse(){
     }
     //Clicks no menu principal
     else if (iMenu ==1){
-      iMenu=iNarrativaM+2;
+      iMenu=iNarrativaM+1;
       cena (0);
       delay(1000);
       robot.mouseMove(width/2, mouseY);
@@ -124,15 +125,12 @@ void getMouse(){
       cena(0);
       delay(1000);
       robot.mouseMove(width/2, mouseY);
-
     }
-  }
-  
+  }  
 }
 
 
 void keyPressed() {
-  println("Key: " + (int)key);
     if (keyCode == 97){
       iNarrativaT=0;
       iMenu=0;
@@ -151,13 +149,18 @@ void keyPressed() {
       cena (1);
       delay(300);
     }
-    else if (keyCode == DOWN || keyCode == UP ){
+    else if (  keyCode == UP )
+    {
+      iMenu =0;
+      cena(0);
+    }
+    else if (keyCode == DOWN  ){
       if ( iMenu == 0) {
         iMenu=1;
         cena (0);
       }
       if ( iMenu == 1) {
-        iMenu=iNarrativaM+2;
+        iMenu=iNarrativaM+1;
         cena (0);
       }
       else

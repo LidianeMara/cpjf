@@ -9,7 +9,7 @@ int offsetMouse = 370;
 int miniOffset=15;
 
 int countdown = 90; // segundos
-int seconds, startTime; //<>// //<>// //<>// //<>// //<>//
+int seconds, seconds2, startTime, startTime2; //<>// //<>// //<>// //<>// //<>//
 
 boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>// //<>// //<>// //<>//
@@ -18,6 +18,7 @@ boolean fade = false;  // transição //<>// //<>// //<>// //<>//
 boolean debug = false; //desliga mouse quando ligado
 
 int iMenu = 0;
+int iDescanso = 0 ; // indice tutorial
 int iNarrativaT = 0 ; // indice tutorial
 int iNarrativaM = 0 ; // indice cena menu
 int iNarrativaB = 0;// indice cena narrativa B
@@ -58,7 +59,8 @@ float scaleE;
 float scaleD;
 float scaleTA=10;
 boolean up = true;
-boolean tutorialSobre = false;
+boolean descansoInverso = false;
+boolean descansoAcao = false;
 
 int offx = 50, offy = 900; //MAO ESQUERDA
 int offx1 = width*10, offy1 = 900; // MAO DIREITA
@@ -116,6 +118,8 @@ void setup() {
 
   // inicializa relogio  
   startTime = millis()/1000 + countdown;
+  startTime2 = millis()/1000 + countdown;
+  
   cena(0);
 }
 
@@ -133,41 +137,10 @@ void draw () {
   if (iddle) {
     //print ("iddle" + seconds);   
     if ( iMenu == 0) {
-      // if ( iNarrativaT >= 0 ){
-      //   // drawIconsTutorialA ( verde );
-      //   if (!tutorialSobre && seconds < countdown - 5){
-      //      tint(255, 255);
-      //      //printImage(overTutorialAOn, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);           
-      //      startTime = millis()/1000 + countdown;
-      //      tutorialSobre=!tutorialSobre;
-
-      //   }
-      //   else if (seconds < countdown - 10){
-      //     //printImage(overTutorialAOff, offset*2, height-600, overTutorialAOn.width, overTutorialAOn.height);
-      //     startTime = millis()/1000 + countdown;
-      //     tutorialSobre=!tutorialSobre;
-      //   }
-      // }
-      //icone tutorial narrativa tela B
-      // else if( iNarrativaT == 1)
-      // {
-      //   drawIconsTutorialAvancar();
-      // }
-      // else if( iNarrativaT == 2)
-      // {
-      //    drawIconsTutorialVoltar();
-      // }
-      // else if( iNarrativaT == 3)
-      // {
-      //   drawIconsTutorialA( bgcolorT );
-      // }
-      if ( iNarrativaT >= 0 && iNarrativaT < 19 ) {
-            delay(3000);
-            cena(1);
-      }
-      else
+      if (iDescanso >= 0 && iDescanso < 50)
       {
-        getMouse();
+        seconds2 = startTime2 - millis()/1000;
+        cena(0);
       }
     } else if (iMenu == 1) {
       if ( seconds <= 0) {
