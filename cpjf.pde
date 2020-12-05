@@ -34,7 +34,7 @@ PFont f, p, p1, p2, p3;
 
 
 /*  IMAGENS    */
-PImage[] narrativaT = new PImage[20];  // Menu tutorial
+PImage[] narrativaT = new PImage[21];  // Menu tutorial
 PImage[] narrativaM = new PImage[6];  // Menu Principal personagens
 PImage[] narrativaB = new PImage[23]; // B Samira
 PImage[] narrativaC = new PImage[25]; // C Julia
@@ -73,9 +73,9 @@ color quasebranco = color (252, 247, 239);
 
 void setup() {
   //TODO fullscreen
-  //fullScreen();
+  fullScreen(2);
   //size(displayHeight, displayWidth,P2D);
-  size(displayHeight, displayWidth);
+  //size(displayHeight, displayWidth);
   //size(displayWidth, displayHeight);
 
 
@@ -104,7 +104,7 @@ void setup() {
 
   //carrega tabelas de imagens das narrativas 
   loadimages();
-  delay(3000);
+  
   try {
     robot = new Robot();
   } 
@@ -121,6 +121,8 @@ void setup() {
   startTime2 = millis()/1000 + countdown;
   
   cena(0);
+  printImage(narrativaT[0],0,0,width,height);
+
 }
 
 void draw () {

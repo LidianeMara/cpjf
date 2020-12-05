@@ -29,14 +29,14 @@ void getMouse(){
 
   //Tutorial 
   if (iMenu == 0){
-    if (iDescanso == 39 ){
+    if (iDescanso == 40 ){
       if (mouseX > width-offsetMouse){
           cena(1);
           robot.mouseMove(width/2, mouseY);
           delay(300);
        }
     }
-    else if (iDescanso == 40){
+    else if (iDescanso == 41){
       if (mouseX < offsetMouse){
           cena(1);
           robot.mouseMove(width/2, mouseY);
@@ -93,8 +93,8 @@ void getMouse(){
     //CLICKS DO TUTORIAL
  
     if (iMenu == 0 ){
-      //PRIMEIRA TELA
-      if (iDescanso ==31) {
+      //primeira interação tutorial
+      if (iDescanso ==32) {
         descansoAcao=true;
         cena(1);
         robot.mouseMove(width/2, mouseY);
@@ -152,6 +152,8 @@ void keyPressed() {
     else if (  keyCode == UP )
     {
       iMenu =0;
+      iNarrativaT=0;
+      iDescanso=0;
       cena(0);
     }
     else if (keyCode == DOWN  ){

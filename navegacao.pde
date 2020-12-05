@@ -13,13 +13,20 @@ void cena(int param){
       iDescanso+=param;
       iddle=false;
     }
+
     if (iDescanso == 0)
     {
-       iNarrativaT=1;
+       
+       iNarrativaT=0;
        iDescanso++;
     }
+    else if (iDescanso == 1){
+      delay(25 * delaySegundo);
+      iNarrativaT=1;
+      iDescanso++;
+    }
     // iMenu 0 Descanso 1-9 tela 2 ppt
-    else if (iDescanso >=1 && iDescanso < 9)
+    else if (iDescanso >1 && iDescanso < 9)
     {
       delay (delayPadrao); //TODO
       
@@ -27,6 +34,9 @@ void cena(int param){
         iNarrativaT=2;
       }
       else if (iNarrativaT==2){
+        iNarrativaT=1;
+      }
+      else {
         iNarrativaT=1;
       }
       iDescanso++;
@@ -63,63 +73,89 @@ void cena(int param){
       iDescanso++;
       
     }
-    //tela 4 -- passagem com click
+    //tela 4a -- passagem sem click 5 seg
     else if (iDescanso == 31){
       if (!descansoAcao){
         startTime2 = millis()/1000 + countdown;
         descansoAcao=true;
       }
-      else if (seconds2 < countdown-10){
+      else if (seconds2 < countdown-5){
        iNarrativaT=7;
        descansoAcao=false;
+       iDescanso++;
       }
 
-       
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=5;
+        iNarrativaT=6;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=6;
+         iNarrativaT=5;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
-      }
       
+      }
+    }
+    //tela 4b -- passagem com click
+    else if (iDescanso == 32){
+      if (!descansoAcao){
+        startTime2 = millis()/1000 + countdown;
+        descansoAcao=true;
+      }
+      else if (seconds2 < countdown-20){
+       iNarrativaT=0;
+       iDescanso=0;
+       descansoAcao=false;
+       
+      }
+
+      if (!descansoInverso && seconds < countdown - 1){
+        startTime = millis()/1000 + countdown;
+        descansoInverso=!descansoInverso;
+        iNarrativaT=6;
+      }
+      else if (seconds < countdown - 2){
+         iNarrativaT=7;
+         startTime = millis()/1000 + countdown;
+         descansoInverso=!descansoInverso;
+      
+      }
       getMouse();
     }
+
     //tela 5 - movimento concluido com sucesso
-    else if (iDescanso == 32){
+    else if (iDescanso == 33){
       iNarrativaT=8;
       iDescanso++;
     }
-    //tela 5 delay 3000
-    else if (iDescanso == 33){
-      delay(3000);
+    //tela 5 delay 5 * segundo (atualizado ppt)
+    else if (iDescanso == 34){
+      delay(5*delaySegundo);
       iNarrativaT=9;//proxima imagem tela 6
       iDescanso++;
     }
-    //tela 6 1a imagem 5 * segundos
-    else if (iDescanso == 34){
+    //tela 6a 1a imagem 
+    else if (iDescanso == 35){
       iNarrativaT=10;
       iDescanso++;
     }
-    //tela 6 delay 5 * segundos
-    else if (iDescanso == 35){
-      delay(5 * delaySegundo);
+    //tela 6a delay 10 * segundos
+    else if (iDescanso == 36){
+      delay(10 * delaySegundo);
       iNarrativaT=11;
       iDescanso++;
     }
     
-    //tela 6 2a parte animada
-    else if (iDescanso == 36){
+    //tela 6b 2a parte animada
+    else if (iDescanso == 37){
 
       //permanece por 15 segundos
       if (!descansoAcao){
         startTime2 = millis()/1000 + countdown;
         descansoAcao=true;
       }
-      else if (seconds2 < countdown-15){
+      else if (seconds2 < countdown-10){
        iNarrativaT=12;
        iDescanso++;
        descansoAcao=false;
@@ -139,14 +175,7 @@ void cena(int param){
       }
     }
     
-    //tela 7 1a imagem 5 * segundos
-    else if (iDescanso == 37){
-      iNarrativaT=12;
-      iDescanso++;
-      delay(2 * delaySegundo);
-    }    
-    
-    //tela 7 2a parte animada
+    //tela 7a
     else if (iDescanso == 38){
 
       //permanece por 15 segundos
@@ -154,12 +183,8 @@ void cena(int param){
         startTime2 = millis()/1000 + countdown;
         descansoAcao=true;
       }
-      else if (seconds2 < countdown-10){
-       iNarrativaT=14;
-       descansoAcao=false;
-      }
       else if (seconds2 < countdown-15){
-       iNarrativaT=15; // carrega proxima cena tela 8
+       iNarrativaT=14; // carrega proxima cena tela 8
        iDescanso++;
        descansoAcao=false;
       }
@@ -168,17 +193,43 @@ void cena(int param){
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=13;
+        iNarrativaT=12;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=12;
+         iNarrativaT=13;
+         startTime = millis()/1000 + countdown;
+         descansoInverso=!descansoInverso;
+      }    }    
+    
+    //tela 7b 2a parte animada
+    else if (iDescanso == 39){
+
+      //permanece por 15 segundos
+      if (!descansoAcao){
+        startTime2 = millis()/1000 + countdown;
+        descansoAcao=true;
+      }
+      else if (seconds2 < countdown-10){
+       iNarrativaT=16; // carrega proxima cena tela 8
+       iDescanso++;
+       descansoAcao=false;
+      }
+
+      // muda imagem em 1 segundo TODO
+      if (!descansoInverso && seconds < countdown - 1){
+        startTime = millis()/1000 + countdown;
+        descansoInverso=!descansoInverso;
+        iNarrativaT=15;
+      }
+      else if (seconds < countdown - 2){
+         iNarrativaT=14;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }
     }
         
     //tela 8 a - mao direita - avançar
-    else if (iDescanso == 39){
+    else if (iDescanso == 40){
 
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
@@ -194,7 +245,7 @@ void cena(int param){
       drawSeta();
     }
     //tela 8 b - mao esquerda - voltar
-    else if (iDescanso == 40){
+    else if (iDescanso == 41){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
@@ -214,12 +265,12 @@ void cena(int param){
     }
     
     //tela 9 -- passagem com click
-    else if (iDescanso == 41){
+    else if (iDescanso == 42){
         iNarrativaT=19;
         iDescanso++;
 
     }
-    else if (iDescanso > 42){
+    else if (iDescanso > 43){
       getMouse();
     }
     
