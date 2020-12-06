@@ -57,7 +57,7 @@ void drawSeta(){
     if (iDescanso == 43 ) {
       printImage(rodapeDescansoA, 0, height-rodapeDescansoA.height, rodapeDescansoA.width, rodapeDescansoA.height);
     }
-    else if (iDescanso == 45 ) {
+    else if (iDescanso == 47 ) {
       printImage(rodapeDescansoV, 0, height-rodapeDescansoV.height, rodapeDescansoV.width, rodapeDescansoV.height);
     }
   }

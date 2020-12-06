@@ -222,7 +222,7 @@ void cena(int param){
       }
     }
         
-    //tela 8 a - mao direita - avançar
+    //tela 8 - mao direita - avançar
     else if (iDescanso == 43){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
@@ -240,13 +240,22 @@ void cena(int param){
     }
     //tela 8a delay 5 * segundos
     else if (iDescanso == 44){
-      delay(5 * delaySegundo);
-      iNarrativaT=18;
+      iNarrativaT=8;
+      iDescanso++;
+    }
+    else if (iDescanso == 45) {
+      delay(5 * delaySegundo);       
+      iNarrativaT=17;
+      iDescanso++;
+    }
+    else if (iDescanso == 46) {       
+      robot.mouseMove(width/2, mouseY);
+      iNarrativaT=17;
       iDescanso++;
     }
     
     //tela 9 - mao esquerda - voltar
-    else if (iDescanso == 45){
+    else if (iDescanso == 47){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
@@ -263,13 +272,13 @@ void cena(int param){
     }
     
     //tela 10
-    else if (iDescanso == 46){
+    else if (iDescanso == 48){
         iNarrativaT=19;
         iDescanso++;
 
     }
     //tela 10 -- passagem com click
-    else if (iDescanso >= 47){
+    else if (iDescanso >= 49){
       getMouse();
     }
     

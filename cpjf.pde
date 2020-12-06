@@ -46,16 +46,6 @@ PImage[] headerNarrativa = new PImage [5];
 PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
 PImage rodapeDescansoA, rodapeDescansoV;
 
-PImage iconVoltar, iconAvancar;
-
-
-//tutorial over
-PImage overTutorialAOff, overTutorialAOn;
-
-float scaleE;
-float scaleD;
-float scaleTA=10;
-boolean up = true;
 boolean descansoInverso = false;
 boolean descansoAcao = false;
 
@@ -153,6 +143,8 @@ void draw () {
     } else if (iMenu >= 2) {
       if ( seconds <=0) {
         zeracenas(); // reinicializa todos indices
+        iDescanso=0;
+        iNarrativaM=0;
         delay(1000);
         cena(0);
       }

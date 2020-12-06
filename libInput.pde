@@ -31,13 +31,11 @@ void getMouse(){
   if (iMenu == 0){
     if (iDescanso == 43 ){
       if (mouseX > width-offsetMouse){
-          iNarrativaT=18;
           cena(1);
           robot.mouseMove(width/2, mouseY);
-          delay(300);
        }
     }
-    else if (iDescanso == 45){
+    else if (iDescanso == 47){
       if (mouseX < offsetMouse){
         iNarrativaT=19;
           cena(1);
@@ -104,7 +102,7 @@ void getMouse(){
         robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
-      else if (iDescanso>=47){
+      else if (iDescanso>=49){
         iMenu=1;
         iNarrativaM=1;
         delay(500);
