@@ -46,64 +46,6 @@ void debug()
   
 }
 
-//TODO Remover desabilitado ultima revisão
-/*
-void drawIconsMenu(){
-        
-  int autoscale =800;
-    
-  noStroke();
-  fill(bgcolor);
-  rect(0, offy+150, 300 ,280 );
-  rect(1080, offy+150, 300 ,280 );
-    
-  if (mouseX < width/2){
-    scaleE =dist(mouseX,1,width/2,1)/autoscale;
-    scaleD =10+dist(mouseX,1,width/2,1)*autoscale;
-    image(iconMaoEOn, offx, offy+150, iconMaoEOn.width*scaleE, iconMaoEOn.height*scaleE*2);  
-    image(iconMaoD, offx1, offy+150, iconMaoD.width*scaleD, iconMaoD.height*scaleD*2);
-  } else {
-    scaleE =dist(mouseX,1,width/2,1)*autoscale;
-    scaleD =dist(mouseX,1,width/2,1)/autoscale;
-    image(iconMaoE, offx, offy+150, iconMaoE.width*scaleE, iconMaoE.height*scaleE*2);  
-    image(iconMaoDOn, offx1, offy+150, iconMaoDOn.width*scaleD, iconMaoDOn.height*scaleD*2);
-  }
-
-}
-*/
-
-// void drawIconsTutorialA(color cor){
-//   if (scaleTA >= 30 ){
-//     scaleTA-=0.25;
-//   }
-//   else{
-//     scaleTA = 60;
-//     //up = false;
-//   } 
-  
-//   noStroke();
-//   fill(cor);
-//   rect(width/2-offset*3, offy-40, offset*7 ,330 );
-//   //image(iconMaoET, 440, offy, 1*scaleTA, 2*scaleTA);
-//   //image(iconMaoDT, 620, offy, 1*scaleTA, 2*scaleTA);
-// }
-
-// void drawIconsTutorialAvancar(){
-//   //    println(scaleE);
-//   noStroke();
-//   fill(bgcolorT);
-//   rect(width/2-offset*5, offy-40, offset*10 ,445 );
-//   image(iconAvancar, 440, offy, 300, 250);
-// }
-
-// void drawIconsTutorialVoltar(){ 
-//   //    println(scaleE);
-//   noStroke();
-//   fill(bgcolorT);
-//   rect(width/2-offset*5, offy-40, offset*10 ,445 );
-//   image(iconVoltar, 440, offy, 300, 250);
-// }
-
 // Novas setas de navegação dos menus
 void drawSeta(){
   //ajuste antes de ativação
@@ -112,18 +54,18 @@ void drawSeta(){
   color cream = color (226,220,208);
   //imagem limpadora da barra
   if (iMenu ==0){
-    if (iDescanso == 40 ) {
-            printImage(rodapeDescansoA, 0, height-rodapeDescansoA.height, rodapeDescansoA.width, rodapeDescansoA.height);
+    if (iDescanso == 43 ) {
+      printImage(rodapeDescansoA, 0, height-rodapeDescansoA.height, rodapeDescansoA.width, rodapeDescansoA.height);
     }
-    else if (iDescanso == 41 ) {
-            printImage(rodapeDescansoV, 0, height-rodapeDescansoV.height, rodapeDescansoV.width, rodapeDescansoV.height);
+    else if (iDescanso == 45 ) {
+      printImage(rodapeDescansoV, 0, height-rodapeDescansoV.height, rodapeDescansoV.width, rodapeDescansoV.height);
     }
   }
-  else if (iMenu==1){
-      printImage(rodapeMenu, 0, height-rodapeMenu.height, rodapeMenu.width, rodapeMenu.height);
+  else if (iMenu==1) {
+    printImage(rodapeMenu, 0, height-rodapeMenu.height, rodapeMenu.width, rodapeMenu.height);
   }
-  else if (iMenu >= 2){
-      printImage(rodapeNarrativa, 0, height-rodapeNarrativa.height, rodapeNarrativa.width, rodapeNarrativa.height);
+  else if (iMenu >= 2) {
+    printImage(rodapeNarrativa, 0, height-rodapeNarrativa.height, rodapeNarrativa.width, rodapeNarrativa.height);
   }
   
     

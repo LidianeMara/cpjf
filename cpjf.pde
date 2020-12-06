@@ -27,14 +27,12 @@ int iNarrativaD = 0; // indice cena narrativa D
 int iNarrativaE = 0; // indice cena narrativa E
 int iNarrativaF = 0; // indice cena narrativa F
 
-String bgpath=""; //TODO conferir uso
-
 /*  FONTES  */
-PFont f, p, p1, p2, p3;
+PFont p, p1;
 
 
 /*  IMAGENS    */
-PImage[] narrativaT = new PImage[21];  // Menu tutorial
+PImage[] narrativaT = new PImage[20];  // Menu tutorial
 PImage[] narrativaM = new PImage[6];  // Menu Principal personagens
 PImage[] narrativaB = new PImage[23]; // B Samira
 PImage[] narrativaC = new PImage[25]; // C Julia
@@ -45,11 +43,8 @@ PImage[] narrativaF = new PImage[47]; // F João
 PImage[] headerNarrativa = new PImage [5];
 
 
-//PImage iconMaoEOn, iconMaoDOn, iconMaoE, iconMaoD;
 PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
 PImage rodapeDescansoA, rodapeDescansoV;
-
-PImage areaProgEsqOn, areaProgEsqOff, areaProgDirOn, areaProgDirOff;
 
 PImage iconVoltar, iconAvancar;
 
@@ -75,9 +70,9 @@ color quasebranco = color (252, 247, 239);
 
 void setup() {
   //TODO fullscreen
-  fullScreen(2);
+  //fullScreen(2);
   //size(displayHeight, displayWidth,P2D);
-  //size(displayHeight, displayWidth);
+  size(displayHeight, displayWidth);
   //size(displayWidth, displayHeight);
 
 
@@ -124,8 +119,7 @@ void setup() {
   startTime = millis()/1000 + countdown;
   startTime2 = millis()/1000 + countdown;
   
-  cena(0);
-  printImage(narrativaT[0],0,0,width,height);
+ 
 
 }
 

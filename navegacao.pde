@@ -3,8 +3,8 @@
 void cena(int param){
 
   debug();
-  int delayPadrao=250; //TODO 
   int delaySegundo= 1000; //TODO
+  int delayPadrao=2*delaySegundo; //TODO
   //MENU 0 - Tela descanso
   if (iMenu == 0) {
      println("iDescanso: " + iDescanso);
@@ -140,15 +140,38 @@ void cena(int param){
       iNarrativaT=9;
       iDescanso++;
     }
-    //tela 6a delay 10 * segundos
+    //tela 6a delay 15 * segundos
     else if (iDescanso == 36){
-      delay(10 * delaySegundo);
-      iNarrativaT=10;
+      delay(15 * delaySegundo);
+      iNarrativaT=10;//proxima imagem tela 6
+      iDescanso++;
+    }
+    //tela 6b 2a imagem 
+    else if (iDescanso == 37){
+      //mantem imagem
+      iDescanso++;
+    }
+    //tela 6b delay 5 * segundos
+    else if (iDescanso == 38){
+      delay(5 * delaySegundo);
+      iNarrativaT=11;
+      iDescanso++;
+    }
+    //tela 6c 3a imagem 
+    else if (iDescanso == 39){
+      iNarrativaT=11;
+      iDescanso++;
+    }
+    //tela 6c delay 7 * segundos
+    else if (iDescanso == 40){
+      delay(7 * delaySegundo);
+      iNarrativaT=12;
       iDescanso++;
     }
     
-    //tela 6b 2a parte animada
-    else if (iDescanso == 37){
+   
+    //tela 7a
+    else if (iDescanso == 41){
 
       //permanece por 15 segundos
       if (!descansoAcao){
@@ -156,35 +179,7 @@ void cena(int param){
         descansoAcao=true;
       }
       else if (seconds2 < countdown-10){
-       iNarrativaT=12;
-       iDescanso++;
-       descansoAcao=false;
-       delay(delaySegundo);
-      }
-
-      // muda imagem em 1 segundo TODO
-      if (!descansoInverso && seconds < countdown - 2){
-        startTime = millis()/1000 + countdown;
-        descansoInverso=!descansoInverso;
-        iNarrativaT=11;
-      }
-      else if (seconds < countdown - 4){
-         iNarrativaT=10;
-         startTime = millis()/1000 + countdown;
-         descansoInverso=!descansoInverso;
-      }
-    }
-    
-    //tela 7a
-    else if (iDescanso == 38){
-
-      //permanece por 15 segundos
-      if (!descansoAcao){
-        startTime2 = millis()/1000 + countdown;
-        descansoAcao=true;
-      }
-      else if (seconds2 < countdown-15){
-       iNarrativaT=15;// carrega proxima cena tela 8
+       iNarrativaT=14;// carrega proxima cena tela 8
        iDescanso++;
        descansoAcao=false;
       }
@@ -193,24 +188,23 @@ void cena(int param){
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=12;
+        iNarrativaT=13;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=13;
+         iNarrativaT=12;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }    }    
     
-    //tela 7b 2a parte animada
-    else if (iDescanso == 39){
-
-      //permanece por 15 segundos
+    //tela 7b 
+    else if (iDescanso == 42){
+      //permanece por 10 segundos
       if (!descansoAcao){
         startTime2 = millis()/1000 + countdown;
         descansoAcao=true;
       }
       else if (seconds2 < countdown-10){
-       iNarrativaT=16; // carrega proxima cena tela 8
+       iNarrativaT=15; // carrega proxima cena tela 8
        iDescanso++;
        descansoAcao=false;
       }
@@ -219,7 +213,7 @@ void cena(int param){
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=15;
+        iNarrativaT=13;
       }
       else if (seconds < countdown - 2){
          iNarrativaT=14;
@@ -229,29 +223,35 @@ void cena(int param){
     }
         
     //tela 8 a - mao direita - avançar
-    else if (iDescanso == 40){
-
+    else if (iDescanso == 43){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=17;
+        iNarrativaT=16;
       }
       else if (seconds < countdown - 2){
-         iNarrativaT=16;
+         iNarrativaT=15;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
       }  
       getMouse();
       drawSeta();
     }
+    //tela 8a delay 5 * segundos
+    else if (iDescanso == 44){
+      delay(5 * delaySegundo);
+      iNarrativaT=18;
+      iDescanso++;
+    }
+    
     //tela 9 - mao esquerda - voltar
-    else if (iDescanso == 41){
+    else if (iDescanso == 45){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
-        iNarrativaT=19;
+        iNarrativaT=17;
       }
       else if (seconds < countdown - 2){
          iNarrativaT=18;
@@ -262,13 +262,14 @@ void cena(int param){
       drawSeta();
     }
     
-    //tela 10 -- passagem com click
-    else if (iDescanso == 42){
+    //tela 10
+    else if (iDescanso == 46){
         iNarrativaT=19;
         iDescanso++;
 
     }
-    else if (iDescanso > 43){
+    //tela 10 -- passagem com click
+    else if (iDescanso >= 47){
       getMouse();
     }
     
@@ -279,9 +280,9 @@ void cena(int param){
     else if (iNarrativaT < 0) {
       iNarrativaT = 0;
     }
-    //if (param != 0){
-      printImage(narrativaT[iNarrativaT],0,0,width,height);
-    //}
+    if (iMenu == 0){
+      printImage(narrativaT[iNarrativaT],0,0,narrativaT[iNarrativaT].width,narrativaT[iNarrativaT].height);
+    }
   }
 
   //iMenu 1 - MENU PRINCIPAL

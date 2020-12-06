@@ -30,12 +30,11 @@ void loadimages () {
   narrativaT[12] = loadImage("tela descanso/TD007-1.png");
   narrativaT[13] = loadImage("tela descanso/TD007-2.png");
   narrativaT[14] = loadImage("tela descanso/TD007-3.png");
-  narrativaT[15] = loadImage("tela descanso/TD007-B.png");
-  narrativaT[16] = loadImage("tela descanso/TD008-1.png");
-  narrativaT[17] = loadImage("tela descanso/TD008-2.png");
-  narrativaT[18] = loadImage("tela descanso/TD009-1.png");
-  narrativaT[19] = loadImage("tela descanso/TD009-2.png");
-  narrativaT[20] = loadImage("tela descanso/TD010.png");
+  narrativaT[15] = loadImage("tela descanso/TD008-1.png");
+  narrativaT[16] = loadImage("tela descanso/TD008-2.png");
+  narrativaT[17] = loadImage("tela descanso/TD009-1.png");
+  narrativaT[18] = loadImage("tela descanso/TD009-2.png");
+  narrativaT[19] = loadImage("tela descanso/TD010.png");
   
   
   // Cabeçalho das narrativas
