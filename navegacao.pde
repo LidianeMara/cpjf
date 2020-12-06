@@ -3,15 +3,14 @@
 void cena(int param){
 
   debug();
-  int delaySegundo= 1000; //TODO
-  int delayPadrao=2*delaySegundo; //TODO
+  
   //MENU 0 - Tela descanso
+  
   if (iMenu == 0) {
      println("iDescanso: " + iDescanso);
     // iMenu 0 Descanso 0 tela 1 ppt
     if (param!=0){
       iDescanso+=param;
-      iddle=false;
     }
 
     if (iDescanso == 0)

@@ -9,10 +9,13 @@ int offsetMouse = 370;
 int miniOffset=15;
 
 int countdown = 90; // segundos
-int seconds, seconds2, startTime, startTime2; //<>// //<>// //<>// //<>// //<>//
+int seconds, seconds2, startTime, startTime2;  //<>//
+
+int delaySegundo= 100; //TODO
+int delayPadrao=2*delaySegundo; //TODO
 
 boolean iddle = true; // sem interação = true
-boolean fade = false;  // transição //<>// //<>// //<>// //<>//
+boolean fade = false;  // transição //<>//
 
 //TODO desligar na instalação
 boolean debug = false; //desliga mouse quando ligado
@@ -108,8 +111,6 @@ void setup() {
   // inicializa relogio  
   startTime = millis()/1000 + countdown;
   startTime2 = millis()/1000 + countdown;
-  
- 
 
 }
 
