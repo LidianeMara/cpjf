@@ -70,14 +70,14 @@ void getMouse(){
     if (mouseX < offsetMouse )  {
       if (iNarrativaB>0 || iNarrativaC>0 || iNarrativaD>0 || iNarrativaE>0 || iNarrativaF>0){
         cena(-1);
-        delay(100);
+        delay(500);
         iddle=false;
         robot.mouseMove(width/2, mouseY);
       }
     }
      else if (mouseX > width-offsetMouse){
       cena (1);
-      delay(100);
+      delay(500);
       iddle=false;
       robot.mouseMove(width/2, mouseY);
    }      

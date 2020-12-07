@@ -296,7 +296,6 @@ void cena(int param){
   //iMenu 1 - MENU PRINCIPAL
   else if (iMenu == 1) {
     iNarrativaM += param;
-    println("iM: " + iNarrativaM);
     if ( iNarrativaM < 1){
       iNarrativaM = 4; 
     }

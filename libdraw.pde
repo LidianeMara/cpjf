@@ -107,7 +107,7 @@ void drawSeta(){
     //printImage(iconMenu, width/2-iconMenu.width/2, height-offset*3.5, iconMenu.width, iconMenu.height);
     
     if (iMenu == 1)       { 
-      int iM=iNarrativaM+1;
+      int iM=iNarrativaM;
       int iL=narrativaM.length-1;
       string = iM + "/" + iL;  
     }
@@ -132,7 +132,7 @@ void drawSeta(){
       string = iNarrativaF + "/" + total;
     }
     
-    if(iMenu>1){
+    if(iMenu>=1){
           textFont(p);
           textAlign(CENTER);
           fill(112,112,112);
