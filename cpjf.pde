@@ -145,11 +145,9 @@ void draw () {
     } else if (iMenu >= 2) {
       if ( seconds <=0) {
         zeracenas(); // reinicializa todos indices
-        iDescanso=0;
-        iNarrativaM=0;
-        iNarrativaT=0;
         delay(1000);
         cena(0);
+        iddle=false;
       }
 
       drawSeta();

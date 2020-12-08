@@ -85,7 +85,7 @@ void drawSeta(){
   }
 
   //barra esquerda        
-  if ( mouseX >= offsetMouse-miniOffset/2 && mouseX < width/2){
+  if ( iddle && mouseX >= offsetMouse-miniOffset/2 && mouseX < width/2){
     fill(blue);
     stroke(cream);          
     rectMode(CORNER); 
@@ -93,7 +93,7 @@ void drawSeta(){
   }
 
   //ativação  seta esquerda
-  if (mouseX < offsetMouse+miniOffset ){
+  if (iddle && mouseX < offsetMouse+miniOffset ){
     /*fill(blue);
     stroke(cream);          
     rectMode(CORNER); 
@@ -132,7 +132,7 @@ void drawSeta(){
       string = iNarrativaF + "/" + total;
     }
     
-    if(iMenu>=1){
+    if(iddle && iMenu>=1){
           textFont(p);
           textAlign(CENTER);
           fill(112,112,112);
@@ -141,7 +141,7 @@ void drawSeta(){
     
 
   //barra e setas da direita
-  if (mouseX >= width/2  && mouseX <= width-offsetMouse+miniOffset ){
+  if (iddle && mouseX >= width/2  && mouseX <= width-offsetMouse+miniOffset ){
     //TODO revisar vazio
     fill(blue);
     stroke(cream);
@@ -150,7 +150,7 @@ void drawSeta(){
   }
   
   //ativa seta na direita 
-   if (mouseX > width-offsetMouse-miniOffset ){
+   if (iddle && mouseX > width-offsetMouse-miniOffset ){
 /*     fill(blue);
     stroke(cream);
     rectMode(CORNER);
