@@ -29,18 +29,19 @@ void getMouse(){
 
   //Tutorial 
   if (iMenu == 0){
-    if (iDescanso == 43 ){
+    if (iDescanso == 63 ){
       if (mouseX > width-offsetMouse){
           cena(1);
           robot.mouseMove(width/2, mouseY);
        }
     }
-    else if (iDescanso == 47){
+    else if (iDescanso == 67){
       if (mouseX < offsetMouse){
         iNarrativaT=19;
           cena(1);
           robot.mouseMove(width/2, mouseY);
-           delay(300);
+          delay(300);
+          robot.mouseMove(width/2, mouseY);
         }
       }
   }
@@ -51,6 +52,7 @@ void getMouse(){
       
       robot.mouseMove(width/2, mouseY);
       delay(500);
+      robot.mouseMove(width/2, mouseY);
       cena(-1);
       iddle=false;
 
@@ -58,6 +60,7 @@ void getMouse(){
      else if (mouseX > width-offsetMouse){
        robot.mouseMove(width/2, mouseY);
        delay(500);
+       robot.mouseMove(width/2, mouseY);
        cena (1);
        iddle=false;
   
@@ -70,6 +73,7 @@ void getMouse(){
     if (mouseX < offsetMouse )  {
       if (iNarrativaB>0 || iNarrativaC>0 || iNarrativaD>0 || iNarrativaE>0 || iNarrativaF>0){
         cena(-1);
+        robot.mouseMove(width/2, mouseY);
         delay(500);
         iddle=false;
         robot.mouseMove(width/2, mouseY);
@@ -77,6 +81,7 @@ void getMouse(){
     }
      else if (mouseX > width-offsetMouse){
       cena (1);
+      robot.mouseMove(width/2, mouseY);
       delay(500);
       iddle=false;
       robot.mouseMove(width/2, mouseY);
@@ -101,8 +106,9 @@ void getMouse(){
         robot.mouseMove(width/2, mouseY);
       }
       //ULTIMA TELA
-      else if (iDescanso>=49){
+      else if (iDescanso>=69){
         iMenu=1;
+        iddle=false;
         iNarrativaM=1;
         delay(500);
         cena(0);
@@ -113,7 +119,9 @@ void getMouse(){
     else if (iMenu ==1){
       iMenu=iNarrativaM+1;
       cena (0);
-      delay(1000);
+      robot.mouseMove(width/2, mouseY);
+      iddle=false;
+      delay(500);
       robot.mouseMove(width/2, mouseY);
 
     }
@@ -122,7 +130,9 @@ void getMouse(){
       //Força o retorno ao menu principal (escolha das narrativas)
       iMenu=1;
       cena(0);
-      delay(1000);
+      robot.mouseMove(width/2, mouseY);
+      iddle=false;
+      delay(500);
       robot.mouseMove(width/2, mouseY);
     }
   }  
@@ -130,29 +140,23 @@ void getMouse(){
 
 
 void keyPressed() {
-    if (keyCode == 97){
-      iNarrativaT=0;
-      iMenu=0;
-      cena(0);
-    }
-   else if (keyCode == 98){
-      iNarrativaM=0;
-      iMenu=1;
-      cena(0);
-    }
-    else if (keyCode == LEFT) {
+
+    if (keyCode == LEFT) {
       cena(-1);
       delay(300);
+      iddle=false;
+
     }
     else if (keyCode == RIGHT ){
       cena (1);
       delay(300);
+      iddle=false;
     }
     else if (  keyCode == UP )
     {
       iMenu =0;
-      iNarrativaT=0;
-      iDescanso=0;
+      iNarrativaT=14;
+      iDescanso=52;
       cena(0);
     }
     else if (keyCode == DOWN  ){

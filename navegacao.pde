@@ -20,14 +20,14 @@ void cena(int param){
        iDescanso++;
     }
     else if (iDescanso == 1){
-      delay(25 * delaySegundo);
+      delay(20 * delaySegundo);
       iNarrativaT=1;
       iDescanso++;
     }
     // iMenu 0 Descanso 1-9 tela 2 ppt
     else if (iDescanso >1 && iDescanso < 9)
     {
-      delay (delayPadrao); //TODO
+      delay (2 * delaySegundo); //TODO
       
       if (iNarrativaT==1){
         iNarrativaT=2;
@@ -170,59 +170,39 @@ void cena(int param){
     
    
     //tela 7a
-    else if (iDescanso == 41){
-
-      //permanece por 15 segundos
-      if (!descansoAcao){
-        startTime2 = millis()/1000 + countdown;
-        descansoAcao=true;
-      }
-      else if (seconds2 < countdown-10){
-       iNarrativaT=14;// carrega proxima cena tela 8
-       iDescanso++;
-       descansoAcao=false;
-      }
-
-      // muda imagem em 1 segundo TODO
-      if (!descansoInverso && seconds < countdown - 1){
-        startTime = millis()/1000 + countdown;
-        descansoInverso=!descansoInverso;
+    else if (iDescanso >= 41 && iDescanso <=51){
+      delay (delaySegundo);      
+      if (iNarrativaT==12){
         iNarrativaT=13;
       }
-      else if (seconds < countdown - 2){
-         iNarrativaT=12;
-         startTime = millis()/1000 + countdown;
-         descansoInverso=!descansoInverso;
-      }    }    
-    
-    //tela 7b 
-    else if (iDescanso == 42){
-      //permanece por 10 segundos
-      if (!descansoAcao){
-        startTime2 = millis()/1000 + countdown;
-        descansoAcao=true;
+      else if (iNarrativaT==13){
+        iNarrativaT=12; 
       }
-      else if (seconds2 < countdown-10){
-       iNarrativaT=15; // carrega proxima cena tela 8
-       iDescanso++;
-       descansoAcao=false;
+      else
+      {
+        iNarrativaT=12;
+        
       }
-
-      // muda imagem em 1 segundo TODO
-      if (!descansoInverso && seconds < countdown - 1){
-        startTime = millis()/1000 + countdown;
-        descansoInverso=!descansoInverso;
+      iDescanso++;
+    }
+    //tela 7b
+    else if (iDescanso >= 52 && iDescanso <=62){
+      delay (delaySegundo);      
+      if (iNarrativaT==14){
         iNarrativaT=13;
       }
-      else if (seconds < countdown - 2){
-         iNarrativaT=14;
-         startTime = millis()/1000 + countdown;
-         descansoInverso=!descansoInverso;
+      else if (iNarrativaT==13){
+        iNarrativaT=14;
       }
+      else
+      {
+        iNarrativaT=14;
+      }
+      iDescanso++;
     }
         
     //tela 8 - mao direita - avançar
-    else if (iDescanso == 43){
+    else if (iDescanso == 63){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
@@ -238,23 +218,23 @@ void cena(int param){
       drawSeta();
     }
     //tela 8a delay 5 * segundos
-    else if (iDescanso == 44){
+    else if (iDescanso == 64){
       iNarrativaT=8;
       iDescanso++;
     }
-    else if (iDescanso == 45) {
+    else if (iDescanso == 65) {
       delay(5 * delaySegundo);       
       iNarrativaT=17;
       iDescanso++;
     }
-    else if (iDescanso == 46) {       
+    else if (iDescanso == 66) {       
       robot.mouseMove(width/2, mouseY);
       iNarrativaT=17;
       iDescanso++;
     }
     
     //tela 9 - mao esquerda - voltar
-    else if (iDescanso == 47){
+    else if (iDescanso == 67){
       // muda imagem em 1 segundo TODO
       if (!descansoInverso && seconds < countdown - 1){
         startTime = millis()/1000 + countdown;
@@ -271,13 +251,13 @@ void cena(int param){
     }
     
     //tela 10
-    else if (iDescanso == 48){
+    else if (iDescanso == 68){
         iNarrativaT=19;
         iDescanso++;
 
     }
     //tela 10 -- passagem com click
-    else if (iDescanso >= 49){
+    else if (iDescanso >= 69){
       getMouse();
     }
     
@@ -297,14 +277,14 @@ void cena(int param){
   else if (iMenu == 1) {
     iNarrativaM += param;
     if ( iNarrativaM < 1){
-      iNarrativaM = 4; 
+      iNarrativaM = 5; 
     }
     else if (iNarrativaM > 5 ) {
       iNarrativaM = 1;
     }
     //background(bgcolor);
-    printImage(narrativaM[0],width/500,height/50,width,height);
-    printImage(narrativaM[iNarrativaM],width/500,height/50,width,height);
+    printImage(narrativaM[0],0,0,narrativaM[0].width,narrativaM[0].height);
+    printImage(narrativaM[iNarrativaM],0,0,narrativaM[iNarrativaM].width,narrativaM[iNarrativaM].height);
   }
 
   //iMenu 2 - NARRATIVA B  Samira
@@ -316,11 +296,11 @@ void cena(int param){
       iNarrativaB = 0;
     }     
     
-    if (iNarrativaB != 0){    
+    if (iNarrativaB != 0 && iNarrativaB != narrativaB.length-1){    
       drawBackgroundB();
       //drawSeta();
     }
-    printImage(narrativaB[iNarrativaB],width/500,height/500,width,height);
+    printImage(narrativaB[iNarrativaB],0,0,narrativaB[iNarrativaB].width,narrativaB[iNarrativaB].height);
 
   }
   //iMenu 3 NARRATIVA C Julia
@@ -333,12 +313,12 @@ void cena(int param){
       }
       
       //background(bgcolor);
-      if (iNarrativaC != 0){    
+      if (iNarrativaC != 0 && iNarrativaC != narrativaC.length-1){    
          drawBackgroundB();
          //drawSeta();
       }
      
-      printImage(narrativaC[iNarrativaC],width/500,height/500,width,height);    
+      printImage(narrativaC[iNarrativaC],0,0,narrativaC[iNarrativaC].width,narrativaC[iNarrativaC].height);    
   }
   
   // iMenu 4 - NARRATIVA D -  Bernardo
@@ -350,11 +330,11 @@ void cena(int param){
         iNarrativaD = 0;
       }
       //background(bgcolor);
-       if (iNarrativaD != 0){    
+       if (iNarrativaD != 0 && iNarrativaD != narrativaD.length-1){
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaD[iNarrativaD],width/500,height/500,width,height);
+       printImage(narrativaD[iNarrativaD],0,0,narrativaD[iNarrativaD].width,narrativaD[iNarrativaD].height);
   }
   
   //iMenu 5 NARRATIVA E - Camila
@@ -367,11 +347,11 @@ void cena(int param){
       }
       
       //background(bgcolor);
-       if (iNarrativaE != 0){    
+       if (iNarrativaE != 0 && iNarrativaE != narrativaE.length-1){
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaE[iNarrativaE],width/500,height/500,width,height);  
+       printImage(narrativaE[iNarrativaE],0,0,narrativaE[iNarrativaE].width,narrativaE[iNarrativaE].height);  
   }
   //iMenu 6 - NARRATIVA F João
   else if (iMenu == 6){ 
@@ -383,16 +363,17 @@ void cena(int param){
       }
       
       //background(bgcolor);
-       if (iNarrativaF != 0){    
+       if (iNarrativaF != 0 && iNarrativaB != narrativaB.length-1){    
           drawBackgroundB();
           //drawSeta();
        }
-       printImage(narrativaF[iNarrativaF],width/500,height/500,width,height);
+       printImage(narrativaF[iNarrativaF],0,0,narrativaF[iNarrativaF].width,narrativaF[iNarrativaF].height);
     }
   } 
 
 
 void zeracenas(){
+       iDescanso=0;
        iNarrativaM=0;
        iNarrativaT=0;
        iNarrativaB=0;

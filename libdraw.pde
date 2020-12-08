@@ -54,10 +54,10 @@ void drawSeta(){
   color cream = color (226,220,208);
   //imagem limpadora da barra
   if (iMenu ==0){
-    if (iDescanso == 43 ) {
+    if (iDescanso == 63 ) {
       printImage(rodapeDescansoA, 0, height-rodapeDescansoA.height, rodapeDescansoA.width, rodapeDescansoA.height);
     }
-    else if (iDescanso == 47 ) {
+    else if (iDescanso == 67 ) {
       printImage(rodapeDescansoV, 0, height-rodapeDescansoV.height, rodapeDescansoV.width, rodapeDescansoV.height);
     }
   }

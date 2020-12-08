@@ -8,11 +8,11 @@ int offset = 50;
 int offsetMouse = 370;
 int miniOffset=15;
 
-int countdown = 90; // segundos
+int countdown = 90; // segundos para tela de descanso
 int seconds, seconds2, startTime, startTime2;  //<>//
 
-int delaySegundo= 100; //TODO
-int delayPadrao=2*delaySegundo; //TODO
+int delaySegundo= 1000; //TODO o valor correto é 1000
+int delayPadrao=2*delaySegundo;
 
 boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>//
@@ -128,7 +128,8 @@ void draw () {
   if (iddle) {
     //print ("iddle" + seconds);   
     if ( iMenu == 0) {
-      if (iDescanso >= 0 && iDescanso < 50)
+      //if (iDescanso >= 0 && iDescanso < 50) //TODO conferir
+      if (iDescanso >= 0)
       {
         seconds2 = startTime2 - millis()/1000;
         cena(0);
@@ -146,6 +147,7 @@ void draw () {
         zeracenas(); // reinicializa todos indices
         iDescanso=0;
         iNarrativaM=0;
+        iNarrativaT=0;
         delay(1000);
         cena(0);
       }
