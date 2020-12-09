@@ -1,5 +1,5 @@
 
-void drawBackgroundB() {
+/*void drawBackgroundB() {
   final int WIDTH =  1000;
   final int HEIGHT = 1000;
   final int BLOCKX = WIDTH/12;
@@ -15,10 +15,11 @@ void drawBackgroundB() {
       //stroke(206, 183, 145, 26);
     } 
   }
+
   printImage(headerNarrativa[iMenu - 2], 0, 0, width, headerNarrativa[iMenu - 2].height);
   
 }
-
+  */
 
 void printImage(PImage photo, float X, float Y, float W, float H)
 {

@@ -308,9 +308,6 @@ void cena(int param){
       iNarrativaB = 0;
     }     
     
-    if (iNarrativaB != 0 && iNarrativaB != narrativaB.length-1){    
-      drawBackgroundB();
-    }
     printImage(narrativaB[iNarrativaB],0,0,narrativaB[iNarrativaB].width,narrativaB[iNarrativaB].height);
 
   }

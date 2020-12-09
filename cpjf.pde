@@ -66,7 +66,8 @@ void setup() {
   //fullscreen(); // Padrão para instalação
   //fullScreen(2); // fullscreen na segunda tela
   //size(displayHeight, displayWidth,P2D);
-  size(displayHeight, displayWidth); // uso em desenvolvimento
+  //size(displayHeight, displayWidth); // uso em desenvolvimento
+  size(1080, 1920); // uso em desenvolvimento
     surface.setTitle("Caminhos dos processos - Powered by Tijolo");
     surface.setResizable(false);
     surface.setLocation(0, -500);
