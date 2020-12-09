@@ -18,7 +18,7 @@ boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>//
 
 //TODO desligar na instalação
-boolean debug = false; //desliga mouse quando ligado
+boolean debug = true; //desliga mouse quando ligado
 
 int iMenu = 0;
 int iDescanso = 0 ; // indice tutorial
@@ -76,19 +76,7 @@ void setup() {
   //não funciona em fullscreen (present)
   noCursor();
 
-  //iconVoltar = loadImage("tela descanso/TD000_maosVoltar.png");
-  //iconAvancar = loadImage("tela descanso/TD000_maosAvancar.png");
-
   p = createFont("fonts/inter/Inter-VariableFont_slnt,wght.ttf", 80);
-
-  //TODO imagem apagada
-  //iconMenu = loadImage("geral/G001_btnMenu.png");
-  //iconSelecionar = loadImage("geral/G001_btnSelecionar.png");
-
-  //imagens tutorial, primeira tela
-  //overTutorialAOn = loadImage("tela descanso/TD001_sobreposicao.png");
-  //overTutorialAOff = loadImage("tela descanso/TD001_sobreposicaoOFF.png");
-
 
   iconProgEsq = loadImage("geral/SetaESQ.png");
   iconProgDir = loadImage("geral/SetaDIR.png");
@@ -124,20 +112,13 @@ void setup() {
 }
 
 void draw () {
-
-
   seconds = startTime - millis()/1000;
   //println(seconds);
-  //desenha icones
-  //icone tutorial narrativa tela A1 e A2
-
-  // icones animados e interação!;
 
   //modo inativo (iddle true)
   if (iddle) {
     //print ("iddle" + seconds);   
     if ( iMenu == 0) {
-      //if (iDescanso >= 0 && iDescanso < 50) //TODO conferir
       if (iDescanso >= 0)
       {
         seconds2 = startTime2 - millis()/1000;
@@ -162,6 +143,7 @@ void draw () {
       drawSeta();
       getMouse();
     }
+    //modo ativo - iddle false
   } else {
     iddle=true;
     startTime = millis()/1000 + countdown;

@@ -1,26 +1,4 @@
 
-/*void drawBackgroundB() {
-  final int WIDTH =  1000;
-  final int HEIGHT = 1000;
-  final int BLOCKX = WIDTH/12;
-  final int BLOCKY = HEIGHT/12;
-  for (int i = 0; i < 24; i ++) {
-    for (int j = 0; j < 24; j ++) {
-      if ((i + j + 1) % 2 == 0) {
-        fill(253,245,232);
-      } else {
-        fill(253,245,232);
-      }
-      rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
-      //stroke(206, 183, 145, 26);
-    } 
-  }
-
-  printImage(headerNarrativa[iMenu - 2], 0, 0, width, headerNarrativa[iMenu - 2].height);
-  
-}
-  */
-
 void printImage(PImage photo, float X, float Y, float W, float H)
 {
   //println("X" + X + " Y: " + Y);
@@ -152,25 +130,6 @@ void drawSeta(){
   
   //ativa seta na direita 
    if (iddle && mouseX > width-offsetMouse-miniOffset ){
-/*     fill(blue);
-    stroke(cream);
-    rectMode(CORNER);
-    rect(width/2, height-offset*3.4, width/2-offsetMouse+miniOffset,45);*/
     printImage(iconProgDir, width-435, height-offset*4.3, iconProgDir.width, iconProgDir.height);
   }
 }
-
-//Sem uso
-/*
-  void drawMouse(){
-  //TODO juntar depois
-  if ( iMenu == 1 ){
-  drawIconsMenu();
-  drawSeta();
-  }
-  else if (iMenu > 1){
-  drawIconsMenu();
-  drawSeta();
-  }
-  }
-*/
