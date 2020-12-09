@@ -43,8 +43,6 @@ PImage[] narrativaD = new PImage[41]; // D Bernardo
 PImage[] narrativaE = new PImage[26]; // E Camila 
 PImage[] narrativaF = new PImage[47]; // F João
 
-PImage[] headerNarrativa = new PImage [5];
-
 
 PImage iconProgEsq, iconProgDir, rodapeMenu, rodapeNarrativa;
 PImage rodapeDescansoA, rodapeDescansoV;

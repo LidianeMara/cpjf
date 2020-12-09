@@ -37,17 +37,6 @@ void loadimages () {
   narrativaT[19] = loadImage("tela descanso/TD010.png");
   
   
-  // Cabeçalho das narrativas
-  headerNarrativa[0] = requestImage("narrativa/B_Samira/B000_header.png");
-  headerNarrativa[1] = requestImage("narrativa/C_Julia/C000_header.png");
-  headerNarrativa[2] = requestImage("narrativa/D_Bernardo/D000_header.png");
-  headerNarrativa[3] = requestImage("narrativa/E_Camila/E000_header.png");
-  headerNarrativa[4] = requestImage("narrativa/F_João/F000_header.png");
-  
-
-  //img = requestImage("narrativa/B_Samira/G002_maoEsquerda.png");
-  //grade? narrativa/G_geral/G003_grade.png
-
   //narrativa B Samira
   narrativaB[0] = requestImage("narrativa/B_Samira/B000.png");
   narrativaB[1] = requestImage("narrativa/B_Samira/B001.png");
@@ -75,7 +64,6 @@ void loadimages () {
   
 
   //narrativa C Julia
-  //narrativaCCapa = requestImage("narrativa/C_Julia/C000_header.png");
   narrativaC[0] = requestImage("narrativa/C_Julia/C000.png");
   narrativaC[1] = requestImage("narrativa/C_Julia/C001.png");
   narrativaC[2] = requestImage("narrativa/C_Julia/C002.png");
@@ -103,7 +91,6 @@ void loadimages () {
   narrativaC[24] = requestImage("narrativa/C_Julia/C024.png");
   
   //narrativaD Bernardo 
-  //narrativaDCapa = requestImage("narrativa/D_Bernardo/D000_header.png");
   narrativaD[0] = requestImage("narrativa/D_Bernardo/D000.png");
   narrativaD[1] = requestImage("narrativa/D_Bernardo/D001.png");
   narrativaD[2] = requestImage("narrativa/D_Bernardo/D002.png");
@@ -148,7 +135,6 @@ void loadimages () {
 
 
   //narrativaE Camila
-  //narrativaECapa = requestImage("narrativa/E_Camila/E000_header.png");
   narrativaE[0] = requestImage("narrativa/E_Camila/E000.png");
   narrativaE[1] = requestImage("narrativa/E_Camila/E001.png");
   narrativaE[2] = requestImage("narrativa/E_Camila/E002.png");
@@ -178,7 +164,6 @@ void loadimages () {
 
 
   //narrativaF João
-  //narrativaFCapa = requestImage("narrativa/F_João/F000_header.png");
   narrativaF[0] = requestImage("narrativa/F_João/F000.png");
   narrativaF[1] = requestImage("narrativa/F_João/F001.png");
   narrativaF[2] = requestImage("narrativa/F_João/F002.png");
