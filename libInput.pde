@@ -31,13 +31,15 @@ void getMouse(){
   if (iMenu == 0){
     if (iDescanso == 63 ){
       if (mouseX > width-offsetMouse){
+          iddle=false;
           cena(1);
           robot.mouseMove(width/2, mouseY);
        }
     }
     else if (iDescanso == 67){
       if (mouseX < offsetMouse){
-        iNarrativaT=19;
+          iddle=false;
+          iNarrativaT=19;
           cena(1);
           robot.mouseMove(width/2, mouseY);
           delay(300);
@@ -155,8 +157,8 @@ void keyPressed() {
     else if (  keyCode == UP )
     {
       iMenu =0;
-      iNarrativaT=14;
-      iDescanso=52;
+      iNarrativaT=0;
+      iDescanso=0;
       cena(0);
     }
     else if (keyCode == DOWN  ){

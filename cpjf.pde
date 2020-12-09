@@ -11,7 +11,7 @@ int miniOffset=15;
 int countdown = 90; // segundos para tela de descanso
 int seconds, seconds2, startTime, startTime2;  //<>//
 
-int delaySegundo= 1000; //TODO o valor correto é 1000
+int delaySegundo=1000; //TODO o valor correto é 1000
 int delayPadrao=2*delaySegundo;
 
 boolean iddle = true; // sem interação = true

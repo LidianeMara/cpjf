@@ -166,6 +166,7 @@ void cena(int param){
       delay(7 * delaySegundo);
       iNarrativaT=12;
       iDescanso++;
+      startTime2 = millis()/1000 + countdown+20;
     }
     
    
@@ -213,7 +214,13 @@ void cena(int param){
          iNarrativaT=15;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
-      }  
+      }
+      if (seconds2 < 0){
+        startTime2 = millis()/1000 + countdown+5;
+        descansoInverso=!descansoInverso;
+        zeracenas();
+      }
+
       getMouse();
       drawSeta();
     }
@@ -245,6 +252,11 @@ void cena(int param){
          iNarrativaT=18;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
+      }
+      if (seconds2 < 0){
+        startTime2 = millis()/1000 + countdown+5;
+        descansoInverso=!descansoInverso;
+        zeracenas();
       }
       getMouse();
       drawSeta();
