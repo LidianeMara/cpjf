@@ -318,14 +318,7 @@ void cena(int param){
         iNarrativaC = narrativaC.length-1;
       } else if (iNarrativaC < 0) {
         iNarrativaC = 0;
-      }
-      
-      //background(bgcolor);
-      if (iNarrativaC != 0 && iNarrativaC != narrativaC.length-1){    
-         drawBackgroundB();
-         //drawSeta();
-      }
-     
+      }    
       printImage(narrativaC[iNarrativaC],0,0,narrativaC[iNarrativaC].width,narrativaC[iNarrativaC].height);    
   }
   
@@ -337,11 +330,6 @@ void cena(int param){
       } else if (iNarrativaD < 0) {
         iNarrativaD = 0;
       }
-      //background(bgcolor);
-       if (iNarrativaD != 0 && iNarrativaD != narrativaD.length-1){
-          drawBackgroundB();
-          //drawSeta();
-       }
        printImage(narrativaD[iNarrativaD],0,0,narrativaD[iNarrativaD].width,narrativaD[iNarrativaD].height);
   }
   
@@ -353,12 +341,6 @@ void cena(int param){
       } else if (iNarrativaE < 0) {
         iNarrativaE = 0;
       }
-      
-      //background(bgcolor);
-       if (iNarrativaE != 0 && iNarrativaE != narrativaE.length-1){
-          drawBackgroundB();
-          //drawSeta();
-       }
        printImage(narrativaE[iNarrativaE],0,0,narrativaE[iNarrativaE].width,narrativaE[iNarrativaE].height);  
   }
   //iMenu 6 - NARRATIVA F João
@@ -369,12 +351,6 @@ void cena(int param){
       } else if (iNarrativaF < 0) {
         iNarrativaF = 0;
       }
-      
-      //background(bgcolor);
-       if (iNarrativaF != 0 && iNarrativaB != narrativaB.length-1){    
-          drawBackgroundB();
-          //drawSeta();
-       }
        printImage(narrativaF[iNarrativaF],0,0,narrativaF[iNarrativaF].width,narrativaF[iNarrativaF].height);
     }
   } 
