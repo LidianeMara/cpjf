@@ -157,8 +157,8 @@ void keyPressed() {
     else if (  keyCode == UP )
     {
       iMenu =0;
-      iNarrativaT=0;
-      iDescanso=0;
+      iNarrativaT=5;
+      iDescanso=31;
       cena(0);
     }
     else if (keyCode == DOWN  ){

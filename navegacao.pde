@@ -72,13 +72,13 @@ void cena(int param){
       iDescanso++;
       
     }
-    //tela 4a -- passagem sem click 5 seg
+    //tela 4a -- passagem sem click 6 seg
     else if (iDescanso == 31){
       if (!descansoAcao){
         startTime2 = millis()/1000 + countdown;
         descansoAcao=true;
       }
-      else if (seconds2 < countdown-5){
+      else if (seconds2 < countdown-6){
        iNarrativaT=7;
        descansoAcao=false;
        iDescanso++;
