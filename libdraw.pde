@@ -12,10 +12,10 @@ void drawBackgroundB() {
         fill(253,245,232);
       }
       rect(i * BLOCKX, j * BLOCKY, (i + 1) * BLOCKX, (j + 1) * BLOCKY);
-      stroke(206, 183, 145, 26);
+      //stroke(206, 183, 145, 26);
     } 
   }
-  printImage(headerNarrativa[iMenu - 2], 0, 0, width, 426);
+  printImage(headerNarrativa[iMenu - 2], 0, 0, width, headerNarrativa[iMenu - 2].height);
   
 }
 

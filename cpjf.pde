@@ -11,7 +11,7 @@ int miniOffset=15;
 int countdown = 90; // segundos para tela de descanso
 int seconds, seconds2, startTime, startTime2;  //<>//
 
-int delaySegundo=1000; //TODO o valor correto é 1000
+int delaySegundo=1000; // o valor correto é 1000, diminuir para acelerar
 int delayPadrao=2*delaySegundo;
 
 boolean iddle = true; // sem interação = true
@@ -62,10 +62,14 @@ color quasebranco = color (252, 247, 239);
 
 
 void setup() {
-  //TODO fullscreen
-  //fullScreen(2);
+  //Exemplos de display
+  //fullscreen(); // Padrão para instalação
+  //fullScreen(2); // fullscreen na segunda tela
   //size(displayHeight, displayWidth,P2D);
-  size(displayHeight, displayWidth);
+  size(displayHeight, displayWidth); // uso em desenvolvimento
+    surface.setTitle("Caminhos dos processos - Powered by Tijolo");
+    surface.setResizable(false);
+    surface.setLocation(0, -500);
   //size(displayWidth, displayHeight);
 
 
@@ -104,7 +108,13 @@ void setup() {
   }
   //reset mouse
 
-  cena(0);
+  if (!debug){
+      cena(0);
+  }
+  else{
+    iMenu=1;
+    cena(0);
+  }
 
   robot.mouseMove(width/2, height/2);
 
