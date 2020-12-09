@@ -18,7 +18,7 @@ boolean iddle = true; // sem interação = true
 boolean fade = false;  // transição //<>//
 
 //TODO desligar na instalação
-boolean debug = false; //desliga mouse quando ligado
+boolean debug = true; //desliga mouse quando ligado
 
 int iMenu = 0;
 int iDescanso = 0 ; // indice tutorial

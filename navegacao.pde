@@ -84,12 +84,12 @@ void cena(int param){
        iDescanso++;
       }
 
-      if (!descansoInverso && seconds < countdown - 1){
+      if (!descansoInverso && seconds <= countdown-1 ){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
         iNarrativaT=6;
       }
-      else if (seconds < countdown - 2){
+      else if (seconds <= countdown - 2){
          iNarrativaT=5;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
@@ -109,12 +109,12 @@ void cena(int param){
        
       }
 
-      if (!descansoInverso && seconds < countdown - 1){
+      if (!descansoInverso && seconds <= countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
         iNarrativaT=6;
       }
-      else if (seconds < countdown - 2){
+      else if (seconds <= countdown - 2){
          iNarrativaT=7;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
@@ -205,12 +205,12 @@ void cena(int param){
     //tela 8 - mao direita - avançar
     else if (iDescanso == 63){
       // muda imagem em 1 segundo TODO
-      if (!descansoInverso && seconds < countdown - 1){
+      if (!descansoInverso && seconds <= countdown - 1){
         startTime = millis()/1000 + countdown;
         descansoInverso=!descansoInverso;
         iNarrativaT=16;
       }
-      else if (seconds < countdown - 2){
+      else if (seconds <= countdown - 2){
          iNarrativaT=15;
          startTime = millis()/1000 + countdown;
          descansoInverso=!descansoInverso;
